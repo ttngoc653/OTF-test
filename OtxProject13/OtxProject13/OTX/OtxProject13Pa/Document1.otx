@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Document1" id="id_08ca9a5e566044fb9ec670977a44b035" package="OtxProject13Pa" version="1.0.0.0" timestamp="2022-10-19T16:19:54.744+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.99.0.46390</data>
+  </metaData>
+  <procedures>
+    <procedure name="main" id="id_bf73fe3b02df420599313264b152137f" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_b8d4f3018935407b8b5f17b6d489672d">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_70c5a3fe7c064216b163b79b17ea6827" disabled="true">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+              </term>
+            </realisation>
+          </action>
+          <action name="DiagnServi_ReadDataByIdentActuaTestStatu1" id="ExecuteDiagService_2764733f3cba482db726dfc2687152ee">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:GetComChannel">
+                  <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                </diag:comChannel>
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_ReadDataByIdentActuaTestStatu" />
+              </diag:diagService>
+            </realisation>
+          </action>
+          <action id="Action_ac46d2e424824de69638bbbeb9badce2">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

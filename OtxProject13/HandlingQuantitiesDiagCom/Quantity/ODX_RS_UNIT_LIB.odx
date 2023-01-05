@@ -1,0 +1,2609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ODX MODEL-VERSION="2.0.1" xsi:noNamespaceSchemaLocation="odx.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<DIAG-LAYER-CONTAINER ID="ODX_RS_UNIT_LIB_DLC" OID="id-8f859aa1-9f4a-478b-85b6-d13ffa9b4f43">
+		<SHORT-NAME>ODX_RS_UNIT_LIB_DLC</SHORT-NAME>
+		<LONG-NAME>ODX-RS UNIT Library</LONG-NAME>
+		<ECU-SHARED-DATAS>
+			<ECU-SHARED-DATA ID="ODX_RS_UNIT_LIB" OID="id-669db4e8-b554-4e78-b17d-23f383d7ad82">
+				<SHORT-NAME>ODX_RS_UNIT_LIB</SHORT-NAME>
+				<LONG-NAME>ODX-RS UNIT Library</LONG-NAME>
+				<DESC>
+					<p>
+      ODX-Recommended-Style library of physical units.This library contains all physical units possibly used in diagnostic data of ODX data bases. It is part of ODX-Recommended-Style data format.
+
+    </p>
+					<p>
+						<b>Please note:</b>
+					</p>
+					<p>
+      Physical dimensions are used to support the conversion from one unit to another unit. According to physics that conversion is only allowed if the physical dimension is the same because the exponents of the base dimensions (length, time, mass, temperature electric current, luminous intensity, molar amount) must be the same.
+    </p>
+					<p>
+      Some physical units are commonly used in context with some physical quantities only. For example Nm is used for torque and for energy quantities. But another unit J (Joule) is only used for energy and not for torque although it is possible from the point-of-view of physics. For that reason there are the physical dimensions of torque and enegry although they have the same exponents of the base dimensions. And further the unit Nm exists twice: One 
+       time as a unit for torque and another time as unit 
+       or energy. With that relationship is is assured that the conversion can be done properly between commonly used physical units.
+    </p>
+					<p>
+      
+    </p>
+					<p>
+       
+    </p>
+				</DESC>
+				<ADMIN-DATA>
+					<LANGUAGE>eng</LANGUAGE>
+					<DOC-REVISIONS>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-672b6081-8762-46e1-81d7-8c1d9244ffee"/>
+							<REVISION-LABEL>000.000.001</REVISION-LABEL>
+							<STATE>draft</STATE>
+							<DATE>2008-08-20T21:35:38</DATE>
+							<TOOL>DatabaseDesigner</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>First Draft</CHANGE>
+									<REASON>Use of Daimler units</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-40242f4b-a657-4607-b704-a06c340e4c17"/>
+							<REVISION-LABEL>000.000.002</REVISION-LABEL>
+							<STATE>draft</STATE>
+							<DATE>2008-08-20T21:43:08</DATE>
+							<TOOL>DatabaseDesigner</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>Revision</CHANGE>
+									<REASON>according to review of unit-spec</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-75d0934e-9888-47cf-812f-65d950ab9d44"/>
+							<REVISION-LABEL>000.000.003</REVISION-LABEL>
+							<STATE>draft</STATE>
+							<DATE>2008-08-20T21:44:27</DATE>
+							<TOOL>DatabaseDesigner</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>BMW units added</CHANGE>
+									<REASON>Introduction of missing BMW units</REASON>
+								</MODIFICATION>
+								<MODIFICATION>
+									<CHANGE>UNIT-GROUPS canceled</CHANGE>
+									<REASON>according to 9th AG Subgroup meeting</REASON>
+								</MODIFICATION>
+								<MODIFICATION>
+									<CHANGE>change of IDs, SHORT-NAMES, and others</CHANGE>
+									<REASON>according to 9th AG Subgroup meeting</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-59d420c0-b704-11de-8a39-0800200c9a66"/>
+							<REVISION-LABEL>000.000.004</REVISION-LABEL>
+							<STATE>draft</STATE>
+							<DATE>2008-11-12T17:27:00</DATE>
+							<TOOL>Altova XMLSpy</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>Added Text Identifiers TI at UNITS, DESC of a UNIT and PHYSICAL-DIMENSIONS. Basis for implementing the TIs are the rules descriped in the chapter 
+&quot;Guidelines for creation of new physical units&quot;, R3.2-0011 of the document 
+&quot;ODX Recommended Style 
+Authoring Guidelines&quot;, 
+Version 0.93 of 29.08.08 </CHANGE>
+									<REASON>Introduction of missing Text Identifiers at UNITS, DESC of a UNIT and PHYSICAL-DIMENSIONS</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-59d420c0-b704-11de-8a39-0800200c9a66"/>
+							<REVISION-LABEL>000.000.005</REVISION-LABEL>
+							<STATE>draft</STATE>
+							<DATE>2009-10-12T09:44:00</DATE>
+							<TOOL>Altova XMLSpy</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>Changed UNIT000014 to UNIT0014</CHANGE>
+									<REASON>Name of TI=UNIT00014 uses 3 times the value 0 instead of 2 times the value 0</REASON>
+								</MODIFICATION>
+								<MODIFICATION>
+									<CHANGE>Added description of units &quot;Ampere per Second&quot;, &quot;Ampere Second&quot;, &quot;Ampere Second Per Second&quot;, &quot;Baud&quot;, &quot;Bit Per Second&quot;, &quot;Byte&quot;, 
+&quot;Byte Per Second&quot;, &quot;Coulomb Per Second&quot;, &quot;Cubic Meter Per Hour&quot;, &quot;Degree Per Second&quot;, &quot;Dots Per Inch&quot;, &quot;Frame&quot;, &quot;Gallon (UK)&quot;,
+&quot;Gallon (US)&quot;, &quot;Hecto-Pascal Per Cubic Meter Per Hour&quot;, &quot;Kilo-Gram Squared Per Hour Squared&quot;, &quot;Kilo-Meter Per Hour Per Second&quot;,
+&quot;Kilo-Meter Per Liter&quot;, &quot;Kilo-Watt Hour&quot;, &quot;Liter Per Milli-Meter&quot;, &quot;Micro-Ampere Second&quot;, &quot;Micro-Farad&quot;, &quot;Micro-Joule&quot;, &quot;Micro-Liter&quot;,
+&quot;Miles Per Gallon (UK)&quot;, &quot;Miles Per Gallon (US)&quot;, &quot;Milli-Ampere Per Second&quot;, &quot;Milli-Gram Per Cubic Meter&quot;, &quot;Milli-Gram Per Second&quot;,
+&quot;Milli-Joule&quot;, &quot;Milli-Liter&quot;, &quot;Milli-Liter Per Minute&quot;, &quot;Milli-Liter Per Second&quot;, &quot;Milli-Meter Per Percent&quot;, &quot;Milli-Radian&quot;, &quot;Parts Per Million&quot;,
+&quot;Pascal Per Cubic Meter Per Second&quot;, &quot;Per Cent Per Milli-Second&quot;, &quot;Per Cent Per Second&quot;, &quot;Per Mille&quot;, &quot;Pico-Farad&quot;, &quot;Pixels Per Inch&quot;,
+&quot;Revolutions Per Minute Per Second&quot;, &quot;Revolutions Per Minute Squared&quot;, &quot;Revolutions Per Second Squared&quot;, &quot;Thousand Kilo-Meter&quot;,
+&quot;Volt Per Second&quot;, &quot;Watt Per Second&quot;.
+Also added dimensions &quot;Current slew rate&quot;, &quot;Charge Slew Rate&quot;, &quot;Line Digit Rate&quot;, &quot;Bit Rate&quot;, &quot;Storage Capacity&quot;, &quot;Transfer Rate&quot;,
+&quot;Volumetric Flow Rate&quot;, &quot;Flow Resistance&quot;, &quot;Mass Flow Squared&quot;, &quot;Fuel Efficiency&quot;, &quot;Work&quot;, &quot;Volumetric Flow Rate Per Distance&quot;,
+&quot;Raw Slew Rate&quot;, &quot;Power Slew Rate&quot;.</CHANGE>
+									<REASON>Adoption of the corresponding VW units</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-59d420c0-b704-11de-8a39-0800200c9a66"/>
+							<REVISION-LABEL>000.000.006</REVISION-LABEL>
+							<STATE>draft</STATE>
+							<DATE>2009-10-13T15:29:00</DATE>
+							<TOOL>Altova XMLSpy</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>Added description of unit &quot;Per Cent Per Second&quot;.
+Also added missing OIDs.
+Removed duplicate UNITs (&quot;Cubic Millimeter&quot;, &quot;Micro-Farad&quot;, &quot;Micro-Meter&quot;, &quot;Micro-Second&quot;)</CHANGE>
+									<REASON>Evaluation of version 000.000.005</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+						<DOC-REVISION>
+							<TEAM-MEMBER-REF ID-REF="id-75d0934e-9888-47cf-812f-65d950ab9d44"/>
+							<REVISION-LABEL>000.000.007</REVISION-LABEL>
+							<STATE>DRAFT</STATE>
+							<DATE>2009-12-02T10:40:31</DATE>
+							<TOOL>DatabaseDesigner</TOOL>
+							<MODIFICATIONS>
+								<MODIFICATION>
+									<CHANGE>ODXlink to Physical Dimensions</CHANGE>
+									<REASON>2 invalid references were corrected</REASON>
+								</MODIFICATION>
+							</MODIFICATIONS>
+						</DOC-REVISION>
+					</DOC-REVISIONS>
+				</ADMIN-DATA>
+				<COMPANY-DATAS>
+					<COMPANY-DATA ID="id-673dd4bc-62c5-464b-ac24-60842d35b380">
+						<SHORT-NAME>DAIMLERAG</SHORT-NAME>
+						<LONG-NAME>DaimlerAG</LONG-NAME>
+						<DESC>
+							<p>
+      Units are used to augment the value with additional information like 
+      &quot;m/s&quot; or &quot;liter&quot;. That is necessary for a correct interpretation of the 
+      physical value for input and output processes. The AC UNIT Library shall 
+      ensure a common usage of one single unit spec.
+    </p>
+						</DESC>
+						<TEAM-MEMBERS>
+							<TEAM-MEMBER ID="id-672b6081-8762-46e1-81d7-8c1d9244ffee">
+								<SHORT-NAME>THORSTENBACKMEISTER</SHORT-NAME>
+								<LONG-NAME>Thorsten Backmeister</LONG-NAME>
+							</TEAM-MEMBER>
+						</TEAM-MEMBERS>
+					</COMPANY-DATA>
+					<COMPANY-DATA ID="id-96ec11a5-53c8-49e7-85d6-77d0ae0ceb7d">
+						<SHORT-NAME>RENAULTAG</SHORT-NAME>
+						<LONG-NAME>Renault AG</LONG-NAME>
+						<TEAM-MEMBERS>
+							<TEAM-MEMBER ID="id-40242f4b-a657-4607-b704-a06c340e4c17">
+								<SHORT-NAME>GILLESMICHARD</SHORT-NAME>
+								<LONG-NAME>Gilles Michard</LONG-NAME>
+							</TEAM-MEMBER>
+							<TEAM-MEMBER ID="id-75d0934e-9888-47cf-812f-65d950ab9d44">
+								<SHORT-NAME>REINHARDHALLERMAYER</SHORT-NAME>
+								<LONG-NAME>Reinhard Hallermayer</LONG-NAME>
+							</TEAM-MEMBER>
+						</TEAM-MEMBERS>
+					</COMPANY-DATA>
+					<COMPANY-DATA ID="id-0d10cbf5-b1ac-4c01-89da-1dfcf92c9278">
+						<SHORT-NAME>BMWAG</SHORT-NAME>
+						<LONG-NAME>BMW AG</LONG-NAME>
+					</COMPANY-DATA>
+					<COMPANY-DATA ID="id-4bce5860-b704-11de-8a39-0800200c9a66">
+						<SHORT-NAME>VolkswagenAG</SHORT-NAME>
+						<LONG-NAME>Volkswagen AG</LONG-NAME>
+						<TEAM-MEMBERS>
+							<TEAM-MEMBER ID="id-59d420c0-b704-11de-8a39-0800200c9a66">
+								<SHORT-NAME>HansWolter</SHORT-NAME>
+								<LONG-NAME>Hans Wolter</LONG-NAME>
+							</TEAM-MEMBER>
+						</TEAM-MEMBERS>
+					</COMPANY-DATA>
+				</COMPANY-DATAS>
+				<DIAG-DATA-DICTIONARY-SPEC>
+					<UNIT-SPEC>
+						<UNITS>
+							<UNIT ID="ODX-RS.UNIT.1000PerMinute" OID="id-e2e822f6-32ec-4aba-960b-c23477ea3cc5">
+								<SHORT-NAME>1000PerMinute</SHORT-NAME>
+								<LONG-NAME TI="UNIT0153">1000 per minute</LONG-NAME>
+								<DISPLAY-NAME>1000/min</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>16.6667</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.AirFuelRatio" OID="id-eacbb5bf-843c-43ff-b9c1-17227b148f45">
+								<SHORT-NAME>AirFuelRatio</SHORT-NAME>
+								<LONG-NAME TI="UNIT0001">Air/Fuel Ratio</LONG-NAME>
+								<DISPLAY-NAME>A/F ratio</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Ampere" OID="id-ef654eeb-6dc7-4599-a2d7-afe778d82ef0">
+								<SHORT-NAME>Ampere</SHORT-NAME>
+								<LONG-NAME TI="UNIT0002">Ampere</LONG-NAME>
+								<DESC TI="UNIT_DESC_0001">
+									<p>
+      SI base unit for electric current.
+    </p>
+								</DESC>
+								<DISPLAY-NAME>A</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricCurrent"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.AmpereHour" OID="id-774d6b84-15e4-48fd-9821-ed36ffb29cea">
+								<SHORT-NAME>AmpereHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0154">Ampere Hour</LONG-NAME>
+								<DISPLAY-NAME>Ah</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>3600</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricCharge"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.AmperePerMeter" OID="id-25bbcc93-d1de-4354-b377-3e85d27f84f9">
+								<SHORT-NAME>AmperePerMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0003">Ampere Per Meter</LONG-NAME>
+								<DISPLAY-NAME>A/m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MagneticFieldStrength"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.AmperePerSecond" OID="d3c65681-00ac-4f22-817e-93cbbbdb9c87">
+								<SHORT-NAME>AmperePerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0180">Ampere Per Second</LONG-NAME>
+								<DISPLAY-NAME>A/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.CurrentSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.AmperePerSquareMeter" OID="id-c89a38a3-4698-4da9-9ff8-bb1b211e3a27">
+								<SHORT-NAME>AmperePerSquareMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0004">Ampere Per Square Meter</LONG-NAME>
+								<DISPLAY-NAME>A/m²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricCurrentDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.AmpereSecond" OID="ca670400-e284-47c9-ac31-1a985c4ff8c1">
+								<SHORT-NAME>AmpereSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0181">Ampere Second</LONG-NAME>
+								<DISPLAY-NAME>As</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricCharge"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.AmpereSecondPerSecond" OID="id-06b42174-5862-4a26-84b3-74316f71fab7">
+								<SHORT-NAME>AmpereSecondPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0182">Ampere Second Per Second</LONG-NAME>
+								<DISPLAY-NAME>As/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ChargSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Bar" OID="id-bcac1256-c8de-4543-9b68-0ab8b9b78940">
+								<SHORT-NAME>Bar</SHORT-NAME>
+								<LONG-NAME TI="UNIT0005">Bar</LONG-NAME>
+								<DISPLAY-NAME>bar</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E5</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.BarPerSecond" OID="id-8c7f050c-5523-4966-b48b-49ff88295d74">
+								<SHORT-NAME>BarPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0006">Bar Per Second</LONG-NAME>
+								<DISPLAY-NAME>bar/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E5</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PressureDividedByTime"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Baud" OID="id-21b7c9ba-bec0-450b-8842-a3e7e09ae5d9">
+								<SHORT-NAME>Baud</SHORT-NAME>
+								<LONG-NAME TI="UNIT0183">Baud</LONG-NAME>
+								<DISPLAY-NAME>Bd</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.LineDigitRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Becquerel" OID="id-74460101-f8d9-4f9b-9a24-481c881ad6ff">
+								<SHORT-NAME>Becquerel</SHORT-NAME>
+								<LONG-NAME TI="UNIT0007">Becquerel</LONG-NAME>
+								<DISPLAY-NAME>Bq</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Activity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Bit" OID="id-89bc0c46-583f-4490-90a3-2c72b73c8e93">
+								<SHORT-NAME>Bit</SHORT-NAME>
+								<LONG-NAME TI="UNIT0008">Bit</LONG-NAME>
+								<DISPLAY-NAME>bit</DISPLAY-NAME>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.BitPerSecond" OID="id-d725c1bb-86d7-4177-beab-1e5328794108">
+								<SHORT-NAME>BitPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0184">Bit Per Second</LONG-NAME>
+								<DESC>
+									<p>Einheit bit pro Sekunde</p>
+								</DESC>
+								<DISPLAY-NAME>bit/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.BitRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Byte" OID="id-67405557-e335-4f04-83dc-c801cda7ab48">
+								<SHORT-NAME>Byte</SHORT-NAME>
+								<LONG-NAME TI="UNIT0185">Byte</LONG-NAME>
+								<DISPLAY-NAME>B</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.125</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.StorageCapacity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.BytePerSecond" OID="id-8d7fc42e-bfa8-4556-be28-31aed782c503">
+								<SHORT-NAME>BytePerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0186">Byte Per Second</LONG-NAME>
+								<DISPLAY-NAME>B/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.125</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.TransferRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Candela" OID="id-3e0f3066-d569-4634-be6b-e363b8748c3e">
+								<SHORT-NAME>Candela</SHORT-NAME>
+								<LONG-NAME TI="UNIT0009">Candela</LONG-NAME>
+								<DESC TI="UNIT_DESC_0002">
+									<p>
+      SI base unit for luminous intensity.
+    </p>
+								</DESC>
+								<DISPLAY-NAME>cd</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.LuminousIntensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CandelaPerSquareMeter" OID="id-c27693c0-11e6-4bf4-8bd0-39c9e75f521e">
+								<SHORT-NAME>CandelaPerSquareMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0010">Candela Per Square Meter</LONG-NAME>
+								<DISPLAY-NAME>cd/m²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Luminance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CentiMeter" OID="id-4712d9ac-c2a1-4df8-a0d4-5f58b3ed09c2">
+								<SHORT-NAME>CentiMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0011">Centi-Meter</LONG-NAME>
+								<DISPLAY-NAME>cm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.01</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CentiMeterPerSecond" OID="id-90b9b675-b3a5-40db-ac8a-97035d2d5cea">
+								<SHORT-NAME>CentiMeterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0013">Centi-Meter Per Second</LONG-NAME>
+								<DISPLAY-NAME>cm/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.01</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Velocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Coulomb" OID="id-d0b249cb-fa14-4a5a-9d74-5078230387da">
+								<SHORT-NAME>Coulomb</SHORT-NAME>
+								<LONG-NAME TI="UNIT0014">Coulomb</LONG-NAME>
+								<DISPLAY-NAME>C</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricCharge"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CoulombPerCubicMeter" OID="id-6decc7aa-ce4f-4b20-bff9-179afb2e9e43">
+								<SHORT-NAME>CoulombPerCubicMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0015">Coulomb Per Cubic Meter</LONG-NAME>
+								<DISPLAY-NAME>C/m³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricChargeDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CoulombPerKiloGram" OID="id-20f7937d-d00c-4e97-80fd-7f9228c2c48f">
+								<SHORT-NAME>CoulombPerKiloGram</SHORT-NAME>
+								<LONG-NAME TI="UNIT0016">Coulomb Per Kilo-Gram</LONG-NAME>
+								<DISPLAY-NAME>C/kg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Exposure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CoulombPerSecond" OID="id-d3706274-daec-4ba9-9e72-164f07b7fb0e">
+								<SHORT-NAME>CoulombPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0187">Coulomb Per Second</LONG-NAME>
+								<DISPLAY-NAME>C/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ChargSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CoulombPerSquareMeter" OID="id-0add6a62-fff5-4123-befe-ffde6bbb71be">
+								<SHORT-NAME>CoulombPerSquareMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0017">Coulomb Per Square Meter</LONG-NAME>
+								<DISPLAY-NAME>C/m²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricFluxDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Counts" OID="id-4d140f03-66e1-45a3-84cf-0f4a96446f54">
+								<SHORT-NAME>Counts</SHORT-NAME>
+								<LONG-NAME TI="UNIT0018">Counts</LONG-NAME>
+								<DISPLAY-NAME>counts</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CubicMeter" OID="id-f9f38622-3f24-4966-a714-59f0a0c38542">
+								<SHORT-NAME>CubicMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0019">Cubic Meter</LONG-NAME>
+								<DISPLAY-NAME>m³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CubicMeterPerHour" OID="id-0f45c14c-0da9-484e-bc81-d0bd4703120b">
+								<SHORT-NAME>CubicMeterPerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0188">Cubic Meter Per Hour</LONG-NAME>
+								<DISPLAY-NAME>m³/h</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.00027777777777777777777777777778</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumetricFlowRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CubicMeterPerKiloGram" OID="id-2ac83727-a20a-4761-ad44-3d0904bc8746">
+								<SHORT-NAME>CubicMeterPerKiloGram</SHORT-NAME>
+								<LONG-NAME TI="UNIT0020">Cubic Meter Per Kilo-Gram</LONG-NAME>
+								<DISPLAY-NAME>m³/kg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.SpecificVolume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CubicMilliMeter" OID="id-7564a805-abbd-4ccd-90b5-6badedd56fbf">
+								<SHORT-NAME>CubicMilliMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0021">Cubic Milli-Meter</LONG-NAME>
+								<DISPLAY-NAME>mm³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-09</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CubicMilliMeterPerSecond" OID="id-97852e38-d26b-4d0f-a180-c03083489bcd">
+								<SHORT-NAME>CubicMilliMeterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0022">Cubic Milli-Meter Per Second</LONG-NAME>
+								<DISPLAY-NAME>mm³/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-09</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumeFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.CubicMillimeterPerStroke" OID="id-bf30a117-7f57-475e-af56-29f4a406536c">
+								<SHORT-NAME>CubicMillimeterPerStroke</SHORT-NAME>
+								<LONG-NAME TI="UNIT0165">Cubic Millimeter Per Stroke</LONG-NAME>
+								<DISPLAY-NAME>mm³/stroke</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-006</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Day" OID="id-4f67deb3-ce9d-4b14-8387-6b0d91c87db0">
+								<SHORT-NAME>Day</SHORT-NAME>
+								<LONG-NAME TI="UNIT0023">Day</LONG-NAME>
+								<DISPLAY-NAME>d</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>86400</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Decibel" OID="id-ea530373-64e7-4234-a4b6-873008f807a4">
+								<SHORT-NAME>Decibel</SHORT-NAME>
+								<LONG-NAME TI="UNIT0024">Decibel</LONG-NAME>
+								<DISPLAY-NAME>dB</DISPLAY-NAME>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Degree" OID="id-520da814-6bf5-4da5-aca1-ef73d6aaa7b2">
+								<SHORT-NAME>Degree</SHORT-NAME>
+								<LONG-NAME TI="UNIT0025">Degree</LONG-NAME>
+								<DISPLAY-NAME>°</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.01745329252</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PlaneAngle"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.DegreeCelsius" OID="id-cf5d4b19-00f3-4f86-bd88-920b1cf13003">
+								<SHORT-NAME>DegreeCelsius</SHORT-NAME>
+								<LONG-NAME TI="UNIT0026">Degree Celsius</LONG-NAME>
+								<DISPLAY-NAME>°C</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>273.15</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperature"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.DegreeCelsiusPerKilometerPerHour" OID="id-b30a74c4-99b3-4758-829e-d62f4ea359cb">
+								<SHORT-NAME>DegreeCelsiusPerKilometerPerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0027">Degree Celsius Per Kilometer Per Hour</LONG-NAME>
+								<DISPLAY-NAME>°C/(km/h)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>3.6</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperatureDividedByVelocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.DegreeFahrenheit" OID="id-be85e1c9-e3a5-4ab6-b2bb-49aa764306f9">
+								<SHORT-NAME>DegreeFahrenheit</SHORT-NAME>
+								<LONG-NAME TI="UNIT0028">Degree Fahrenheit</LONG-NAME>
+								<DISPLAY-NAME>°F</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.5555555555555</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>255.37222222222222222222222222222</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperature"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.DegreePerSecond" OID="id-5dae4a4a-3a5f-470b-9acd-b3c234430d04">
+								<SHORT-NAME>DegreePerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0189">Degree Per Second</LONG-NAME>
+								<DISPLAY-NAME>°/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.017453292519943295769236907684886</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AngularVelocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.DotsPerInch" OID="id-53d28ba9-0f98-4bf3-b2c4-86ca055fb37b">
+								<SHORT-NAME>DotsPerInch</SHORT-NAME>
+								<LONG-NAME TI="UNIT0190">Dots Per Inch</LONG-NAME>
+								<DISPLAY-NAME>dpi</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Farad" OID="id-6b1dcfd6-aea2-455e-978d-8d26bd28dc29">
+								<SHORT-NAME>Farad</SHORT-NAME>
+								<LONG-NAME TI="UNIT0029">Farad</LONG-NAME>
+								<DISPLAY-NAME>F</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Capacitance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.FaradPerMeter" OID="id-ebf5896e-d685-40a2-989b-39a432fe0e90">
+								<SHORT-NAME>FaradPerMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0030">Farad Per Meter</LONG-NAME>
+								<DISPLAY-NAME>F/m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Permittivity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Foot" OID="id-9e79a193-e652-446f-b1d8-c4e3b7573686">
+								<SHORT-NAME>Foot</SHORT-NAME>
+								<LONG-NAME TI="UNIT0031">Foot</LONG-NAME>
+								<DISPLAY-NAME>ft</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.3048</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Frame" OID="id-f96e2623-1af4-4671-a398-7142acfce971">
+								<SHORT-NAME>Frame</SHORT-NAME>
+								<LONG-NAME TI="UNIT0191">Frame</LONG-NAME>
+								<DISPLAY-NAME>frames</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Gallon" OID="id-633117b4-d12e-4f1d-9a16-e62a3004c848">
+								<SHORT-NAME>Gallon</SHORT-NAME>
+								<LONG-NAME TI="UNIT0032">Gallon</LONG-NAME>
+								<DISPLAY-NAME>gal</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.003785412</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GallonUK" OID="id-502cde3e-b874-4b34-9c7c-69e622cf9441">
+								<SHORT-NAME>GallonUK</SHORT-NAME>
+								<LONG-NAME TI="UNIT0192">Gallon (UK)</LONG-NAME>
+								<DISPLAY-NAME>gal (Imperial)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>219.96924829908778752730368294512</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GallonUS" OID="id-fa0bf3ff-699b-46bf-99bb-5a81e3946ae9">
+								<SHORT-NAME>GallonUS</SHORT-NAME>
+								<LONG-NAME TI="UNIT0193">Gallon (US)</LONG-NAME>
+								<DISPLAY-NAME>gal (U.S. liq)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>264.17205263729590866333701745917</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Gram" OID="id-5dd50eeb-1837-445d-86b7-a3674fe87058">
+								<SHORT-NAME>Gram</SHORT-NAME>
+								<LONG-NAME TI="UNIT0033">Gram</LONG-NAME>
+								<DISPLAY-NAME>g</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Mass"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GramPerCubicCentimeter" OID="id-b1c3c35e-d8a7-469e-a12a-7692fba11f0d">
+								<SHORT-NAME>GramPerCubicCentimeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0155">Gram Per Cubic Centimeter</LONG-NAME>
+								<DISPLAY-NAME>g/cm³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GramPerCylinder" OID="id-c4c25c95-0598-40e2-9136-af887f128e3b">
+								<SHORT-NAME>GramPerCylinder</SHORT-NAME>
+								<LONG-NAME TI="UNIT0034">Gram Per Cylinder</LONG-NAME>
+								<DISPLAY-NAME>g/cyl</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassPerCylinder"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GramPerKilometer" OID="id-a17c9e00-d9be-4495-9384-c5fccf43caa4">
+								<SHORT-NAME>GramPerKilometer</SHORT-NAME>
+								<LONG-NAME TI="UNIT0157">Gram Per Kilometer</LONG-NAME>
+								<DISPLAY-NAME>g/km</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassUsage"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GramPerKilowattHour" OID="id-f183bce3-77fc-4328-b78b-0ffb2e587031">
+								<SHORT-NAME>GramPerKilowattHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0156">Gram Per Kilowatt Hour</LONG-NAME>
+								<DISPLAY-NAME>g/kWh</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.SpecificMassUsage"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GramPerMile" OID="id-9d0284e1-03dc-4408-89b6-41185c3b7c9a">
+								<SHORT-NAME>GramPerMile</SHORT-NAME>
+								<LONG-NAME TI="UNIT0158">Gram Per Mile</LONG-NAME>
+								<DISPLAY-NAME>g/mile</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.6214</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassUsage"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GramPerMole" OID="id-99042896-c9d6-4036-adc3-520ccf134261">
+								<SHORT-NAME>GramPerMole</SHORT-NAME>
+								<LONG-NAME TI="UNIT0159">Gram Per Mole</LONG-NAME>
+								<DISPLAY-NAME>g/mol</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MolarMass"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GramPerSecond" OID="id-aac8506c-ec17-4874-b52b-0f0d50870996">
+								<SHORT-NAME>GramPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0035">Gram Per Second</LONG-NAME>
+								<DISPLAY-NAME>g/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Gray" OID="id-d207af42-3d8d-46b2-8a0b-873fab6172e3">
+								<SHORT-NAME>Gray</SHORT-NAME>
+								<LONG-NAME TI="UNIT0036">Gray</LONG-NAME>
+								<DISPLAY-NAME>Gy</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AbsorbedDose"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.GrayPerSecond" OID="id-e4d1633e-8212-4ddf-936c-e47819d73ba9">
+								<SHORT-NAME>GrayPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0037">Gray Per Second</LONG-NAME>
+								<DISPLAY-NAME>Gy/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AbsorbedDoseRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.HectoPascal" OID="id-4dc3c03a-c638-4aba-be85-3aa73113c401">
+								<SHORT-NAME>HectoPascal</SHORT-NAME>
+								<LONG-NAME TI="UNIT0038">Hecto-Pascal</LONG-NAME>
+								<DISPLAY-NAME>hPa</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>100</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.HectoPascalPerCubicMeterPerHour" OID="id-7b4b98da-d62d-4794-9c0c-3c9bce38012a">
+								<SHORT-NAME>HectoPascalPerCubicMeterPerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0194">Hecto-Pascal Per Cubic Meter Per Hour</LONG-NAME>
+								<DISPLAY-NAME>hPa/(m³/h)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>3.6</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.FlowResistance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Henry" OID="id-d0648704-84d1-4205-9a98-f9235892a200">
+								<SHORT-NAME>Henry</SHORT-NAME>
+								<LONG-NAME TI="UNIT0039">Henry</LONG-NAME>
+								<DISPLAY-NAME>H</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Inductance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.HenryPerMeter" OID="id-595a0bd1-628d-4019-9d88-766fa1f1a7aa">
+								<SHORT-NAME>HenryPerMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0040">Henry Per Meter</LONG-NAME>
+								<DISPLAY-NAME>H/m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Permeability"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Hertz" OID="id-36aa95c6-ed7e-441f-8396-8b293fac8e83">
+								<SHORT-NAME>Hertz</SHORT-NAME>
+								<LONG-NAME TI="UNIT0041">Hertz</LONG-NAME>
+								<DISPLAY-NAME>Hz</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.HertzPerKmH" OID="id-ea6563e9-3931-4c79-801b-f4008027c27d">
+								<SHORT-NAME>HertzPerKmH</SHORT-NAME>
+								<LONG-NAME TI="UNIT0042">Hertz Per km/h</LONG-NAME>
+								<DISPLAY-NAME>Hz/(km/h)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>3.6</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ReciprocalLength"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.HorsePowerDIN" OID="id-e4d4b1f2-3b1b-4bcd-9c0a-4508cadc026e">
+								<SHORT-NAME>HorsePowerDIN</SHORT-NAME>
+								<LONG-NAME TI="UNIT0043">Horse Power (DIN)</LONG-NAME>
+								<DISPLAY-NAME>PS</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>735.29411764705878</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Power"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Hour" OID="id-bfde9c58-0c45-423e-9f1a-75fe5d860cd6">
+								<SHORT-NAME>Hour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0044">Hour</LONG-NAME>
+								<DISPLAY-NAME>h</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>3600</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Impuls" OID="id-3c2a7989-2e48-42ef-9e03-98c81f2b4b58">
+								<SHORT-NAME>Impuls</SHORT-NAME>
+								<LONG-NAME TI="UNIT0045">Impuls</LONG-NAME>
+								<DISPLAY-NAME>impuls</DISPLAY-NAME>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.ImpulsPerKM" OID="id-844bd650-2394-44f9-b343-8c093362ccac">
+								<SHORT-NAME>ImpulsPerKM</SHORT-NAME>
+								<LONG-NAME TI="UNIT0047">Impuls Per KM</LONG-NAME>
+								<DISPLAY-NAME>1/km</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ReciprocalLength"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.ImpulsPerRotation" OID="id-4acf2969-5a6d-4156-aa08-11fef8961d3f">
+								<SHORT-NAME>ImpulsPerRotation</SHORT-NAME>
+								<LONG-NAME TI="UNIT0046">Impuls Per Rotation</LONG-NAME>
+								<DISPLAY-NAME>1/n</DISPLAY-NAME>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Inch" OID="id-ad3a3b7f-147b-4454-8609-04fe2654037b">
+								<SHORT-NAME>Inch</SHORT-NAME>
+								<LONG-NAME TI="UNIT0048">Inch</LONG-NAME>
+								<DISPLAY-NAME>in</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.0254</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Joule" OID="id-a5eb4bd1-1c3c-4062-81e8-b27ef78635d7">
+								<SHORT-NAME>Joule</SHORT-NAME>
+								<LONG-NAME TI="UNIT0049">Joule</LONG-NAME>
+								<DISPLAY-NAME>J</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Energy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.JoulePerCubicMeter" OID="id-485d7ee8-1063-4fe6-ab55-51ef55439fd1">
+								<SHORT-NAME>JoulePerCubicMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0050">Joule Per Cubic Meter</LONG-NAME>
+								<DISPLAY-NAME>J/m³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.EnergyDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.JoulePerKelvin" OID="id-92ad64f1-4a08-4abb-beb1-53e73bc27329">
+								<SHORT-NAME>JoulePerKelvin</SHORT-NAME>
+								<LONG-NAME TI="UNIT0051">Joule Per Kelvin</LONG-NAME>
+								<DISPLAY-NAME>J/K</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.HeatCapacity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.JoulePerKiloGram" OID="id-04eb9bc4-e795-437b-b76c-46720224f765">
+								<SHORT-NAME>JoulePerKiloGram</SHORT-NAME>
+								<LONG-NAME TI="UNIT0052">Joule Per Kilo-Gram</LONG-NAME>
+								<DISPLAY-NAME>J/kg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.SpecificEnergy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.JoulePerKiloGramKelvin" OID="id-addf82d5-97b6-43f6-938c-0773e6ceacd9">
+								<SHORT-NAME>JoulePerKiloGramKelvin</SHORT-NAME>
+								<LONG-NAME TI="UNIT0053">Joule Per Kilo-Gram Kelvin</LONG-NAME>
+								<DISPLAY-NAME>J/(kg·K)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.SpecificHeatCapacity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.JoulePerMole" OID="id-b13e91ea-3b6c-4404-9e68-e4f211065e7e">
+								<SHORT-NAME>JoulePerMole</SHORT-NAME>
+								<LONG-NAME TI="UNIT0054">Joule Per Mole</LONG-NAME>
+								<DISPLAY-NAME>J/mol</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MolarEnergy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.JoulePerMoleKelvin" OID="id-1b31454a-c808-4ea8-92a6-6bf6c287a1ae">
+								<SHORT-NAME>JoulePerMoleKelvin</SHORT-NAME>
+								<LONG-NAME TI="UNIT0055">Joule Per Mole Kelvin</LONG-NAME>
+								<DISPLAY-NAME>J/(mol·K)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MolarEntropy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Katal" OID="id-cf9dfce0-5bff-4c0f-b1ec-db894eda2898">
+								<SHORT-NAME>Katal</SHORT-NAME>
+								<LONG-NAME TI="UNIT0056">Katal</LONG-NAME>
+								<DISPLAY-NAME>kat</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.CatalyticActivity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KatalPerCubicMeter" OID="id-a350f2ee-2fc4-48b5-b75c-3d5ae50c72f7">
+								<SHORT-NAME>KatalPerCubicMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0057">Katal Per Cubic Meter</LONG-NAME>
+								<DISPLAY-NAME>kat/m³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.CatalyticConcentration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Kelvin" OID="id-9edccde9-06d9-4505-a1b9-81cf2317dc5c">
+								<SHORT-NAME>Kelvin</SHORT-NAME>
+								<LONG-NAME TI="UNIT0058">Kelvin</LONG-NAME>
+								<DESC TI="UNIT_DESC_0003">
+									<p>
+      SI base unit for temperature.
+    </p>
+								</DESC>
+								<DISPLAY-NAME>K</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperature"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloByte" OID="id-f94734c1-832c-4f4e-9bd4-27c98d636467">
+								<SHORT-NAME>KiloByte</SHORT-NAME>
+								<LONG-NAME TI="UNIT0059">Kilo-Byte</LONG-NAME>
+								<DISPLAY-NAME>kByte</DISPLAY-NAME>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloGram" OID="id-48b0c272-baa1-4e1e-ad72-e6c5bec39bf3">
+								<SHORT-NAME>KiloGram</SHORT-NAME>
+								<LONG-NAME TI="UNIT0062">Kilo-Gram</LONG-NAME>
+								<DESC TI="UNIT_DESC_0004">
+									<p>
+      SI base unit for mass.
+    </p>
+								</DESC>
+								<DISPLAY-NAME>kg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Mass"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloGramPerCubicMeter" OID="id-6e280eed-af10-4510-bbac-b5e1b0f8589e">
+								<SHORT-NAME>KiloGramPerCubicMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0061">Kilo-Gram Per Cubic Meter</LONG-NAME>
+								<DISPLAY-NAME>kg/m³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloGramPerHour" OID="id-4e61ab77-efb3-451c-aee8-6ad31c44052a">
+								<SHORT-NAME>KiloGramPerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0064">Kilo-Gram Per Hour</LONG-NAME>
+								<DISPLAY-NAME>kg/h</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.00027777777777777778</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloGramPerSecond" OID="id-faecefbb-5722-4e85-99bb-0993c261764e">
+								<SHORT-NAME>KiloGramPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0063">Kilo-Gram Per Second</LONG-NAME>
+								<DISPLAY-NAME>kg/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KilogramPerSquareMeter" OID="id-fa605657-7a06-4125-9b45-c050519186c9">
+								<SHORT-NAME>KilogramPerSquareMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0160">Kilogram Per Square Meter</LONG-NAME>
+								<DISPLAY-NAME>kg/m²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MomentOfInertia"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloGramSquaredPerHourSquared" OID="id-b8570113-cbb4-46d9-9c9a-8b3172b0662f">
+								<SHORT-NAME>KiloGramSquaredPerHourSquared</SHORT-NAME>
+								<LONG-NAME TI="UNIT0195">Kilo-Gram Squared Per Hour Squared</LONG-NAME>
+								<DISPLAY-NAME>kg²/h²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>12960000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassFlowSquared"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloHertz" OID="id-4f99933f-c576-4c6a-bbba-8b626c704a4a">
+								<SHORT-NAME>KiloHertz</SHORT-NAME>
+								<LONG-NAME TI="UNIT0060">Kilo-Hertz</LONG-NAME>
+								<DISPLAY-NAME>kHz</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloJoule" OID="id-a21a61b1-b34f-43dd-ad36-17f366ee7d24">
+								<SHORT-NAME>KiloJoule</SHORT-NAME>
+								<LONG-NAME TI="UNIT0065">Kilo-Joule</LONG-NAME>
+								<DISPLAY-NAME>kJ</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Energy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloMeter" OID="id-51c79f1d-c5b3-4292-8f89-0f5aa25cf4bd">
+								<SHORT-NAME>KiloMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0066">Kilo-Meter</LONG-NAME>
+								<DISPLAY-NAME>km</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloMeterPerDay" OID="id-6c077cca-fb28-44d3-a85e-29555eb9b325">
+								<SHORT-NAME>KiloMeterPerDay</SHORT-NAME>
+								<LONG-NAME TI="UNIT0068">Kilo-Meter Per Day</LONG-NAME>
+								<DISPLAY-NAME>km/day</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.011574074074</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Velocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloMeterPerHour" OID="id-83bbf1bd-f095-4c69-badd-8952c3d27cd0">
+								<SHORT-NAME>KiloMeterPerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0067">Kilo-Meter Per Hour</LONG-NAME>
+								<DISPLAY-NAME>km/h</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.27777777777777778</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Velocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloMeterPerHourPerSecond" OID="id-d7e2192a-4062-43b0-a8ca-02c7e373e94f">
+								<SHORT-NAME>KiloMeterPerHourPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0196">Kilo-Meter Per Hour Per Second</LONG-NAME>
+								<DISPLAY-NAME>(km/h)/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>3.6</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Acceleration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloMeterPerLiter" OID="id-bb4e3bea-2cd4-415c-8454-fb849b0d1cc0">
+								<SHORT-NAME>KiloMeterPerLiter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0197">Kilo-Meter Per Liter</LONG-NAME>
+								<DISPLAY-NAME>km/l</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.FuelEfficiency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Kilonewton" OID="id-35097d09-e1df-47ed-b804-4cd243e9d23a">
+								<SHORT-NAME>Kilonewton</SHORT-NAME>
+								<LONG-NAME TI="UNIT0161">Kilonewton</LONG-NAME>
+								<DISPLAY-NAME>kN</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Force"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloNewtonMeterPerSecond" OID="id-42846eb3-dac6-412f-8599-5a868a93d1dc">
+								<SHORT-NAME>KiloNewtonMeterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0069">Kilo-Newton Meter Per Second</LONG-NAME>
+								<DISPLAY-NAME>(kN•m)/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Power"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloOhm" OID="id-af11c3f1-d9a4-4344-9c7f-11c35537ad51">
+								<SHORT-NAME>KiloOhm</SHORT-NAME>
+								<LONG-NAME TI="UNIT0070">Kilo-Ohm</LONG-NAME>
+								<DISPLAY-NAME>kΩ</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricResistance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloPascal" OID="id-285aeec1-2bb8-4f4b-affb-f9d9607b9be1">
+								<SHORT-NAME>KiloPascal</SHORT-NAME>
+								<LONG-NAME TI="UNIT0071">Kilo-Pascal</LONG-NAME>
+								<DISPLAY-NAME>kPa</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloPascalPerSecond" OID="id-428ed8ce-6da0-469a-a3bd-f0be112804b4">
+								<SHORT-NAME>KiloPascalPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0072">Kilo-Pascal Per Second</LONG-NAME>
+								<DISPLAY-NAME>kPa/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PressureDividedByTime"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloPond" OID="id-4f4c62ae-936d-4706-9977-14c371376280">
+								<SHORT-NAME>KiloPond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0073">Kilo-Pond</LONG-NAME>
+								<DISPLAY-NAME>kp</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>9.80665</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Force"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloWatt" OID="id-198ff1c3-1ead-4bce-b49d-1942e7e211f7">
+								<SHORT-NAME>KiloWatt</SHORT-NAME>
+								<LONG-NAME TI="UNIT0074">Kilo-Watt</LONG-NAME>
+								<DISPLAY-NAME>kW</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Power"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KiloWattHour" OID="id-eb7316c1-f042-4a7c-87ce-0ded73f527c9">
+								<SHORT-NAME>KiloWattHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0198">Kilo-Watt Hour</LONG-NAME>
+								<DISPLAY-NAME>kWh</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>2.7777777777777777777777777777778e-7</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Work"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.KilowattHour" OID="id-0ee0c936-1cb1-4ef0-a8db-f4ca90e531e4">
+								<SHORT-NAME>KilowattHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0162">Kilowatt Hour</LONG-NAME>
+								<DISPLAY-NAME>kWh</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>3.6E+006</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Energy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Lambda" OID="id-f56290a4-5b43-430c-9acb-941144c85c88">
+								<SHORT-NAME>Lambda</SHORT-NAME>
+								<LONG-NAME TI="UNIT0075">Lambda</LONG-NAME>
+								<DISPLAY-NAME>lambda</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Liter" OID="id-ba507b5d-f387-4f42-9b48-fdda43128001">
+								<SHORT-NAME>Liter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0076">Liter</LONG-NAME>
+								<DISPLAY-NAME>l</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.LiterPer100Km" OID="id-f2c8cb23-2442-4a94-939c-856292c38050">
+								<SHORT-NAME>LiterPer100Km</SHORT-NAME>
+								<LONG-NAME TI="UNIT0077">Liter Per 100 km</LONG-NAME>
+								<DISPLAY-NAME>l/100km</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-8</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumeDividedByLength"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.LiterPerHour" OID="id-b5b36986-151d-49ca-9412-33c211c24637">
+								<SHORT-NAME>LiterPerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0079">Liter Per Hour</LONG-NAME>
+								<DISPLAY-NAME>l/h</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>2.77777777777778E-7</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumeFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.LiterPerKM" OID="id-cbd50d72-b21d-4e0c-9201-6078b2b42c7e">
+								<SHORT-NAME>LiterPerKM</SHORT-NAME>
+								<LONG-NAME TI="UNIT0078">Liter Per KM</LONG-NAME>
+								<DISPLAY-NAME>l/km</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-6</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumeDividedByLength"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.LiterPerMilliMeter" OID="id-f05211a6-5220-4ab6-b3cb-bc8bfe107917">
+								<SHORT-NAME>LiterPerMilliMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0199">Liter Per Milli-Meter</LONG-NAME>
+								<DISPLAY-NAME>l/mm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumetricFlowRatePerDistance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.LiterPerMinute" OID="id-4fe9eb38-1318-4934-97fa-a27c6d2a2d17">
+								<SHORT-NAME>LiterPerMinute</SHORT-NAME>
+								<LONG-NAME TI="UNIT0080">Liter Per Minute</LONG-NAME>
+								<DISPLAY-NAME>l/min</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1.666666666667E-5</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumeFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.LiterPerSecond" OID="id-360c5f72-2185-4093-9aa4-976e56b215a5">
+								<SHORT-NAME>LiterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0164">Liter Per Second</LONG-NAME>
+								<DISPLAY-NAME>l/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumeFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Lumen" OID="id-4ec6743d-8bf8-4040-bfbf-d0781b8d21a1">
+								<SHORT-NAME>Lumen</SHORT-NAME>
+								<LONG-NAME TI="UNIT0081">Lumen</LONG-NAME>
+								<DISPLAY-NAME>lm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.LuminousFlux"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Lux" OID="id-2e0acbfa-b0c8-4dd4-bfd4-a18e2caf6fa0">
+								<SHORT-NAME>Lux</SHORT-NAME>
+								<LONG-NAME TI="UNIT0082">Lux</LONG-NAME>
+								<DISPLAY-NAME>lx</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Illuminance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MegaByte" OID="id-8c4e13e8-eca4-4010-953f-cf54d46b45f3">
+								<SHORT-NAME>MegaByte</SHORT-NAME>
+								<LONG-NAME TI="UNIT0083">Mega-Byte</LONG-NAME>
+								<DISPLAY-NAME>MByte</DISPLAY-NAME>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MegaHertz" OID="id-3f713b66-0140-4410-9d42-d56a4738ee22">
+								<SHORT-NAME>MegaHertz</SHORT-NAME>
+								<LONG-NAME TI="UNIT0085">Mega-Hertz</LONG-NAME>
+								<DISPLAY-NAME>MHz</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MegaJoule" OID="id-cd7cc868-3e51-4a27-95b3-94ee2e9f667f">
+								<SHORT-NAME>MegaJoule</SHORT-NAME>
+								<LONG-NAME TI="UNIT0084">Mega-Joule</LONG-NAME>
+								<DISPLAY-NAME>MJ</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Energy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MegaPascal" OID="id-4d05d6b8-ffee-4b5a-a2b8-3edf267226e2">
+								<SHORT-NAME>MegaPascal</SHORT-NAME>
+								<LONG-NAME TI="UNIT0086">Mega-Pascal</LONG-NAME>
+								<DISPLAY-NAME>MPa</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Meter" OID="id-8e0c49f1-01e4-4825-8547-a3a6b4f2f835">
+								<SHORT-NAME>Meter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0087">Meter</LONG-NAME>
+								<DESC TI="UNIT_DESC_0005">
+									<p>
+      SI base unit for length.
+    </p>
+								</DESC>
+								<DISPLAY-NAME>m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MeterPerSecond" OID="id-c0d99044-cd3d-46f3-bf63-a1b8ed2c725a">
+								<SHORT-NAME>MeterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0088">Meter Per Second</LONG-NAME>
+								<DISPLAY-NAME>m/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Velocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MeterPerSecondSquared" OID="id-6babdee0-e60b-41ba-b8a7-417299c571e2">
+								<SHORT-NAME>MeterPerSecondSquared</SHORT-NAME>
+								<LONG-NAME TI="UNIT0089">Meter Per Second Squared</LONG-NAME>
+								<DISPLAY-NAME>m/s²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Acceleration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MicroAmpereSecond" OID="id-633e7b2f-8ad2-4a7e-a2fa-48defa779351">
+								<SHORT-NAME>MicroAmpereSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0200">Micro-Ampere Second</LONG-NAME>
+								<DISPLAY-NAME>µAs</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricCharge"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MicroDegreeCelsiusPerSecond" OID="id-6025c290-f5d8-4d98-9e42-c3cb7151ca71">
+								<SHORT-NAME>MicroDegreeCelsiusPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0090">Micro Degree Celsius Per Second</LONG-NAME>
+								<DISPLAY-NAME>µ°C/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-06</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperatureDividedByTime"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Microfarad" OID="id-532252b1-269b-4273-a190-aecc7057a440">
+								<SHORT-NAME>Microfarad</SHORT-NAME>
+								<LONG-NAME TI="UNIT0175">Microfarad</LONG-NAME>
+								<DISPLAY-NAME>µF</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Capacitance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Microgram" OID="id-a1904bbe-8021-4001-bb9a-43ba63ad680a">
+								<SHORT-NAME>Microgram</SHORT-NAME>
+								<LONG-NAME TI="UNIT0176">Microgram</LONG-NAME>
+								<DISPLAY-NAME>µg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Mass"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MicroJoule" OID="id-86206859-a72d-490d-a6e1-be44eaf17d06">
+								<SHORT-NAME>MicroJoule</SHORT-NAME>
+								<LONG-NAME TI="UNIT0202">Micro-Joule</LONG-NAME>
+								<DISPLAY-NAME>µJ</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Work"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MicroLiter" OID="id-1ea04d1c-9a09-4794-99c7-e4957ea39135">
+								<SHORT-NAME>MicroLiter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0203">Micro-Liter</LONG-NAME>
+								<DISPLAY-NAME>µl</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E+009</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Micrometer" OID="id-dc340e02-93a3-439c-9742-d6cf25538572">
+								<SHORT-NAME>Micrometer</SHORT-NAME>
+								<LONG-NAME TI="UNIT0177">Micrometer</LONG-NAME>
+								<DISPLAY-NAME>µm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-006</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Microsecond" OID="id-89f18fa4-2e74-401b-b93d-e1ef2bc60f0b">
+								<SHORT-NAME>Microsecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0178">Microsecond</LONG-NAME>
+								<DISPLAY-NAME>µs</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-006</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Mile" OID="id-0f10f311-b24f-4dc2-88d2-e23c2db96087">
+								<SHORT-NAME>Mile</SHORT-NAME>
+								<LONG-NAME TI="UNIT0093">Mile</LONG-NAME>
+								<DISPLAY-NAME>mi</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1609.344</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilesPerGallon" OID="id-2470eed7-6f4c-4855-b7d7-bca903366000">
+								<SHORT-NAME>MilesPerGallon</SHORT-NAME>
+								<LONG-NAME TI="UNIT0163">Miles Per Gallon</LONG-NAME>
+								<DISPLAY-NAME>mpg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Range"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilesPerGallonUK" OID="id-01f5bd49-af26-4853-8cbc-082c1fe39dee">
+								<SHORT-NAME>MilesPerGallonUK</SHORT-NAME>
+								<LONG-NAME TI="UNIT0204">Miles Per Gallon (UK)</LONG-NAME>
+								<DISPLAY-NAME>mpg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>2.8248093633182215859381213711918e-6</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.FuelEfficiency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilesPerGallonUS" OID="id-962db97d-baf4-4d4b-a5d3-0f7631d3d0e7">
+								<SHORT-NAME>MilesPerGallonUS</SHORT-NAME>
+								<LONG-NAME TI="UNIT0205">Miles Per Gallon (US)</LONG-NAME>
+								<DISPLAY-NAME>mpg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>2.3521458333333333333333333333333e-6</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.FuelEfficiency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilesPerHour" OID="id-3bedf7bd-95af-4086-bcd9-d8bba6e32d22">
+								<SHORT-NAME>MilesPerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0094">Miles Per Hour</LONG-NAME>
+								<DISPLAY-NAME>mph</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.44704</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Velocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliAmpere" OID="id-c0cb138b-6a54-4e51-821d-3d06e96b05db">
+								<SHORT-NAME>MilliAmpere</SHORT-NAME>
+								<LONG-NAME TI="UNIT0095">Milli-Ampere</LONG-NAME>
+								<DISPLAY-NAME>mA</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricCurrent"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliAmperePerSecond" OID="id-a32a6fdf-7bb8-4aa0-afd0-1f87a55927c2">
+								<SHORT-NAME>MilliAmperePerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0206">Milli-Ampere Per Second</LONG-NAME>
+								<DISPLAY-NAME>mA/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.CurrentSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliBar" OID="id-222a24ee-9216-4129-bcf9-57bf14224634">
+								<SHORT-NAME>MilliBar</SHORT-NAME>
+								<LONG-NAME TI="UNIT0096">Milli-Bar</LONG-NAME>
+								<DISPLAY-NAME>mbar</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>100</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliFarad" OID="id-830d3d5c-7744-4e6e-8c03-cffa6e807315">
+								<SHORT-NAME>MilliFarad</SHORT-NAME>
+								<LONG-NAME TI="UNIT0099">Milli-Farad</LONG-NAME>
+								<DISPLAY-NAME>mF</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Capacitance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliGram" OID="id-4a222bfe-b66a-4960-84fd-a9925d297f27">
+								<SHORT-NAME>MilliGram</SHORT-NAME>
+								<LONG-NAME TI="UNIT0097">Milli-Gram</LONG-NAME>
+								<DISPLAY-NAME>mg</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-06</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Mass"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliGramPerCubicMeter" OID="id-af29ceeb-f495-42a9-a648-c4891b95bcc4">
+								<SHORT-NAME>MilliGramPerCubicMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0207">Milli-Gram Per Cubic Meter</LONG-NAME>
+								<DISPLAY-NAME>mg/m³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliGramPerSecond" OID="id-f2b1c610-3c74-4e88-bc74-a7e768a8bcf2">
+								<SHORT-NAME>MilliGramPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0208">Milli-Gram Per Second</LONG-NAME>
+								<DISPLAY-NAME>mg/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassFlow"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliGramPerStroke" OID="id-d1f289a9-2bb9-4760-8abd-f149862e45a9">
+								<SHORT-NAME>MilliGramPerStroke</SHORT-NAME>
+								<LONG-NAME TI="UNIT0098">Milli-Gram Per Stroke</LONG-NAME>
+								<DISPLAY-NAME>mg/stroke</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-06</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MassPerStroke"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliJoule" OID="id-a2a6bae4-fa43-4731-8c74-26fdb02344a3">
+								<SHORT-NAME>MilliJoule</SHORT-NAME>
+								<LONG-NAME TI="UNIT0209">Milli-Joule</LONG-NAME>
+								<DISPLAY-NAME>mJ</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Work"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliLiter" OID="id-a0d9e22a-4edb-4048-ae24-8dd5dab2ad9e">
+								<SHORT-NAME>MilliLiter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0210">Milli-Liter</LONG-NAME>
+								<DISPLAY-NAME>ml</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Volume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliLiterPerMinute" OID="id-ca63697c-7dcb-444b-91c7-be0bc6241613">
+								<SHORT-NAME>MilliLiterPerMinute</SHORT-NAME>
+								<LONG-NAME TI="UNIT0211">Milli-Liter Per Minute</LONG-NAME>
+								<DISPLAY-NAME>ml/min</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>60000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumetricFlowRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliLiterPerSecond" OID="id-8254ba92-d9e3-45d4-8c72-8cd4969d2d82">
+								<SHORT-NAME>MilliLiterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0212">Milli-Liter Per Second</LONG-NAME>
+								<DISPLAY-NAME>ml/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VolumetricFlowRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliMeter" OID="id-2536a41e-d805-4f6b-8641-e0d7ee6d0cc7">
+								<SHORT-NAME>MilliMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0100">Milli-Meter</LONG-NAME>
+								<DISPLAY-NAME>mm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliMeterPerPercent" OID="id-2f884f41-a576-45fe-aa3e-193ba57f7aac">
+								<SHORT-NAME>MilliMeterPerPercent</SHORT-NAME>
+								<LONG-NAME TI="UNIT0213">Milli-Meter Per Percent</LONG-NAME>
+								<DESC>
+									<p>Einheit Millimeter pro Prozent</p>
+								</DESC>
+								<DISPLAY-NAME>mm/%</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliOhm" OID="id-c4edd8f1-2fc5-4a15-b5f3-38a36ebfc919">
+								<SHORT-NAME>MilliOhm</SHORT-NAME>
+								<LONG-NAME TI="UNIT0101">Milli-Ohm</LONG-NAME>
+								<DISPLAY-NAME>mΩ</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricResistance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliRadian" OID="id-beb52fb2-0813-4030-a0eb-ef044996ca82">
+								<SHORT-NAME>MilliRadian</SHORT-NAME>
+								<LONG-NAME TI="UNIT0214">Milli-Radian</LONG-NAME>
+								<DISPLAY-NAME>mrad</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PlaneAngle"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliSecond" OID="id-dc847fbd-1aac-4fbe-9582-83a49408a7f3">
+								<SHORT-NAME>MilliSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0102">Milli-Second</LONG-NAME>
+								<DISPLAY-NAME>ms</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliVolt" OID="id-9aeae756-05e9-4862-82b4-8d0fe55c060b">
+								<SHORT-NAME>MilliVolt</SHORT-NAME>
+								<LONG-NAME TI="UNIT0103">Milli-Volt</LONG-NAME>
+								<DISPLAY-NAME>mV</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricPotentialDifference"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MilliVoltPerSecond" OID="id-03783d15-313a-4808-a969-bd0bb4bc547d">
+								<SHORT-NAME>MilliVoltPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0104">Milli-Volt Per Second</LONG-NAME>
+								<DISPLAY-NAME>mV/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VoltageSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Minute" OID="id-d3b94365-027a-49ea-bcda-8321a8fb6ead">
+								<SHORT-NAME>Minute</SHORT-NAME>
+								<LONG-NAME TI="UNIT0105">Minute</LONG-NAME>
+								<DISPLAY-NAME>min</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>60</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MinuteOfArc" OID="id-f8ea64fc-d195-4e2a-9176-6e0cb7917f0f">
+								<SHORT-NAME>MinuteOfArc</SHORT-NAME>
+								<LONG-NAME TI="UNIT0106">Minute Of Arc</LONG-NAME>
+								<DISPLAY-NAME>&apos;</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>2.908882086657216E-4</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PlaneAngle"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Mole" OID="id-a9b2e89a-7da1-46e6-b49a-16c8237dda6d">
+								<SHORT-NAME>Mole</SHORT-NAME>
+								<LONG-NAME TI="UNIT0107">Mole</LONG-NAME>
+								<DESC TI="UNIT_DESC_0006">
+									<p>
+      SI base unit for molar amount.
+    </p>
+								</DESC>
+								<DISPLAY-NAME>mol</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AmountOfSubstance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.MolePerCubicMeter" OID="id-ff114af9-807c-4de9-8f04-dcceccd30a83">
+								<SHORT-NAME>MolePerCubicMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0108">Mole Per Cubic Meter</LONG-NAME>
+								<DISPLAY-NAME>mol/m³</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AmountOfSubstanceConcentration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Month" OID="id-3a3aaad3-2f8d-4e6f-a0d3-3821b1491ba7">
+								<SHORT-NAME>Month</SHORT-NAME>
+								<LONG-NAME TI="UNIT0109">Month</LONG-NAME>
+								<DISPLAY-NAME>Month</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>2590673.5751295337</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Newton" OID="id-76dade26-8000-42c7-b8cc-911e24e9679c">
+								<SHORT-NAME>Newton</SHORT-NAME>
+								<LONG-NAME TI="UNIT0110">Newton</LONG-NAME>
+								<DISPLAY-NAME>N</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Force"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonMeter" OID="id-75ad9b3f-e099-4c6e-ad9a-60c66df65022">
+								<SHORT-NAME>NewtonMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0111">Newton Meter</LONG-NAME>
+								<DISPLAY-NAME>N·m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Torque"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonMeterPerCubicMillimeterPerCycle" OID="id-2bf854d2-670f-41c6-86d1-c4926a553d11">
+								<SHORT-NAME>NewtonMeterPerCubicMillimeterPerCycle</SHORT-NAME>
+								<LONG-NAME TI="UNIT0113">Newton Meter Per Cubic Millimeter per Cycle</LONG-NAME>
+								<DISPLAY-NAME>(N·m)/(mm³/cyc)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E9</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.TorquePerVolume"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonMeterPerRPM" OID="id-97d84c72-74de-4973-866d-510d07c00f5a">
+								<SHORT-NAME>NewtonMeterPerRPM</SHORT-NAME>
+								<LONG-NAME TI="UNIT0112">Newton Meter Per RPM</LONG-NAME>
+								<DISPLAY-NAME>(N·m)/rpm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.01666666667</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.TorqueDividedByRotationalSpeed"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonMeterPerSecond" OID="id-5bb06632-ec7d-4c9b-823e-f0362e9dbf8d">
+								<SHORT-NAME>NewtonMeterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0114">Newton Meter Per Second</LONG-NAME>
+								<DISPLAY-NAME>(N·m)/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Power"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonMeterTorque" OID="id-6015228f-4de7-4f2c-a8e6-6d9d4e68c33c">
+								<SHORT-NAME>NewtonMeterTorque</SHORT-NAME>
+								<LONG-NAME TI="UNIT0168">Newton Meter (torque)</LONG-NAME>
+								<DISPLAY-NAME>Nm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Torque"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonMeterWork" OID="id-04eb8323-3a96-4d5b-9ec2-dc4f5ce8eeb8">
+								<SHORT-NAME>NewtonMeterWork</SHORT-NAME>
+								<LONG-NAME TI="UNIT0169">Newton Meter (work)</LONG-NAME>
+								<DISPLAY-NAME>Nm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Energy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonPerMeter" OID="id-c694f202-9663-468f-87e5-e088eb8829cf">
+								<SHORT-NAME>NewtonPerMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0115">Newton Per Meter</LONG-NAME>
+								<DISPLAY-NAME>N/m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.SurfaceTension"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.NewtonPerSquareMeterPressure" OID="id-7edae881-ac61-4899-9181-ea39a8a39ef3">
+								<SHORT-NAME>NewtonPerSquareMeterPressure</SHORT-NAME>
+								<LONG-NAME TI="UNIT0167">Newton Per Square Meter (pressure)</LONG-NAME>
+								<DISPLAY-NAME>N/m²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-005</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Ohm" OID="id-90219c45-acf4-45fd-a061-e13303679799">
+								<SHORT-NAME>Ohm</SHORT-NAME>
+								<LONG-NAME TI="UNIT0116">Ohm</LONG-NAME>
+								<DISPLAY-NAME>Ω</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricResistance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PartsPerMillion" OID="id-6595d0ba-2a41-46e0-93d4-b25aec3f60dc">
+								<SHORT-NAME>PartsPerMillion</SHORT-NAME>
+								<LONG-NAME TI="UNIT0215">Parts Per Million</LONG-NAME>
+								<DISPLAY-NAME>ppm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Pascal" OID="id-1effa07b-068e-4fb3-8f2a-3cfd1b7bbdf8">
+								<SHORT-NAME>Pascal</SHORT-NAME>
+								<LONG-NAME TI="UNIT0117">Pascal</LONG-NAME>
+								<DISPLAY-NAME>Pa</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PascalPerCubicMeterPerSecond" OID="id-4577c574-36bd-4803-afd9-98836fb81c29">
+								<SHORT-NAME>PascalPerCubicMeterPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0216">Pascal Per Cubic Meter Per Second</LONG-NAME>
+								<DISPLAY-NAME>Pa/(m³/s)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.FlowResistance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PascalPerSecond" OID="id-dc905b28-772b-43d2-894f-8155d83eae07">
+								<SHORT-NAME>PascalPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0118">Pascal Per Second</LONG-NAME>
+								<DISPLAY-NAME>Pa/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PressureDividedByTime"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PascalSecond" OID="id-fe963f57-cb47-4916-857b-2635f294d164">
+								<SHORT-NAME>PascalSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0119">Pascal Second</LONG-NAME>
+								<DISPLAY-NAME>Pa·s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.DynamicViscosity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerCent" OID="id-6ef36553-356b-4ee4-83c6-b4975f87d332">
+								<SHORT-NAME>PerCent</SHORT-NAME>
+								<LONG-NAME TI="UNIT0120">Per Cent</LONG-NAME>
+								<DISPLAY-NAME>%</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.01</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerCentPerMilliSecond" OID="id-9646288a-970f-454b-8964-118d7a64b720">
+								<SHORT-NAME>PerCentPerMilliSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0217">Per Cent Per Milli-Second</LONG-NAME>
+								<DISPLAY-NAME>%/ms</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>100000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.RawSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerHour" OID="id-fba022ad-0cdb-44d5-9215-0aaca140b156">
+								<SHORT-NAME>PerHour</SHORT-NAME>
+								<LONG-NAME TI="UNIT0170">Per Hour</LONG-NAME>
+								<DISPLAY-NAME>1/h</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.0002778</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerKelvin" OID="id-5205ca3b-7fd3-40b2-b67f-2f9958801ad0">
+								<SHORT-NAME>PerKelvin</SHORT-NAME>
+								<LONG-NAME TI="UNIT0171">Per Kelvin</LONG-NAME>
+								<DISPLAY-NAME>1/K</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.TemperatureScale"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerMeter" OID="id-a7d1b1f3-3e54-40c1-9712-63e33bc08596">
+								<SHORT-NAME>PerMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0172">Per Meter</LONG-NAME>
+								<DISPLAY-NAME>1/m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ReciprocalLength"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerMille" OID="id-82ded488-1737-4c68-97e3-40ed4b03be9c">
+								<SHORT-NAME>PerMille</SHORT-NAME>
+								<LONG-NAME TI="UNIT0218">Per Mille</LONG-NAME>
+								<DISPLAY-NAME>‰</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerMilliSecond" OID="id-97ad541f-cd0b-42df-8062-0e9dd07c1472">
+								<SHORT-NAME>PerMilliSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0122">Per Milli Second</LONG-NAME>
+								<DISPLAY-NAME>1/ms</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E3</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerMinute" OID="id-75ad15c7-26b3-4e6c-84a4-dc74a7de0650">
+								<SHORT-NAME>PerMinute</SHORT-NAME>
+								<LONG-NAME TI="UNIT0121">Per Minute</LONG-NAME>
+								<DISPLAY-NAME>1/min</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.016666666666666667</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerSecond" OID="id-c2bf9f41-3a57-4ee6-93c3-9011434fbd06">
+								<SHORT-NAME>PerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0173">Per Second</LONG-NAME>
+								<DISPLAY-NAME>1/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.0002778</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PicoFarad" OID="id-5353ae1e-4358-4e05-a4be-fea8dbc77cf6">
+								<SHORT-NAME>PicoFarad</SHORT-NAME>
+								<LONG-NAME TI="UNIT0219">Pico-Farad</LONG-NAME>
+								<DISPLAY-NAME>pF</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E+012</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Capacitance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PicoSecond" OID="id-35ce5a4a-e797-4c3b-962d-26c0b64a57d2">
+								<SHORT-NAME>PicoSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0123">Pico-Second</LONG-NAME>
+								<DISPLAY-NAME>ps</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1E-12</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Pixel" OID="id-92d5abe9-7d0e-4134-b5d2-4b492086b3cf">
+								<SHORT-NAME>Pixel</SHORT-NAME>
+								<LONG-NAME TI="UNIT0124">Pixel</LONG-NAME>
+								<DISPLAY-NAME>Pix</DISPLAY-NAME>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PixelsPerInch" OID="id-d4316e0e-c760-4bf7-af0e-2a2ba20d208f">
+								<SHORT-NAME>PixelsPerInch</SHORT-NAME>
+								<LONG-NAME TI="UNIT0220">Pixels Per Inch</LONG-NAME>
+								<DISPLAY-NAME>ppi</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Pound" OID="id-c7e3f914-ac66-4312-857d-42c1827d2e25">
+								<SHORT-NAME>Pound</SHORT-NAME>
+								<LONG-NAME TI="UNIT0125">Pound</LONG-NAME>
+								<DISPLAY-NAME>lb</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.45359237</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Mass"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PoundForcePerSquareInch" OID="id-b60d9edd-5a36-4489-83db-fc42f2f06f8d">
+								<SHORT-NAME>PoundForcePerSquareInch</SHORT-NAME>
+								<LONG-NAME TI="UNIT0126">Pound-Force Per Square Inch</LONG-NAME>
+								<DISPLAY-NAME>psi</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>6894.7570</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Pressure"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Radian" OID="id-57f33635-255a-450c-92c6-1205f968a232">
+								<SHORT-NAME>Radian</SHORT-NAME>
+								<LONG-NAME TI="UNIT0127">Radian</LONG-NAME>
+								<DISPLAY-NAME>rad</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PlaneAngle"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.RadianPerSecond" OID="id-19014226-12d2-41ec-ad0d-c0008b2b12a9">
+								<SHORT-NAME>RadianPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0128">Radian Per Second</LONG-NAME>
+								<DISPLAY-NAME>rad/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AngularVelocity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.RadianPerSecondSquared" OID="id-dd790dcf-29c6-4ecc-833c-d87fbf8e2c2a">
+								<SHORT-NAME>RadianPerSecondSquared</SHORT-NAME>
+								<LONG-NAME TI="UNIT0129">Radian Per Second Squared</LONG-NAME>
+								<DISPLAY-NAME>rad/s²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AngularAcceleration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.RevolutionsPerMinute" OID="id-4953d875-a9b9-4603-a8ca-2b0e6c77cf31">
+								<SHORT-NAME>RevolutionsPerMinute</SHORT-NAME>
+								<LONG-NAME TI="UNIT0130">Revolutions Per Minute</LONG-NAME>
+								<DISPLAY-NAME>rpm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.016666666666666667</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.RotationalSpeed"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.RevolutionsPerMinutePerSecond" OID="id-37fd0151-17a7-4e60-8774-0dde321bcdfc">
+								<SHORT-NAME>RevolutionsPerMinutePerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0221">Revolutions Per Minute Per Second</LONG-NAME>
+								<DISPLAY-NAME>1/min/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>376.99111843077518861551720599354</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AngularAcceleration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.RevolutionsPerMinuteSquared" OID="id-c8ba9b4f-3c6b-4070-8b15-c8385f45829e">
+								<SHORT-NAME>RevolutionsPerMinuteSquared</SHORT-NAME>
+								<LONG-NAME TI="UNIT0222">Revolutions Per Minute Squared</LONG-NAME>
+								<DISPLAY-NAME>1/min²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>22619.467105846511316931032359612</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AngularAcceleration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.RevolutionsPerSecond" OID="id-a46daa88-2b58-4c71-bbb7-1a14518fd8a4">
+								<SHORT-NAME>RevolutionsPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0131">Revolutions Per Second</LONG-NAME>
+								<DISPLAY-NAME>rps</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.RotationalSpeed"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.RevolutionsPerSecondSquared" OID="id-08e4397b-7d83-43a3-b89a-f748e8ce41cf">
+								<SHORT-NAME>RevolutionsPerSecondSquared</SHORT-NAME>
+								<LONG-NAME TI="UNIT0223">Revolutions Per Second Squared</LONG-NAME>
+								<DISPLAY-NAME>1/s²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>6.283185307179586476925286766559</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.AngularAcceleration"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Second" OID="id-cbb99e1f-6189-4f0e-b732-7e7ff404fc1d">
+								<SHORT-NAME>Second</SHORT-NAME>
+								<LONG-NAME TI="UNIT0132">Second</LONG-NAME>
+								<DESC TI="UNIT_DESC_0007">
+									<p>
+      SI unit unit for time.
+    </p>
+								</DESC>
+								<DISPLAY-NAME>s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.SecondOfArc" OID="id-97475f0e-56df-4ef6-a002-e5900f9d82fa">
+								<SHORT-NAME>SecondOfArc</SHORT-NAME>
+								<LONG-NAME TI="UNIT0133">Second Of Arc</LONG-NAME>
+								<DISPLAY-NAME>&apos;&apos;</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>4.848136957929807E-06</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PlaneAngle"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Siemens" OID="id-b4acc581-eac2-4e5b-95f2-36f7d00fa79d">
+								<SHORT-NAME>Siemens</SHORT-NAME>
+								<LONG-NAME TI="UNIT0134">Siemens</LONG-NAME>
+								<DISPLAY-NAME>S</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricConductance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Sievert" OID="id-fa2d8efd-7319-4d7d-bafe-913a93b55781">
+								<SHORT-NAME>Sievert</SHORT-NAME>
+								<LONG-NAME TI="UNIT0135">Sievert</LONG-NAME>
+								<DISPLAY-NAME>Sv</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.DoseEquivalent"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.SquareCentiMeter" OID="id-3c34f29e-2a27-4aee-a211-70f1dafab7ad">
+								<SHORT-NAME>SquareCentiMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0012">Square Centi-Meter</LONG-NAME>
+								<DISPLAY-NAME>cm²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.0001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Area"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.SquareMeter" OID="id-bc5dbaba-8b65-4857-a5e7-1a8d9febb94e">
+								<SHORT-NAME>SquareMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0136">Square Meter</LONG-NAME>
+								<DISPLAY-NAME>m²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Area"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Steradian" OID="id-e906f931-0ae6-43a1-92b8-10714f15c273">
+								<SHORT-NAME>Steradian</SHORT-NAME>
+								<LONG-NAME TI="UNIT0137">Steradian</LONG-NAME>
+								<DISPLAY-NAME>sr</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.SolidAngle"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Switches" OID="id-cf1b86e0-303d-43f3-a0a3-70903aee4223">
+								<SHORT-NAME>Switches</SHORT-NAME>
+								<LONG-NAME TI="UNIT0138">Switches</LONG-NAME>
+								<DISPLAY-NAME>switches</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Raw"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Tesla" OID="id-0c6a868c-5950-4e0c-930b-ad02287384b5">
+								<SHORT-NAME>Tesla</SHORT-NAME>
+								<LONG-NAME TI="UNIT0139">Tesla</LONG-NAME>
+								<DISPLAY-NAME>T</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MagneticFluxDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.ThousandKiloMeter" OID="id-6ac71df1-ca35-4671-9cc3-f8e2440ebebf">
+								<SHORT-NAME>ThousandKiloMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0224">Thousand Kilo-Meter</LONG-NAME>
+								<DISPLAY-NAME>Tkm</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.000001</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.TicPerSecond" OID="id-811b4d62-0c17-4a87-9880-b929723a2334">
+								<SHORT-NAME>TicPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0174">Tic Per Second</LONG-NAME>
+								<DISPLAY-NAME>tic/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Frequency"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Tonne" OID="id-f190af75-67fd-431f-b8d8-6ed7fb15c33b">
+								<SHORT-NAME>Tonne</SHORT-NAME>
+								<LONG-NAME TI="UNIT0140">Tonne</LONG-NAME>
+								<DISPLAY-NAME>t</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Mass"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Volt" OID="id-e82a466f-18c7-4d2f-a8b2-f022d7593707">
+								<SHORT-NAME>Volt</SHORT-NAME>
+								<LONG-NAME TI="UNIT0141">Volt</LONG-NAME>
+								<DISPLAY-NAME>V</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricPotentialDifference"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.VoltPerMeter" OID="id-0e4cd6de-44e9-4b12-ac46-e72c419d120d">
+								<SHORT-NAME>VoltPerMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0142">Volt Per Meter</LONG-NAME>
+								<DISPLAY-NAME>V/m</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ElectricFieldStrength"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.VoltPerMilliSecond" OID="id-f693263e-414f-42ef-a774-239ead720244">
+								<SHORT-NAME>VoltPerMilliSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0143">Volt Per Milli-Second</LONG-NAME>
+								<DISPLAY-NAME>V/ms</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1000</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VoltageSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.VoltPerSecond" OID="id-bd0f5c83-a15b-4c9b-9a37-ab8facf10294">
+								<SHORT-NAME>VoltPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0225">Volt Per Second</LONG-NAME>
+								<DISPLAY-NAME>V/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.VoltageSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Watt" OID="id-277d1292-7fd6-4bf3-a615-330289e31b2d">
+								<SHORT-NAME>Watt</SHORT-NAME>
+								<LONG-NAME TI="UNIT0144">Watt</LONG-NAME>
+								<DISPLAY-NAME>W</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Power"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.WattPerMeterKelvin" OID="id-c5cdf11f-1534-4b4f-90b4-85d164198c37">
+								<SHORT-NAME>WattPerMeterKelvin</SHORT-NAME>
+								<LONG-NAME TI="UNIT0145">Watt Per Meter Kelvin</LONG-NAME>
+								<DISPLAY-NAME>W/(m·K)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.ThermalConductivity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.WattPerSecond" OID="id-6c112fd7-42bb-4354-9b25-38d834705ec9">
+								<SHORT-NAME>WattPerSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0226">Watt Per Second</LONG-NAME>
+								<DISPLAY-NAME>W/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.PowerSlewRate"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.WattPerSquareMeter" OID="id-a921c3d7-051f-458a-85a6-41fe2c84061a">
+								<SHORT-NAME>WattPerSquareMeter</SHORT-NAME>
+								<LONG-NAME TI="UNIT0146">Watt Per Square Meter</LONG-NAME>
+								<DISPLAY-NAME>W/m²</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.HeatFluxDensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.WattPerSquareMeterSteradian" OID="id-4be12d12-ba02-4a81-b7e4-40743b2314cc">
+								<SHORT-NAME>WattPerSquareMeterSteradian</SHORT-NAME>
+								<LONG-NAME TI="UNIT0147">Watt Per Square Meter Steradian</LONG-NAME>
+								<DISPLAY-NAME>W/(m²·sr)</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Radiance"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.WattPerSteradian" OID="id-d55cb2ec-d34d-473a-8359-d9d0cd04e59b">
+								<SHORT-NAME>WattPerSteradian</SHORT-NAME>
+								<LONG-NAME TI="UNIT0148">Watt Per Steradian</LONG-NAME>
+								<DISPLAY-NAME>W/sr</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.RadiantIntensity"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.WattSecond" OID="id-3304a89b-9746-4466-a92b-955e9e0538c2">
+								<SHORT-NAME>WattSecond</SHORT-NAME>
+								<LONG-NAME TI="UNIT0179">Watt Second</LONG-NAME>
+								<DISPLAY-NAME>Ws</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Energy"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Weber" OID="id-1cf133c0-d929-486c-b7b8-b7b2274b0bd5">
+								<SHORT-NAME>Weber</SHORT-NAME>
+								<LONG-NAME TI="UNIT0150">Weber</LONG-NAME>
+								<DISPLAY-NAME>Wb</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>1</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.MagneticFlux"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Week" OID="id-875bf716-19f2-4fe5-96a6-8ed104532514">
+								<SHORT-NAME>Week</SHORT-NAME>
+								<LONG-NAME TI="UNIT0149">Week</LONG-NAME>
+								<DISPLAY-NAME>wk</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>604800</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Yard" OID="id-3b0e654c-dc35-4891-b278-b66377c949ee">
+								<SHORT-NAME>Yard</SHORT-NAME>
+								<LONG-NAME TI="UNIT0151">Yard</LONG-NAME>
+								<DISPLAY-NAME>yd</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>0.9144</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Length"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.Year" OID="id-2507216c-cb11-4e00-bfeb-bf1bbc1f0a8a">
+								<SHORT-NAME>Year</SHORT-NAME>
+								<LONG-NAME TI="UNIT0152">Year</LONG-NAME>
+								<DISPLAY-NAME>yr</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>31545741.324921135</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.Time"/>
+							</UNIT>
+							<UNIT ID="ODX-RS.UNIT.PerCentPerSecon" OID="id-4f56e13c-8bbb-46da-b157-cde4f622e2d4">
+								<SHORT-NAME>PerCentPerSecon</SHORT-NAME>
+								<LONG-NAME TI="UNIT0227">Per Cent Per Second</LONG-NAME>
+								<DISPLAY-NAME>%/s</DISPLAY-NAME>
+								<FACTOR-SI-TO-UNIT>100</FACTOR-SI-TO-UNIT>
+								<OFFSET-SI-TO-UNIT>0</OFFSET-SI-TO-UNIT>
+								<PHYSICAL-DIMENSION-REF ID-REF="ODX-RS.PHYSICAL-DIMENSION.RawSlewRate"/>
+							</UNIT>
+						</UNITS>
+						<PHYSICAL-DIMENSIONS>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.AbsorbedDose" OID="id-b4fd17d0-02c3-41b8-86e4-90096c1b89b3">
+								<SHORT-NAME>AbsorbedDose</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0001">Absorbed Dose</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.AbsorbedDoseRate" OID="id-8eb03dd5-68d1-4897-8d83-96168ac7f7bf">
+								<SHORT-NAME>AbsorbedDoseRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0002">Absorbed Dose Rate</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Acceleration" OID="id-8bdab856-d026-4f5a-9930-7ce298842b03">
+								<SHORT-NAME>Acceleration</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0003">Acceleration</LONG-NAME>
+								<LENGTH-EXP>1</LENGTH-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Activity" OID="id-a5bdc2bc-e396-4e6e-9885-ca1468d0bc64">
+								<SHORT-NAME>Activity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0004">Activity</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.AmountOfSubstance" OID="id-f47a9277-bbf0-4f91-a46b-73d6445d0f1d">
+								<SHORT-NAME>AmountOfSubstance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0005">Amount Of Substance</LONG-NAME>
+								<MOLAR-AMOUNT-EXP>1</MOLAR-AMOUNT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.AmountOfSubstanceConcentration" OID="id-cc7db0a8-e81b-496b-bd39-8dd6f194aca7">
+								<SHORT-NAME>AmountOfSubstanceConcentration</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0012">Amount Of Substance Concentration</LONG-NAME>
+								<LENGTH-EXP>-3</LENGTH-EXP>
+								<MOLAR-AMOUNT-EXP>1</MOLAR-AMOUNT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.AngularAcceleration" OID="id-19298f8f-ec56-46db-9e40-af255c16184a">
+								<SHORT-NAME>AngularAcceleration</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0006">Angular Acceleration</LONG-NAME>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.AngularVelocity" OID="id-66591ce3-9d1f-4698-bd4c-b53cd0fb691a">
+								<SHORT-NAME>AngularVelocity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0007">Angular Velocity</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Area" OID="id-f85ab3a5-41ea-4858-8e2e-aea2420fd90b">
+								<SHORT-NAME>Area</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0008">Area</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.BitRate" OID="id-8b7daa50-b732-11de-8a39-0800200c9a66">
+								<SHORT-NAME>BitRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0086">Bit Rate</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Capacitance" OID="id-de19edea-0395-4828-9364-9b941a751b42">
+								<SHORT-NAME>Capacitance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0009">Capacitance</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+								<MASS-EXP>-1</MASS-EXP>
+								<TIME-EXP>4</TIME-EXP>
+								<CURRENT-EXP>2</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.CatalyticActivity" OID="id-da5942db-8c9e-48cc-b336-0ad543bac9db">
+								<SHORT-NAME>CatalyticActivity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0010">Catalytic Activity</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+								<MOLAR-AMOUNT-EXP>1</MOLAR-AMOUNT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.CatalyticConcentration" OID="id-58894beb-8004-4b13-bea6-897497a896a5">
+								<SHORT-NAME>CatalyticConcentration</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0011">Catalytic Concentration</LONG-NAME>
+								<LENGTH-EXP>-3</LENGTH-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+								<MOLAR-AMOUNT-EXP>1</MOLAR-AMOUNT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ChargSlewRate" OID="id-45eb0f53-2341-44ac-926d-c1baf1db6f06">
+								<SHORT-NAME>ChargeSlewRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0084">Charge Slew Rate</LONG-NAME>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.CurrentSlewRate" OID="id-b67f00b9-bcc6-4881-82e0-7c05e24ffcbd">
+								<SHORT-NAME>CurrentSlewRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0083">Current Slew Rate</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.DoseEquivalent" OID="id-6bf09000-d035-49c6-a796-54d891c795a7">
+								<SHORT-NAME>DoseEquivalent</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0015">Dose Equivalent</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.DynamicViscosity" OID="id-ec832a74-a322-460b-ac94-8bcdd2426249">
+								<SHORT-NAME>DynamicViscosity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0016">Dynamic Viscosity</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricCharge" OID="id-3781b232-5214-4c1a-92d5-4f25f5c16b24">
+								<SHORT-NAME>ElectricCharge</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0017">Electric Charge</LONG-NAME>
+								<TIME-EXP>1</TIME-EXP>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricChargeDensity" OID="id-a9848c67-1fa4-46b5-a14c-61e96361b92a">
+								<SHORT-NAME>ElectricChargeDensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0018">Electric Charge Density</LONG-NAME>
+								<LENGTH-EXP>-3</LENGTH-EXP>
+								<TIME-EXP>1</TIME-EXP>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricConductance" OID="id-acf37a1d-663a-47fe-9a66-a0883ccbb6db">
+								<SHORT-NAME>ElectricConductance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0019">Electric Conductance</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+								<MASS-EXP>-1</MASS-EXP>
+								<TIME-EXP>3</TIME-EXP>
+								<CURRENT-EXP>2</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricCurrent" OID="id-2ae080df-e27d-4589-8c6c-5ab37ef1371d">
+								<SHORT-NAME>ElectricCurrent</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0020">Electric Current</LONG-NAME>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricCurrentDensity" OID="id-951a563a-5d5f-417d-bae6-f48eb2c19d05">
+								<SHORT-NAME>ElectricCurrentDensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0013">Electric Current Density</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricFieldStrength" OID="id-50a81dbc-0dd7-4c8d-8198-edfd62f3edaf">
+								<SHORT-NAME>ElectricFieldStrength</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0021">Electric Field Strength</LONG-NAME>
+								<LENGTH-EXP>1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+								<CURRENT-EXP>-1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricFluxDensity" OID="id-612eeb92-9dcc-4f7d-882b-06daa87a6d40">
+								<SHORT-NAME>ElectricFluxDensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0022">Electric Flux Density</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+								<TIME-EXP>1</TIME-EXP>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricPotentialDifference" OID="id-edda132c-9bc6-4df5-be5a-fbe0425fe56d">
+								<SHORT-NAME>ElectricPotentialDifference</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0023">Electric Potential Difference</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+								<CURRENT-EXP>-1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ElectricResistance" OID="id-2044d04a-e53a-42af-9fee-5e013c8f2b6e">
+								<SHORT-NAME>ElectricResistance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0024">Electric Resistance</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+								<CURRENT-EXP>-2</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Energy" OID="id-3175812e-7b6b-4b83-a522-9c7c40694e23">
+								<SHORT-NAME>Energy</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0076">Energy</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.EnergyDensity" OID="id-b0170219-f295-4ddb-8600-99c33089ced8">
+								<SHORT-NAME>EnergyDensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0025">Energy Density</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Exposure" OID="id-a0f32dcf-286d-4b69-944f-5921cda91599">
+								<SHORT-NAME>Exposure</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0026">Exposure</LONG-NAME>
+								<MASS-EXP>-1</MASS-EXP>
+								<TIME-EXP>1</TIME-EXP>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.FlowResistance" OID="id-360f6389-be18-4bf1-9302-f394e105630d">
+								<SHORT-NAME>FlowResistance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0090">Flow Resistance</LONG-NAME>
+								<LENGTH-EXP>-4</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Force" OID="id-3295b47f-730e-4c1e-88e4-db48da055620">
+								<SHORT-NAME>Force</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0027">Force</LONG-NAME>
+								<LENGTH-EXP>1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Frequency" OID="id-9043d980-dbda-49f2-a894-f9f14fb1fcfa">
+								<SHORT-NAME>Frequency</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0028">Frequency</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.FuelEfficiency" OID="id-1f3884aa-4484-4180-b5dd-207008ae4b37">
+								<SHORT-NAME>FuelEfficiency</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0092">Fuel Efficiency</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.HeatCapacity" OID="id-7c7f5d84-f328-4d1d-bcdd-42cf4b852503">
+								<SHORT-NAME>HeatCapacity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0030">Heat Capacity</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<TEMPERATURE-EXP>1</TEMPERATURE-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.HeatFluxDensity" OID="id-eadcdfa4-9063-4c7f-8d15-196ea90d4d49">
+								<SHORT-NAME>HeatFluxDensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0031">Heat Flux Density</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Illuminance" OID="id-b874badf-65f5-4832-97d3-58cd05aa2548">
+								<SHORT-NAME>Illuminance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0032">Illuminance</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+								<LUMINOUS-INTENSITY-EXP>1</LUMINOUS-INTENSITY-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Inductance" OID="id-d6bbca97-d3f3-4300-8606-f84521797293">
+								<SHORT-NAME>Inductance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0033">Inductance</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<CURRENT-EXP>-2</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Length" OID="id-02147adc-fa09-40d4-9f6b-2449e2f88861">
+								<SHORT-NAME>Length</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0034">Length</LONG-NAME>
+								<LENGTH-EXP>1</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.LineDigitRate" OID="id-6693e84a-1461-49d6-a81d-7df3a0505a41">
+								<SHORT-NAME>LineDigitRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0085">Line Digit Rate</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Luminance" OID="id-ffc1e4d7-254d-4db9-8f5f-9d7af49c2fd8">
+								<SHORT-NAME>Luminance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0035">Luminance</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+								<LUMINOUS-INTENSITY-EXP>1</LUMINOUS-INTENSITY-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.LuminousFlux" OID="id-9f26f576-ff58-474c-a971-b356cf843ca1">
+								<SHORT-NAME>LuminousFlux</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0036">Luminous Flux</LONG-NAME>
+								<LUMINOUS-INTENSITY-EXP>1</LUMINOUS-INTENSITY-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.LuminousIntensity" OID="id-e4081dfb-5110-4e07-83ed-08e5a05fe614">
+								<SHORT-NAME>LuminousIntensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0037">Luminous Intensity</LONG-NAME>
+								<LUMINOUS-INTENSITY-EXP>1</LUMINOUS-INTENSITY-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MagneticFieldStrength" OID="id-170637d3-3c71-405b-a55d-5510be509b75">
+								<SHORT-NAME>MagneticFieldStrength</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0038">Magnetic Field Strength</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<CURRENT-EXP>1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MagneticFlux" OID="id-b5c96031-1a15-4372-a3c3-1f2e266b1137">
+								<SHORT-NAME>MagneticFlux</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0039">Magnetic Flux</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<CURRENT-EXP>-1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MagneticFluxDensity" OID="id-20ac1fea-4092-40a6-ba69-10e8a8d87762">
+								<SHORT-NAME>MagneticFluxDensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0040">Magnetic Flux Density</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<CURRENT-EXP>-1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Mass" OID="id-d0e97860-7a9a-4d4b-ab93-3bbe07e22eee">
+								<SHORT-NAME>Mass</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0041">Mass</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MassDensity" OID="id-89448a72-864a-4893-978f-e0a352e2b427">
+								<SHORT-NAME>MassDensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0014">Mass Density</LONG-NAME>
+								<LENGTH-EXP>-3</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MassFlow" OID="id-ed58d769-e3f1-4659-b4d4-f4be5cc6e45c">
+								<SHORT-NAME>MassFlow</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0042">Mass Flow</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MassFlowSquared" OID="id-655440ae-37b8-4149-95c7-3a1a0105c4fa">
+								<SHORT-NAME>MassFlowSquared</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0091">Mass Flow Squared</LONG-NAME>
+								<MASS-EXP>2</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MassPerCylinder" OID="id-83f89049-fb37-4223-80f7-ae0277d554a0">
+								<SHORT-NAME>MassPerCylinder</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0043">Mass Per Cylinder</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MassPerStroke" OID="id-492e541c-8224-4a83-8c71-ad513e4af4b0">
+								<SHORT-NAME>MassPerStroke</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0044">Mass Per Stroke</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MassUsage" OID="id-2d97ed9a-774d-47ac-90b5-86eecf3ce085">
+								<SHORT-NAME>MassUsage</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0078">Mass Usage</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MolarEnergy" OID="id-74d58b2b-96d2-41c6-8f86-b1982ba681d2">
+								<SHORT-NAME>MolarEnergy</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0045">Molar Energy</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<MOLAR-AMOUNT-EXP>-1</MOLAR-AMOUNT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MolarEntropy" OID="id-e49ad9c7-7aa6-411a-9f77-e4b981e364a0">
+								<SHORT-NAME>MolarEntropy</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0046">Molar Entropy</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<TEMPERATURE-EXP>-1</TEMPERATURE-EXP>
+								<MOLAR-AMOUNT-EXP>-1</MOLAR-AMOUNT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MolarMass" OID="id-7b5014ce-fa0e-44b4-acb2-ab48f7c25b8c">
+								<SHORT-NAME>MolarMass</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0079">Molar Mass</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+								<MOLAR-AMOUNT-EXP>-1</MOLAR-AMOUNT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.MomentOfInertia" OID="id-66d91c7f-15a7-4450-b5a1-3b68e7586894">
+								<SHORT-NAME>MomentOfInertia</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0080">Moment Of Inertia</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Permeability" OID="id-331fef9f-4e4f-496b-a299-860d047f5415">
+								<SHORT-NAME>Permeability</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0047">Permeability</LONG-NAME>
+								<LENGTH-EXP>1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<CURRENT-EXP>-2</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Permittivity" OID="id-540bc5c4-2ccc-4ad5-bd5e-8c2b7b79a958">
+								<SHORT-NAME>Permittivity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0048">Permittivity</LONG-NAME>
+								<LENGTH-EXP>-3</LENGTH-EXP>
+								<MASS-EXP>-1</MASS-EXP>
+								<TIME-EXP>4</TIME-EXP>
+								<CURRENT-EXP>2</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.PlaneAngle" OID="id-d29854e2-4bf8-40b8-9b97-5e22623cab5c">
+								<SHORT-NAME>PlaneAngle</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0049">Plane Angle</LONG-NAME>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Power" OID="id-a42caaaa-78a0-4290-b15d-90e042b4437c">
+								<SHORT-NAME>Power</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0050">Power</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.PowerSlewRate" OID="id-55454b83-c410-4f07-b9dd-9fd436cd90d9">
+								<SHORT-NAME>PowerSlewRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0096">Power Slew Rate</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Pressure" OID="id-5b16aa9f-6280-4ff8-80e7-fc2a97ba75f4">
+								<SHORT-NAME>Pressure</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0051">Pressure</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.PressureDividedByTime" OID="id-89527354-b91a-40ff-bba1-b4c0e453d849">
+								<SHORT-NAME>PressureDividedByTime</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0052">Pressure Divided By Time</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Radiance" OID="id-2d8a072b-a05c-4362-af1e-707bc9d248cb">
+								<SHORT-NAME>Radiance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0053">Radiance</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.RadiantIntensity" OID="id-a67afd84-ab32-4651-9c25-6b50ba450fbd">
+								<SHORT-NAME>RadiantIntensity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0054">Radiant Intensity</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Range" OID="id-13477d96-ab70-4e1e-866a-b3da64e5ccd7">
+								<SHORT-NAME>Range</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0081">Range</LONG-NAME>
+								<LENGTH-EXP>-2</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Raw" OID="id-7cf2ee8f-4544-4d0b-ba68-a9a318f2d3c4">
+								<SHORT-NAME>Raw</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0055">Raw</LONG-NAME>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.RawSlewRate" OID="id-f26277ad-7b35-4b06-bf33-6c4a1ca39aa0">
+								<SHORT-NAME>RawSlewRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0095">Raw Slew Rate</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ReciprocalLength" OID="id-b4451fd6-607f-4be7-9454-237c15120b4e">
+								<SHORT-NAME>ReciprocalLength</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0029">Reciprocal Length</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.RefractiveIndex" OID="id-7c4325c5-b28b-45bc-b4b5-de18e22aca7a">
+								<SHORT-NAME>RefractiveIndex</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0056">Refractive Index</LONG-NAME>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.RotationalSpeed" OID="id-b55c9fef-3cb7-4c59-9808-be9ba5eceaab">
+								<SHORT-NAME>RotationalSpeed</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0057">Rotational Speed</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.SolidAngle" OID="id-1e115feb-d559-40b5-93ac-5eeb81e05533">
+								<SHORT-NAME>SolidAngle</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0058">Solid Angle</LONG-NAME>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.SpecificEnergy" OID="id-11426e03-5912-4ddb-a811-75d3440abb91">
+								<SHORT-NAME>SpecificEnergy</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0059">Specific Energy</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.SpecificHeatCapacity" OID="id-246e4f4d-697c-478b-a368-ca778aa2e64a">
+								<SHORT-NAME>SpecificHeatCapacity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0060">Specific Heat Capacity</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+								<TEMPERATURE-EXP>-1</TEMPERATURE-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.SpecificMassUsage" OID="id-3eab4ba5-8b2b-4bcb-bef4-c2723121ea2c">
+								<SHORT-NAME>SpecificMassUsage</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0077">Specific Mass Usage</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.SpecificVolume" OID="id-99e6ffae-8917-4da0-9e69-cae7afe576cf">
+								<SHORT-NAME>SpecificVolume</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0061">Specific Volume</LONG-NAME>
+								<LENGTH-EXP>3</LENGTH-EXP>
+								<MASS-EXP>-1</MASS-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.StorageCapacity" OID="id-0006898e-d364-484b-af9f-47b1970487f0">
+								<SHORT-NAME>StorageCapacity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0087">Storage Capacity</LONG-NAME>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.SurfaceTension" OID="id-31f38486-38f8-4bca-adb2-375f9601534e">
+								<SHORT-NAME>SurfaceTension</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0062">Surface Tension</LONG-NAME>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.TemperatureScale" OID="id-8bbd5c9c-cc67-4446-afd5-f9a38112d8b3">
+								<SHORT-NAME>TemperatureScale</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0082">Temperature Scale</LONG-NAME>
+								<TEMPERATURE-EXP>-1</TEMPERATURE-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ThermalConductivity" OID="id-305e76b2-7d3a-44f9-b39d-ecfd717fd622">
+								<SHORT-NAME>ThermalConductivity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0063">Thermal Conductivity</LONG-NAME>
+								<LENGTH-EXP>1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-3</TIME-EXP>
+								<TEMPERATURE-EXP>-1</TEMPERATURE-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperature" OID="id-50ae9655-1130-49cc-b020-c7419d33df36">
+								<SHORT-NAME>ThermodynamicTemperature</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0065">Thermodynamic Temperature</LONG-NAME>
+								<TEMPERATURE-EXP>1</TEMPERATURE-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperatureDividedByTime" OID="id-459d6302-b857-4e9b-b156-f4d47b1ea68b">
+								<SHORT-NAME>ThermodynamicTemperatureDividedByTime</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0066">Thermodynamic Temperature Divided By Time</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+								<TEMPERATURE-EXP>1</TEMPERATURE-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.ThermodynamicTemperatureDividedByVelocity" OID="id-4dba57e0-fd9a-4f99-8d6d-8e913a905882">
+								<SHORT-NAME>ThermodynamicTemperatureDividedByVelocity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0064">Thermodynamic Temperature Divided By Velocity</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<TIME-EXP>1</TIME-EXP>
+								<TEMPERATURE-EXP>1</TEMPERATURE-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Time" OID="id-63828e75-3c74-406a-ae48-1b58d055c301">
+								<SHORT-NAME>Time</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0067">Time</LONG-NAME>
+								<TIME-EXP>1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Torque" OID="id-5055329d-1f97-42e5-ac73-147337de5d6f">
+								<SHORT-NAME>Torque</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0068">Torque</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.TorqueDividedByRotationalSpeed" OID="id-6f1ae992-be4a-420a-9dc8-13d2fc37ea03">
+								<SHORT-NAME>TorqueDividedByRotationalSpeed</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0069">Torque Divided By Rotational Speed</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.TorquePerVolume" OID="id-c2fefd38-299c-4351-92c0-dbb8105a4ea9">
+								<SHORT-NAME>TorquePerVolume</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0070">Torque Per Volume</LONG-NAME>
+								<LENGTH-EXP>-1</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.TransferRate" OID="id-f4a56c1a-f890-4870-80be-8941bf23d294">
+								<SHORT-NAME>TransferRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0088">Transfer Rate</LONG-NAME>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Velocity" OID="id-038de5d5-67b9-4480-a178-daaebad2f332">
+								<SHORT-NAME>Velocity</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0071">Velocity</LONG-NAME>
+								<LENGTH-EXP>1</LENGTH-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.VoltageSlewRate" OID="id-314971e8-f3ad-4b3d-808d-80d68785e93e">
+								<SHORT-NAME>VoltageSlewRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0072">Voltage Slew Rate</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-4</TIME-EXP>
+								<CURRENT-EXP>-1</CURRENT-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Volume" OID="id-9614ea3d-64d1-402f-bb75-779c56991672">
+								<SHORT-NAME>Volume</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0073">Volume</LONG-NAME>
+								<LENGTH-EXP>3</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.VolumeDividedByLength" OID="id-6d61106e-3fd1-4108-a95f-ce5849f000e2">
+								<SHORT-NAME>VolumeDividedByLength</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0074">Volume Divided By Length</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.VolumeFlow" OID="id-3175a7d2-7290-4b9c-99d2-0e89283b0eee">
+								<SHORT-NAME>VolumeFlow</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0075">Volume Flow</LONG-NAME>
+								<LENGTH-EXP>3</LENGTH-EXP>
+								<TIME-EXP>1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.VolumetricFlowRate" OID="id-a6d31bf4-1a6c-48f0-8b39-924c69e73b7e">
+								<SHORT-NAME>VolumetricFlowRate</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0089">Volumetric Flow Rate</LONG-NAME>
+								<LENGTH-EXP>3</LENGTH-EXP>
+								<TIME-EXP>-1</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.VolumetricFlowRatePerDistance" OID="id-94c34a14-e8ed-4874-bef2-63d863771dc0">
+								<SHORT-NAME>VolumetricFlowRatePerDistance</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0094">Volumetric Flow Rate Per Distance</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+							</PHYSICAL-DIMENSION>
+							<PHYSICAL-DIMENSION ID="ODX-RS.PHYSICAL-DIMENSION.Work" OID="id-08192b2b-9392-4146-9b4b-cc7fc3c10664">
+								<SHORT-NAME>Work</SHORT-NAME>
+								<LONG-NAME TI="PHYSDIM0093">Work</LONG-NAME>
+								<LENGTH-EXP>2</LENGTH-EXP>
+								<MASS-EXP>1</MASS-EXP>
+								<TIME-EXP>-2</TIME-EXP>
+							</PHYSICAL-DIMENSION>
+						</PHYSICAL-DIMENSIONS>
+					</UNIT-SPEC>
+				</DIAG-DATA-DICTIONARY-SPEC>
+			</ECU-SHARED-DATA>
+		</ECU-SHARED-DATAS>
+	</DIAG-LAYER-CONTAINER>
+</ODX>

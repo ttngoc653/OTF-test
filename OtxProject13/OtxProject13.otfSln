@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="id_665cff78d0df4b37acb6105b8ab9ece8" UseDiagRuntimeSystem="true" xmlns="http://www.emotive.de/odf">
+  <Project Name="OtxProject13" Path="OtxProject13\OtxProject13.otfPrj" />
+  <Project Name="OtxTestProject1" Path="OtxTestProject1\OtxTestProject1.otfPrj" />
+  <Project Name="OtxProjectGenToFile" Path="OtxProjectGenToFile\OtxProjectGenToFile.otfPrj" />
+  <Project Name="HandlingQuantitiesDiagCom_1" Path="HandlingQuantitiesDiagCom_1\HandlingQuantitiesDiagCom_1.otfPrj" />
+  <Project Name="HandlingQuantitiesDiagCom" Path="TestHandlingQuantitiesDiagCom\HandlingQuantitiesDiagCom\HandlingQuantitiesDiagCom.otfPrj" />
+  <StartupProject Name="OtxProject13" />
+  <Config>
+    <MvciServer />
+  </Config>
+  <DiagCom>
+    <DbConfig ConfigType="MVCIServer" ProjectName="DVRTest_024_001" VehicleInfo="VINFO_DVRTest" OdxViewType="DiagnosticView">
+      <Property Name="doip" Value="False" />
+    </DbConfig>
+    <ECUMappings />
+  </DiagCom>
+</Solution>

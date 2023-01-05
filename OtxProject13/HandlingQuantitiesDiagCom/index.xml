@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CATALOG xmlns:ptxXhtml="http://iso.org/OTX/1.0.0/Auxiliaries/ContainerXhtml" CONTAINER-VERSION="1.0.0.0" xmlns="http://iso.org/OTX/1.0.0/Auxiliaries/Container">
+  <SHORT-NAME>HandlingQuantitiesDiagCom</SHORT-NAME>
+  <ABLOCKS>
+    <ABLOCK UPD="NEW">
+      <SHORT-NAME>OTXRTDATA</SHORT-NAME>
+      <CATEGORY>OTX-RT-DATA</CATEGORY>
+      <FILES>
+        <FILE CREATION-DATE="2022-10-06T13:57:52.4714885+07:00" CREATOR="OTF" MIME-TYPE="other">CppOutput/ProjectEntry.lua</FILE>
+        <FILE CREATION-DATE="2022-10-06T13:57:52.4724914+07:00" CREATOR="OTF" MIME-TYPE="other">CppOutput/.packages/llthreads2/ex.lua</FILE>
+        <FILE CREATION-DATE="2022-10-06T13:57:52.4748046+07:00" CREATOR="OTF" MIME-TYPE="other">CppOutput/HandlingQuantitiesDiagComPackage1/Document1.lua</FILE>
+      </FILES>
+    </ABLOCK>
+    <ABLOCK UPD="NEW">
+      <SHORT-NAME>OTXMAIN</SHORT-NAME>
+      <CATEGORY>OTX-MAIN</CATEGORY>
+      <FILES>
+        <FILE CREATION-DATE="2022-10-06T13:57:52.4778125+07:00" CREATOR="OTF" MIME-TYPE="text/xml">OTX/HandlingQuantitiesDiagComPackage1/Document1.otx</FILE>
+      </FILES>
+    </ABLOCK>
+  </ABLOCKS>
+</CATALOG>

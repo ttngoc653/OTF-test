@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Setting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.emotive.de/odf">
+  <LoggingConfig Type="Standard">
+    <Property Name="Directory" Value="" />
+    <Property Name="FileName" Value="[Proj].log" />
+    <Property Name="FileSize" Value="10" />
+    <Property Name="MaxFileNumber" Value="3" />
+    <Property Name="HeaderFormat" Value="" />
+    <Property Name="MessageFormat" Value="%[Msg]$s" />
+    <Property Name="Version" Value="6.99.0.46343" />
+    <Property Name="LoggingOn" Value="True" />
+    <Property Name="LogCommunicationTrace" Value="False" />
+    <Property Name="LogVariableTrace" Value="False" />
+    <Property Name="LogOtxException" Value="False" />
+    <Property Name="LogCommunicationTraceSeverityLevel" Value="TRACE" />
+    <Property Name="LogVariableTraceSeverityLevel" Value="TRACE" />
+    <Property Name="LogOtxExceptionSeverityLevel" Value="TRACE" />
+    <Property Name="LoggingTargetResolving" Value="False" />
+    <Property Name="WriteId" Value="False" />
+    <Property Name="WriteIdSeverityLevel" Value="TRACE" />
+    <Property Name="LoggingLevelDefault" Value="ALL" />
+  </LoggingConfig>
+</Setting>

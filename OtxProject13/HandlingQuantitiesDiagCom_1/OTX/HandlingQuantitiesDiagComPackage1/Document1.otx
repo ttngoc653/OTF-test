@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:quant="http://iso.org/OTX/1.0.0/Quantities" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hmi="http://iso.org/OTX/1.0.0/HMI" xmlns:diagComPlus="http://iso.org/OTX/1.0.0/DiagComPlus" name="Document1" id="id_385c0a0483e94e7eb927256ed5cf0614" package="HandlingQuantitiesDiagComPackage1" version="1.0.0.0" timestamp="2022-10-03T10:51:10.094+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.99.0.46303</data>
+  </metaData>
+  <procedures>
+    <procedure name="main" id="Procedure_9725eb92b94642d3ab4c60ae4b34dc00" visibility="PUBLIC">
+      <realisation>
+        <flow>
+          <action id="Action_5a68d1623ac44307a505c85fdd6838b1">
+            <realisation xsi:type="ProcedureCall" procedure="proc_GetDefaultComParameterValueAsQuantity" />
+          </action>
+          <action id="Action_140d85d9ae314bb2bd3d80ac710d48d3">
+            <realisation xsi:type="ProcedureCall" procedure="proc_GetComParameterValueAsQuantity" />
+          </action>
+          <action id="Action_b0c6b78a10e646f18f20aaad5e624c63">
+            <realisation xsi:type="ProcedureCall" procedure="proc_GetParameterValueAsQuantity_RequestParam" />
+          </action>
+          <action id="Action_6849c82c2b8e41089693d7ccfb73dd61">
+            <realisation xsi:type="ProcedureCall" procedure="proc_GetParameterValueAsQuantity_ResponseParam1" />
+          </action>
+          <action id="Action_4fd6395fb6734353907e94ae7fbe5099">
+            <realisation xsi:type="ProcedureCall" procedure="proc_GetParameterValueAsQuantity_ResponseParam2" />
+          </action>
+          <action id="Action_cd69061bd01d4227998e69760bc595e7">
+            <realisation xsi:type="ProcedureCall" procedure="proc_SetParameterValue" />
+          </action>
+          <action id="Action_4e87db6f456d4f5a926052186a529441">
+            <realisation xsi:type="ProcedureCall" procedure="proc_SetParameterValueBySemantic" />
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="proc_GetParameterValueAsQuantity_ResponseParam1" id="id_50be569613cd4bd6bd2b2deb939c4a48" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_f15ae8f4522242ebba93e62b155e0729">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="Minute1" id="VariableDeclaration_d6c85084f38d44a2812b12577e791bea">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="Integer" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_f65273e222de48a5acfcff7232da2f45">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+          <variable name="Response1" id="VariableDeclaration_b6858f598a66424b81420526242aca41">
+            <realisation>
+              <dataType xsi:type="diag:Response" />
+            </realisation>
+          </variable>
+          <variable name="Parameter_Struct" id="VariableDeclaration_75ba93ab0f84476895f642862745fbbd">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="List_of_Parameter_Struct" id="VariableDeclaration_0840987ff0354d259acbf099eea351eb">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Parameter" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Map_of_Quantity" id="VariableDeclaration_5b16af09c2764f27b9dc25763f813e47">
+            <realisation>
+              <dataType xsi:type="Map">
+                <keyType xsi:type="String" />
+                <valueType xsi:type="quant:Quantity" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Index1" id="VariableDeclaration_642160a233554d3e9def0027f9246386">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_ea0015ed4ca843d3a8405d6ca43e90bd">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <action name="ReadDataByIdentifierMeasurementValue1" id="ExecuteDiagService_da01b68e853141aaa0321a2fde0eb383">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_ReadDataByIdentMeasuValue" />
+              </diag:diagService>
+              <diag:requestParameters>
+                <diag:requestParam>
+                  <diag:value xsi:type="StringLiteral" value="LifeCycleData 21" />
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="Param_RecorDataIdent" />
+                  </diag:path>
+                </diag:requestParam>
+              </diag:requestParameters>
+              <diag:responseParameters>
+                <diag:name xsi:type="StringLiteral" value="Resp_ReadDataByIdentMeasuValue" />
+                <diag:responseParam>
+                  <diag:target xsi:type="ListVariable" name="Minute1" />
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                    <stepByName xsi:type="StringLiteral" value="Param_LifeC21" />
+                    <stepByName xsi:type="StringLiteral" value="STRUC_LifeC21Eleme" />
+                    <stepByName xsi:type="StringLiteral" value="Param_Minut" />
+                  </diag:path>
+                </diag:responseParam>
+              </diag:responseParameters>
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action name="GetFirstResponse1" id="Action_94d63b292a084c26851acb70972bebd7">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ResponseVariable" name="Response1" />
+              <term xsi:type="diag:GetFirstResponse">
+                <diag:result xsi:type="diag:ResultValue" valueOf="Result1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6a251d2e31134e64b081521548a566a1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Parameter_Struct" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:ResponseValue" valueOf="Response1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                  <stepByName xsi:type="StringLiteral" value="Param_LifeC21" />
+                  <stepByIndex xsi:type="IntegerLiteral" value="0" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_86e8e70923a441bdb4b61ddd1b1969f3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="List_of_Parameter_Struct" />
+              <term xsi:type="diag:GetParameterAsList">
+                <diag:parameterContainer xsi:type="diag:ParameterValue" valueOf="Parameter_Struct" />
+              </term>
+            </realisation>
+          </action>
+          <loop name="ForEachLoop1" id="Loop_9abd8659c5d14292b17b3aff91d9c136">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_4c8b16c72d3144d3865df5f39eea4fd6">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="Index1" />
+                  <collection xsi:type="ListValue" valueOf="List_of_Parameter_Struct" />
+                </realisation>
+              </configuration>
+              <flow>
+                <handler id="Handler_bca936eb75c846a6aa196850a27512bf">
+                  <realisation>
+                    <try>
+                      <action id="Action_ddf2213f7dd7461c910256630820032e">
+                        <realisation xsi:type="MapPutItems">
+                          <map name="Map_of_Quantity" />
+                          <item>
+                            <key xsi:type="diag:GetParameterName">
+                              <diag:parameter xsi:type="diag:ParameterValue" valueOf="List_of_Parameter_Struct">
+                                <diag:path>
+                                  <stepByIndex xsi:type="IntegerValue" valueOf="Index1" />
+                                </diag:path>
+                              </diag:parameter>
+                            </key>
+                            <value xsi:type="diag:GetParameterValueAsQuantity">
+                              <diag:parameter xsi:type="diag:ParameterValue" valueOf="List_of_Parameter_Struct">
+                                <diag:path>
+                                  <stepByIndex xsi:type="IntegerValue" valueOf="Index1" />
+                                </diag:path>
+                              </diag:parameter>
+                            </value>
+                          </item>
+                        </realisation>
+                      </action>
+                    </try>
+                    <catch>
+                      <exception id="CatchHeader_7bba1e501fac42139180fc7b06a640c3">
+                        <realisation>
+                          <type />
+                        </realisation>
+                      </exception>
+                      <flow />
+                    </catch>
+                  </realisation>
+                </handler>
+              </flow>
+            </realisation>
+          </loop>
+          <action id="Action_fd99d9cd00094f509d00eb6ac3bdffb4">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="proc_GetParameterValueAsQuantity_ResponseParam2" id="Procedure_f0838aaa775040318a5ae1396c00e35b" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_97c96b6ecdef4b55810f957c2ca499ef">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Vol" id="VariableDeclaration_098fdbeba20a4e68af3a83c31b32ec5c">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Parameter_Quantity" id="VariableDeclaration_deb6e6b2f88647aaa2f632ce01ebea6b">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_c23ccbdce2ce44df964c09341092e2f4">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_5479b0a7db8b4278af4d9fbc68e12eee">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="Param_VoltaEleva" id="VariableDeclaration_5beaa57e8889426fa67841aa910a8d70">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="Param_VoltaLower" id="VariableDeclaration_b5beb4a3559a4e8e9e58990cca4782c9">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="BaseUnit1" id="VariableDeclaration_631d11fd1b9845bdb0487b82d3ae71d8">
+            <realisation>
+              <dataType xsi:type="quant:Unit" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_c8787c63747a44708e3fb5f6b3bb8b47">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_731f6454faf44235a40659d00f5eff80">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="Quantity_Vol" />
+              <term xsi:type="quant:CreateQuantity">
+                <quant:numeral xsi:type="IntegerLiteral" value="15000" />
+                <quant:displayUnit xsi:type="quant:UnitLiteral">
+                  <quant:value p18:type="simple" p18:href="ODX_RS_UNIT_LIB.odx#MilliVolt" xmlns:p18="http://www.w3.org/1999/xlink" />
+                </quant:displayUnit>
+              </term>
+            </realisation>
+          </action>
+          <action name="WriteDataByIdentifierCalibrationData2" id="Action_98562ca453d94f91b024f4e5e34ac103">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_WriteDataByIdentCalibData" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetRequest1" id="Action_c486defd04c74e32bee7cf42ed197a5b">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action name="SetParameterValue1" id="SetParameterValue_1bcdd6bd8e3a43ae85f42e0ab8bd89d8">
+            <realisation xsi:type="diag:SetParameterValue">
+              <diag:parameter xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_RecorDataIdent" />
+                </diag:path>
+              </diag:parameter>
+              <diag:value xsi:type="StringLiteral" value="Hysteresis_voltage" />
+            </realisation>
+          </action>
+          <action name="GetParameterByPath2" id="Action_27741fd9e79245b49cc402029790329c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Param_VoltaEleva" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                  <stepByName xsi:type="StringLiteral" value="Param_VoltaEleva" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action name="SetParameterValue2" id="SetParameterValue_c1021edf91e74238929dd6bda6e5da10">
+            <realisation xsi:type="diag:SetParameterValue">
+              <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaEleva" />
+              <diag:value xsi:type="quant:QuantityValue" valueOf="Quantity_Vol" />
+            </realisation>
+          </action>
+          <action id="Action_959a3aef42d34b5eb0f94804d743936e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Param_VoltaLower" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                  <stepByName xsi:type="StringLiteral" value="Param_VoltaLower" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_7fcfa762d0ad42c2a2a30a3d10e6626a">
+            <realisation xsi:type="diag:SetParameterValue">
+              <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaLower" />
+              <diag:value xsi:type="IntegerLiteral" value="15" />
+            </realisation>
+          </action>
+          <action id="Action_f02ef48ebb4b44bf9af5be8f8765cf18">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="Parameter_Quantity" />
+              <term xsi:type="diag:GetParameterValueAsQuantity">
+                <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaEleva" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_79ec25c427774ee988554a18536740bd">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="Parameter_Quantity" />
+              <term xsi:type="diag:GetParameterValueAsQuantity">
+                <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaLower" />
+              </term>
+            </realisation>
+          </action>
+          <action name="GetBaseUnit1" id="Action_372ba2d05d004ab1b7a0e4e14ab42c48">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:UnitVariable" name="BaseUnit1" />
+              <term xsi:type="quant:GetBaseUnit">
+                <quant:quantity xsi:type="quant:QuantityValue" valueOf="Parameter_Quantity" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_7d69235423e74715ab04e94297ae44db">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+            </realisation>
+          </action>
+          <action id="Action_c29f51c5359b42dfa47c563e208e7e61">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="proc_GetParameterValueAsQuantity_RequestParam" id="Procedure_0556794a3d524182b2b5a8fc25b6a153" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="par_Voltage_Terminal_301" id="VariableDeclaration_80d828c7fc424df2a4fef6bac310d98f">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_f8b9f70c00af4db5acaef070ea478994">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="Result1" id="VariableDeclaration_afcebdc9fc42402393ec76621a1b8e48">
+            <realisation>
+              <dataType xsi:type="diag:Result" />
+            </realisation>
+          </variable>
+          <variable name="Response1" id="VariableDeclaration_5964e89d58b14e01abb46dc69463889c">
+            <realisation>
+              <dataType xsi:type="diag:Response" />
+            </realisation>
+          </variable>
+          <variable name="Param_ParVoltaTermi30" id="VariableDeclaration_93a48eace64f40f988804a9e63266e63">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_ParVoltaTermi30" id="VariableDeclaration_a0b87ba54cde44748b722d3176f714d7">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_f43c206df2e84fb4ad410ab5c09bfd6e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_d69e0f5ad1be46eeabdba4bc8751fdbd">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_ReadDataByIdentMeasuValue" />
+              </diag:diagService>
+              <diag:requestParameters>
+                <diag:requestParam>
+                  <diag:value xsi:type="StringLiteral" value="Voltage terminal 30" />
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="Param_RecorDataIdent" />
+                  </diag:path>
+                </diag:requestParam>
+              </diag:requestParameters>
+              <diag:responseParameters>
+                <diag:name xsi:type="StringLiteral" value="Resp_ReadDataByIdentMeasuValue" />
+                <diag:responseParam>
+                  <diag:target xsi:type="FloatVariable" name="par_Voltage_Terminal_301" />
+                  <diag:path>
+                    <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                    <stepByName xsi:type="StringLiteral" value="Param_ParVoltaTermi30" />
+                  </diag:path>
+                </diag:responseParam>
+              </diag:responseParameters>
+              <diag:result name="Result1" />
+            </realisation>
+          </action>
+          <action id="Action_ba11ab839d3b42efa7fa73817732adaf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ResponseVariable" name="Response1" />
+              <term xsi:type="diag:GetFirstResponse">
+                <diag:result xsi:type="diag:ResultValue" valueOf="Result1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8cb83efa31e649af9d05d6ecdd899a6c">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Param_ParVoltaTermi30" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:ResponseValue" valueOf="Response1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                  <stepByName xsi:type="StringLiteral" value="Param_ParVoltaTermi30" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_5bba0ca8e33a4a639b5afa7ae504bacf">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="Quantity_ParVoltaTermi30" />
+              <term xsi:type="diag:GetParameterValueAsQuantity">
+                <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_ParVoltaTermi30" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_520992d8f2dd4ccea40a108ba6726094">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="proc_GetComParameterValueAsQuantity" id="Procedure_6a202b5ef21f422f96f2ef1b9dc5c93f" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="CP_TesterPresentTime_Float" id="VariableDeclaration_da16a4df6df14b8a88378a45efeecfb7">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_60d51b00234b41918273dde0c06854f5">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="CP_TesterPresentTime" id="VariableDeclaration_d63d11eb177e498894a78b39ebd46dfa">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="CP_TesterPresentTime" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="Response1" id="VariableDeclaration_ad4ec65d33244e7a896a1aa4cc8dd048">
+            <realisation>
+              <dataType xsi:type="diag:Response" />
+            </realisation>
+          </variable>
+          <variable name="Param_ParVoltaTermi30" id="VariableDeclaration_74f1b2ec12c94a0196301f77813519e4">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="CP_TesterPresentTime_Quantity" id="VariableDeclaration_62ca0e066bd54e09ac4d5e0d70b8aae3">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_fed45ee4b7fb4b14942c628d0c88e6ec">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_CentrElectUDS" />
+                <diag:ecuVariantName xsi:type="StringLiteral" value="EV_BCMCONTI_009" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_096f329668a04dbd8e4dec9c1e70d253">
+            <realisation xsi:type="diagComPlus:StartCommunication">
+              <diagComPlus:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+            </realisation>
+          </action>
+          <action id="Action_2edd1b768fb74a0a9e6bc27de047eca3">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="CP_TesterPresentTime_Quantity" />
+              <term xsi:type="diag:GetComParameterValueAsQuantity">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_58dfb9f867e44c90a8a956feccff3653">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="CP_TesterPresentTime_Float" />
+              <term xsi:type="diag:GetComParameterValueAsInteger">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_9a5320fc0fae4fc5b11eaf1da9cf3c76">
+            <realisation xsi:type="diag:SetComParameter">
+              <diag:comChannel valueOf="ComChannel1" />
+              <diag:name xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              <diag:value xsi:type="Multiply">
+                <numeral xsi:type="FloatValue" valueOf="CP_TesterPresentTime_Float" />
+                <numeral xsi:type="IntegerLiteral" value="2" />
+              </diag:value>
+            </realisation>
+          </action>
+          <action id="Action_6f3e01270fb046fea6e7cd3f08b558a8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="CP_TesterPresentTime_Quantity" />
+              <term xsi:type="diag:GetComParameterValueAsQuantity">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_664ed7f84cd5428c9c25d296dbb90da2">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="CP_TesterPresentTime_Float" />
+              <term xsi:type="diag:GetComParameterValueAsInteger">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_292803c4889841969a1f442869ded1e6">
+            <specification>CP_TesterPresentTime_Quantity = Quantities.CreateQuantity(60, [@Unit, "ODX_RS_UNIT_LIB.odx", "min"]);</specification>
+            <realisation xsi:type="diag:SetComParameter">
+              <diag:comChannel valueOf="ComChannel1" />
+              <diag:name xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              <diag:value xsi:type="quant:QuantityValue" valueOf="CP_TesterPresentTime_Quantity" />
+            </realisation>
+          </action>
+          <action id="Action_2fe3739eb22b43b19d6aa079c1d904b1">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="CP_TesterPresentTime_Quantity" />
+              <term xsi:type="diag:GetComParameterValueAsQuantity">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_b6e9c2bd287944b9b57dcff806817e48">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="CP_TesterPresentTime_Float" />
+              <term xsi:type="diag:GetComParameterValueAsInteger">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringValue" valueOf="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_aba6b730829c4fa6830eccd0f32fb05f">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="proc_GetDefaultComParameterValueAsQuantity" id="Procedure_275fc49ff02147ba8e80e2d82ef4784b" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="CP_TesterPresentTime_Float" id="VariableDeclaration_0248cf508a064fb488c5015d05f402fe">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_1a9b3cc50b7048b1872b3a60d7b11c78">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="Response1" id="VariableDeclaration_e81c455802a849d08dee7f38bed0a8f1">
+            <realisation>
+              <dataType xsi:type="diag:Response" />
+            </realisation>
+          </variable>
+          <variable name="Param_ParVoltaTermi30" id="VariableDeclaration_376db8a765d648a2a3547a9c14a3d7f2">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="CP_TesterPresentTime_Quantity" id="VariableDeclaration_d36e37fcdf514a7da0ae7b81af94b057">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_b99012b33033432881c739fea9adac27">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+              <term xsi:type="diag:GetComChannel">
+                <diag:identifier xsi:type="StringLiteral" value="LL_CentrElectUDS" />
+                <diag:ecuVariantName xsi:type="StringLiteral" value="EV_BCMCONTI_009" />
+                <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_6a48c85bd9c14504b960e3bbcb656a5f">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="CP_TesterPresentTime_Quantity" />
+              <term xsi:type="diag:GetDefaultComParameterValueAsQuantity">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringLiteral" value="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_eb8383deb2994c1abb22b235f0315eee">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="CP_TesterPresentTime_Float" />
+              <term xsi:type="diag:GetDefaultComParameterValueAsInteger">
+                <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                <diag:comParameterName xsi:type="StringLiteral" value="CP_TesterPresentTime" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_0b0a079c90c24a9094bcb35deb5704cf">
+            <realisation xsi:type="diag:CloseComChannel">
+              <diag:comChannel name="ComChannel1" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="proc_SetParameterValue" id="Procedure_92e686a5cd004981ad9ed0cd72a1fd38" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="DiagService1" id="VariableDeclaration_e38cf88c431640dc947c4bbbe837fc44">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_f7106d493439452d8a900c5c35880d74">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Vol" id="VariableDeclaration_c04738d6318445899f42fe17f46ebf33">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Amper" id="VariableDeclaration_239c8cd047544ac391dd815402a999ae">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Param_VoltaEleva" id="VariableDeclaration_d3d5628aa4ea494a84bf816ab4f95979">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="Param_VoltaLower" id="VariableDeclaration_341433c3e64648bb9dffe442fbd3fa35">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_09bddb8ff5b04c759d0630fb888a5595">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+              <term xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:GetComChannel">
+                  <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                  <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+                </diag:comChannel>
+                <diag:name xsi:type="StringLiteral" value="DiagnServi_WriteDataByIdentCalibData" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_a7988684ffab4eda8995f7711e49e3c8">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:RequestVariable" name="Request1" />
+              <term xsi:type="diag:GetRequest">
+                <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_b689ec5183c24127aa176bd4e6002813">
+            <realisation xsi:type="diag:SetParameterValue">
+              <diag:parameter xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_RecorDataIdent" />
+                </diag:path>
+              </diag:parameter>
+              <diag:value xsi:type="StringLiteral" value="Hysteresis_voltage" />
+            </realisation>
+          </action>
+          <action id="Action_af2c3c0eb1b54c7e93126230c3d94354">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="Quantity_Vol" />
+              <term xsi:type="quant:CreateQuantity">
+                <quant:numeral xsi:type="IntegerLiteral" value="15" />
+                <quant:displayUnit xsi:type="quant:UnitLiteral">
+                  <quant:value p18:type="simple" p18:href="ODX_RS_UNIT_LIB.odx#Volt" xmlns:p18="http://www.w3.org/1999/xlink" />
+                </quant:displayUnit>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_088d2d4f46ba42c59de29bf82818c146">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="quant:QuantityVariable" name="Quantity_Amper" />
+              <term xsi:type="quant:CreateQuantity">
+                <quant:numeral xsi:type="IntegerLiteral" value="15" />
+                <quant:displayUnit xsi:type="quant:UnitLiteral">
+                  <quant:value p18:type="simple" p18:href="ODX_RS_UNIT_LIB.odx#Ampere" xmlns:p18="http://www.w3.org/1999/xlink" />
+                </quant:displayUnit>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_55dc6bd4e5ff4df091072f5baefdd8ec">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Param_VoltaEleva" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                  <stepByName xsi:type="StringLiteral" value="Param_VoltaEleva" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_c2581696bb574ad09b0eb0d4acb0e7c0">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="diag:ParameterVariable" name="Param_VoltaLower" />
+              <term xsi:type="diag:GetParameterByPath">
+                <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                <diag:path>
+                  <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                  <stepByName xsi:type="StringLiteral" value="Param_VoltaLower" />
+                </diag:path>
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_d6edfcb10f604fcf89463644e1f2bc25">
+            <realisation xsi:type="diag:SetParameterValue">
+              <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaEleva" />
+              <diag:value xsi:type="quant:QuantityValue" valueOf="Quantity_Vol" />
+            </realisation>
+          </action>
+          <action id="Action_176506d8228c48e7be5e1460b6166cb1">
+            <realisation xsi:type="diag:SetParameterValue">
+              <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaLower" />
+              <diag:value xsi:type="quant:QuantityValue" valueOf="Quantity_Amper" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="proc_SetParameterValueBySemantic" id="Procedure_4d295410b85640bc8270d955f444589d" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="ComChannel1" id="VariableDeclaration_57a8434e75c74868ad95896a224a0c4d">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="DiagService1" id="VariableDeclaration_4102f9bd4a2f43bbb7360a9ca3f71329">
+            <realisation>
+              <dataType xsi:type="diag:DiagService" />
+            </realisation>
+          </variable>
+          <variable name="Request1" id="VariableDeclaration_219c74dca3844406ac4a18ad9761f397">
+            <realisation>
+              <dataType xsi:type="diag:Request" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Vol_New" id="VariableDeclaration_c86cac8e9a894730a84d33e117eb583a">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Amper_New" id="VariableDeclaration_d624fcb176164653b9bb6641532925c5">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Vol_Before" id="VariableDeclaration_4cf3696cd36c42f891d7a29b5e4e4ae7">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Amper_Before" id="VariableDeclaration_9368072757bf467b8d3e856f45c53af7">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Vol_After" id="VariableDeclaration_18350c71a7d6412faa6c45996e550a3d">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Quantity_Amper_After" id="VariableDeclaration_cf287c49f5a0418ba3e00f90cf4a38d3">
+            <realisation>
+              <dataType xsi:type="quant:Quantity" />
+            </realisation>
+          </variable>
+          <variable name="Param_VoltaEleva" id="VariableDeclaration_11633000fadc4b3ebcc19e7b4a403084">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="Param_VoltaLower" id="VariableDeclaration_6a9bb537f062488ba29be11b8048461d">
+            <realisation>
+              <dataType xsi:type="diag:Parameter" />
+            </realisation>
+          </variable>
+          <variable name="List1" id="VariableDeclaration_ac0e11a024fd4f83a34ed5a3e8e52099">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="diag:Parameter" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_93350dbf4a634a50b24de26fd9f69a29">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="String2" id="VariableDeclaration_9b2f40dc441d46c3800b123212aebd4a">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_e7dfd25aad404871aa06e61545f97b72">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <handler id="Handler_2098fe98e6c54507bc1388c4e28e6f81">
+            <realisation>
+              <try>
+                <action id="Action_259b6acad86643a89236d474ed579406">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                    <term xsi:type="diag:GetComChannel">
+                      <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                      <diag:performVariantSelection xsi:type="BooleanLiteral" value="false" />
+                    </term>
+                  </realisation>
+                </action>
+                <action id="Action_348afd3c24494607942b56bab7d865b3">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
+                    <term xsi:type="diag:CreateDiagServiceByName">
+                      <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                      <diag:name xsi:type="StringLiteral" value="DiagnServi_WriteDataByIdentCalibData" />
+                    </term>
+                  </realisation>
+                </action>
+                <action id="Action_f23ab70063444046b6d205d0218cb8a1">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="diag:RequestVariable" name="Request1" />
+                    <term xsi:type="diag:GetRequest">
+                      <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+                    </term>
+                  </realisation>
+                </action>
+                <action id="Action_346cc6f7b1c8440b8cb9c0435b5dd43e">
+                  <realisation xsi:type="Assignment">
+                    <result xsi:type="StringVariable" name="String1" />
+                    <term xsi:type="diag:GetParameterSemantic">
+                      <diag:parameter xsi:type="diag:GetParameterByPath">
+                        <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                        <diag:path>
+                          <stepByName xsi:type="StringLiteral" value="Param_RecorDataIdent" />
+                        </diag:path>
+                      </diag:parameter>
+                    </term>
+                  </realisation>
+                </action>
+                <action id="Action_0701f0c528634c24bae914da2b3528b5">
+                  <realisation xsi:type="diag:SetParameterValueBySemantic">
+                    <diag:parameterContainer xsi:type="diag:GetRequest">
+                      <diag:diagService xsi:type="diag:DiagServiceValue" valueOf="DiagService1" />
+                    </diag:parameterContainer>
+                    <diag:semantic xsi:type="StringValue" valueOf="String1" />
+                    <diag:value xsi:type="StringLiteral" value="Hysteresis_voltage" />
+                  </realisation>
+                </action>
+                <group id="Group_edbe60aeabda4a51991392da84fbd3d2">
+                  <specification>Get parameter</specification>
+                  <realisation>
+                    <action id="Action_8e68698cfe2b4782b04a0c0f21f0ecc3">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="diag:ParameterVariable" name="Param_VoltaEleva" />
+                        <term xsi:type="diag:GetParameterByPath">
+                          <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                          <diag:path>
+                            <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                            <stepByName xsi:type="StringLiteral" value="Param_VoltaEleva" />
+                          </diag:path>
+                        </term>
+                      </realisation>
+                    </action>
+                    <action id="Action_2f70037b275e4850b02623d36c743287">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="diag:ParameterVariable" name="Param_VoltaLower" />
+                        <term xsi:type="diag:GetParameterByPath">
+                          <diag:parameterContainer xsi:type="diag:RequestValue" valueOf="Request1" />
+                          <diag:path>
+                            <stepByName xsi:type="StringLiteral" value="Param_DataRecor" />
+                            <stepByName xsi:type="StringLiteral" value="Param_VoltaLower" />
+                          </diag:path>
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </group>
+                <group id="Group_0e4faa48efc745ffa83fec9482131991">
+                  <specification>Get the initial parameter value</specification>
+                  <realisation>
+                    <action id="Action_37870726e81e482a8c032a5968341e17">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="quant:QuantityVariable" name="Quantity_Vol_Before" />
+                        <term xsi:type="diag:GetParameterValueAsQuantity">
+                          <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaEleva" />
+                        </term>
+                      </realisation>
+                    </action>
+                    <action id="Action_97dbe20fe3b8457aa36b97de17c60d9b">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="quant:QuantityVariable" name="Quantity_Amper_Before" />
+                        <term xsi:type="diag:GetParameterValueAsQuantity">
+                          <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaLower" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </group>
+                <group id="Group_7a165b838bda4e24a74c4682b4be3ec9">
+                  <specification>Initial the quantity value to set parameters</specification>
+                  <realisation>
+                    <action id="Action_50746168f9f74f70898c5552efdd161f">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="quant:QuantityVariable" name="Quantity_Vol_New" />
+                        <term xsi:type="quant:CreateQuantity">
+                          <quant:numeral xsi:type="IntegerLiteral" value="15" />
+                          <quant:displayUnit xsi:type="quant:UnitLiteral">
+                            <quant:value p23:type="simple" p23:href="ODX_RS_UNIT_LIB.odx#Volt" xmlns:p23="http://www.w3.org/1999/xlink" />
+                          </quant:displayUnit>
+                        </term>
+                      </realisation>
+                    </action>
+                    <action id="Action_e7cfd93135874437a8e94ee7c83fa64d">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="quant:QuantityVariable" name="Quantity_Amper_New" />
+                        <term xsi:type="quant:CreateQuantity">
+                          <quant:numeral xsi:type="IntegerLiteral" value="15" />
+                          <quant:displayUnit xsi:type="quant:UnitLiteral">
+                            <quant:value p23:type="simple" p23:href="ODX_RS_UNIT_LIB.odx#Volt" xmlns:p23="http://www.w3.org/1999/xlink" />
+                          </quant:displayUnit>
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </group>
+                <group id="Group_c07904a15f594d1f924353bafd8ae9e1">
+                  <specification>Set new value to parameter</specification>
+                  <realisation>
+                    <action id="Action_5cf877d3668c472baaf444bf94863082">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="StringVariable" name="String2" />
+                        <term xsi:type="StringLiteral" value="VALUE" />
+                      </realisation>
+                    </action>
+                    <action id="Action_858614a3a0724f029d98be7c10c157bb">
+                      <realisation xsi:type="diag:SetParameterValueBySemantic">
+                        <diag:parameterContainer xsi:type="diag:ParameterValue" valueOf="Param_VoltaEleva" />
+                        <diag:semantic xsi:type="StringValue" valueOf="String2" />
+                        <diag:value xsi:type="quant:QuantityValue" valueOf="Quantity_Vol_New" />
+                      </realisation>
+                    </action>
+                    <action id="Action_b9fe262c1cfc4d7e91a107476df23f79">
+                      <realisation xsi:type="diag:SetParameterValueBySemantic">
+                        <diag:parameterContainer xsi:type="diag:ParameterValue" valueOf="Param_VoltaLower" />
+                        <diag:semantic xsi:type="StringValue" valueOf="String2" />
+                        <diag:value xsi:type="quant:QuantityValue" valueOf="Quantity_Amper_New" />
+                      </realisation>
+                    </action>
+                  </realisation>
+                </group>
+                <group id="Group_84f24224cf59446d8667b66075497838">
+                  <specification>Get the parameter value after setted</specification>
+                  <realisation>
+                    <action id="Action_b994bdc51e6747fb8ed612de7e13a9d6">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="quant:QuantityVariable" name="Quantity_Vol_After" />
+                        <term xsi:type="diag:GetParameterValueAsQuantity">
+                          <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaEleva" />
+                        </term>
+                      </realisation>
+                    </action>
+                    <action id="Action_59199e329ff446eab7fdbb4ef62c7c3c">
+                      <realisation xsi:type="hmi:ConfirmDialog">
+                        <hmi:message xsi:type="StringLiteral" value="12V" />
+                      </realisation>
+                    </action>
+                    <action id="Action_0d0385985231412a9f4e84770d2ba2b1">
+                      <realisation xsi:type="Assignment">
+                        <result xsi:type="quant:QuantityVariable" name="Quantity_Amper_After" />
+                        <term xsi:type="diag:GetParameterValueAsQuantity">
+                          <diag:parameter xsi:type="diag:ParameterValue" valueOf="Param_VoltaLower" />
+                        </term>
+                      </realisation>
+                    </action>
+                  </realisation>
+                </group>
+              </try>
+              <catch>
+                <exception id="CatchHeader_4aafde8309cb42a682987bedea7a8c61">
+                  <realisation>
+                    <type />
+                    <handle name="Exception1" />
+                  </realisation>
+                </exception>
+                <flow />
+              </catch>
+              <finally>
+                <action id="Action_f00e6c6269ce4d17a88f05510039f10d">
+                  <realisation xsi:type="diag:CloseComChannel">
+                    <diag:comChannel name="ComChannel1" />
+                  </realisation>
+                </action>
+              </finally>
+            </realisation>
+          </handler>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

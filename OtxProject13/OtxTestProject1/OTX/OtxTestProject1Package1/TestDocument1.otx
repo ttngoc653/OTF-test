@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:unittest="http://emotive.de/OTX/1.0.0/UnitTest" xmlns:util="http://iso.org/OTX/1.0.0/Util" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="TestDocument1" id="id_c96495c9e2d042f3b73a40fe80da4878" package="OtxTestProject1Package1" version="1.0.0.0" timestamp="2022-10-19T16:28:55.047+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.99.0.46390</data>
+  </metaData>
+  <extendedElement xsi:type="unittest:TestProcedures">
+    <unittest:testProcedure name="TestProcedure1" id="id_cc3b23a3945c4bbcae3e10bb895f1e7b">
+      <unittest:realisation>
+        <unittest:testCases>
+          <unittest:testCase id="TestCase_5082867880fd41a8819ac211e76093b2">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="1" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="7" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_750a4ecf0c744381bcc2e98459bdb129">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="2" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="8" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_5e6d9d9a0ae3419cb4b3e092a09f82a5">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="3" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="9" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_2514d1083a4a4b30915444bbaa730321">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="0" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="4" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_048a07e070ec43248e56d46617a992e7">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="1" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="5" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_ca089c982ff2435ebd03321e84463148">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="2" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="6" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_f89978089e0a49008bf778481d8a4639">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="3" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="7" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_3082e48685f14461ace923db69b577c1">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="4" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="8" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_92a23c8b67d5462a9b5cad466afe2991">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="5" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="9" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+          <unittest:testCase id="TestCase_4465fed842174efb85ef6108eb0c79fa">
+            <unittest:expectedResults>
+              <unittest:expectedResult param="OutParameterDeclaration1">
+                <unittest:valueSource>
+                  <unittest:range>
+                    <unittest:minValue xsi:type="IntegerLiteral" value="0" />
+                    <unittest:maxValue xsi:type="IntegerLiteral" value="6" />
+                    <unittest:step xsi:type="IntegerLiteral" value="2" />
+                  </unittest:range>
+                </unittest:valueSource>
+              </unittest:expectedResult>
+            </unittest:expectedResults>
+          </unittest:testCase>
+        </unittest:testCases>
+        <unittest:parameters>
+          <unittest:outParam name="OutParameterDeclaration1" id="OutParameterDeclaration_7d711c149d2745cc88a0f16cbe400444">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </unittest:outParam>
+        </unittest:parameters>
+        <unittest:declarations>
+          <variable name="Float1" id="VariableDeclaration_d1df3915a2cb4853b422500f86c1798c">
+            <realisation>
+              <dataType xsi:type="Float" />
+            </realisation>
+          </variable>
+          <variable name="RecordDataIdentifier1" id="VariableDeclaration_cc3544f204f24172bdbb94b0fccf5232">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ResponseCode1" id="VariableDeclaration_c58440b0b37945e58accb79054ee8cd3">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </unittest:declarations>
+        <unittest:flow>
+          <action id="Action_3024966be2b847ca9d29c4fa282230d4">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="FloatVariable" name="Float1" />
+              <term xsi:type="util:GetRandomNumber" />
+            </realisation>
+          </action>
+          <action id="Action_3f7f6051f82d4f8f8ea51d6486c1e400">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="IntegerVariable" name="OutParameterDeclaration1" />
+              <term xsi:type="ToInteger">
+                <term xsi:type="Multiply">
+                  <numeral xsi:type="FloatValue" valueOf="Float1" />
+                  <numeral xsi:type="IntegerLiteral" value="10" />
+                </term>
+              </term>
+            </realisation>
+          </action>
+          <action name="TABROW_AdjusModeTimeSlotAdap_aContr_Write1" id="ExecuteDiagService_639288bb0d724e61b9b10213f7098f61">
+            <realisation xsi:type="diag:ExecuteDiagService">
+              <diag:diagService xsi:type="diag:CreateDiagServiceByName">
+                <diag:comChannel xsi:type="diag:GetComChannel">
+                  <diag:identifier xsi:type="StringLiteral" value="LL_AdaptCruisContrUDS" />
+                  <diag:performVariantSelection xsi:type="BooleanLiteral" value="true" />
+                </diag:comChannel>
+                <diag:name xsi:type="StringLiteral" value="TABROW_AdjusModeTimeSlotAdaptDistaContr_Write" />
+              </diag:diagService>
+            </realisation>
+          </action>
+        </unittest:flow>
+      </unittest:realisation>
+    </unittest:testProcedure>
+  </extendedElement>
+</otx>
