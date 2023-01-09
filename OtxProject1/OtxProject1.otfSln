@@ -6,6 +6,9 @@
     <MvciServer />
   </Config>
   <DiagCom>
+    <DbConfig ConfigType="MVCIServer" ProjectName="DVRTest_024_001" VehicleInfo="VINFO_DVRTest">
+      <Property Name="doip" Value="False" />
+    </DbConfig>
     <ECUMappings />
   </DiagCom>
 </Solution>
