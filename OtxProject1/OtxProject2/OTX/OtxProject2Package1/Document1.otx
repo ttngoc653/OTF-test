@@ -15,12 +15,25 @@
               </dataType>
             </realisation>
           </variable>
+          <variable name="a_zzz" id="VariableDeclaration_4625eaf0d80c440e9e547da6c6193cfb">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="b_zzz" />
+              </dataType>
+            </realisation>
+          </variable>
         </declarations>
         <flow>
           <action name="zzz_c" id="Assignment_6270450233514506aca526e331130642">
             <realisation xsi:type="Assignment">
               <result xsi:type="StringVariable" name="zzz_a" />
               <term xsi:type="StringLiteral" value="zzz_d" />
+            </realisation>
+          </action>
+          <action name="c_zzz" id="Assignment_217eeba01a454cc6b2e3f13bbbdf6a1d">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="a_zzz" />
+              <term xsi:type="StringLiteral" value="d_zzz" />
             </realisation>
           </action>
         </flow>
