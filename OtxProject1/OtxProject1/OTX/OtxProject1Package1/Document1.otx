@@ -18,22 +18,49 @@
               <dataType xsi:type="diag:DiagService" />
             </realisation>
           </variable>
+          <variable name="IdentifierName" id="VariableDeclaration_30cffb4434b54b3096150ddbcb9bd688">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="GetComChannel_EcuVariantName" id="VariableDeclaration_7a794214824048b184c28a19e8afd8ce">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="PerformVariantSelection" id="VariableDeclaration_bfda321686684731987089a45f3782f5">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
+          <variable name="IsVariant_EcuVariantName" id="VariableDeclaration_ebe0caaa65b74ebaaa8cfff60b9ecd3a">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="result" id="VariableDeclaration_fe620083fca142a99118850085c91c14">
+            <realisation>
+              <dataType xsi:type="Boolean" />
+            </realisation>
+          </variable>
         </declarations>
         <flow>
           <action name="GetComChannel1" id="Action_35d7b04ec2d44b049d318f1f09edfd95">
             <realisation xsi:type="Assignment">
               <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
               <term xsi:type="diag:GetComChannel">
-                <diag:identifier xsi:type="StringLiteral" value="LL_GatewUDS" />
+                <diag:identifier xsi:type="StringValue" valueOf="IdentifierName" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="GetComChannel_EcuVariantName" />
+                <diag:performVariantSelection xsi:type="BooleanValue" valueOf="PerformVariantSelection" />
               </term>
             </realisation>
           </action>
-          <action name="CreateDiagServiceByName1" id="Action_d73ca819c6b14beba549dcf521e8ca6f">
+          <action name="IsVariant1" id="Action_10a710b8bb504ca987ce9d008238ef08">
             <realisation xsi:type="Assignment">
-              <result xsi:type="diag:DiagServiceVariable" name="DiagService1" />
-              <term xsi:type="diag:CreateDiagServiceByName">
+              <result xsi:type="BooleanVariable" name="result" />
+              <term xsi:type="diag:IsVariant">
                 <diag:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
-                <diag:name xsi:type="StringLiteral" value="DiagnServi_ReadDataByIdentASAMODXFileIdent" />
+                <diag:ecuVariantName xsi:type="StringValue" valueOf="IsVariant_EcuVariantName" />
               </term>
             </realisation>
           </action>
