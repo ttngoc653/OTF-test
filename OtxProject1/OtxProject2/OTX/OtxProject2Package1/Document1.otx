@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="id_27acb15ed88d4b0e94025d40df530759" name="Document1" package="OtxProject2Package1" version="1.0.0.0" timestamp="2023-01-09T10:55:20.5079908+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.99.0.46834</data>
+  </metaData>
+  <procedures>
+    <procedure id="id_717187ba5ab14bf1838523b1567aa42c" name="main" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="zzz_a" id="VariableDeclaration_31da3b4c729145ccb3f256c8291bbdb4">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="zzz_b" />
+              </dataType>
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action name="Assignment1" id="Assignment_6270450233514506aca526e331130642">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="zzz_a" />
+              <term xsi:type="StringLiteral" value="zzz_d" />
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>
