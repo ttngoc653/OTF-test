@@ -1,0 +1,1014 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otx xmlns="http://iso.org/OTX/1.0.0" xmlns:diag="http://iso.org/OTX/1.0.0/DiagCom" xmlns:string="http://iso.org/OTX/1.0.0/StringUtil" xmlns:diagDataPlus="http://iso.org/OTX/1.0.0/DiagDataBrowsingPlus" xmlns:diagConf="http://iso.org/OTX/1.0.0/DiagConfiguration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:file="http://iso.org/OTX/1.0.0/File" xmlns:data="http://iso.org/OTX/1.0.0/DiagDataBrowsing" xmlns:ecuConf="http://iso.org/OTX/1.0.0/EcuConfiguration" name="Document1" id="id_eb5db8f901ab4966a084623784bfb741" package="pendingEcuConfigurationPackage1" version="1.0.0.0" timestamp="2022-08-05T17:10:00.864+07:00">
+  <metaData>
+    <data key="MadeWith">Created by emotive Open Test Framework - www.emotive.de</data>
+    <data key="OtfVersion">6.99.0.46854</data>
+  </metaData>
+  <procedures>
+    <procedure name="main" id="Procedure_5ea5fcd871e1465caf46f71b507c742f" visibility="PUBLIC">
+      <realisation>
+        <declarations>
+          <variable name="Int1" id="VariableDeclaration_e6687a525a1544d6a8a41d110091c952">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Int2" id="VariableDeclaration_b34547acd12f4c30b467cd69c60dc06a">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Int3" id="VariableDeclaration_d718a28205a2488dad3b57264313796e">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="Int4" id="VariableDeclaration_15220ecc4b2942739a0e8ac7bfe169bc">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_487f5e80f31b4ef9b4adcbf104c8c04c">
+            <realisation xsi:type="ProcedureCall" procedure="callee">
+              <arguments>
+                <inoutArg param="IndexIdentifier">
+                  <variable xsi:type="IntegerVariable" name="Int1" />
+                </inoutArg>
+                <inoutArg param="IndexEcuVariant">
+                  <variable xsi:type="IntegerVariable" name="Int2" />
+                </inoutArg>
+                <inoutArg param="IndexConfigurationRecord">
+                  <variable xsi:type="IntegerVariable" name="Int3" />
+                </inoutArg>
+                <inoutArg param="IndexOptionItem">
+                  <variable xsi:type="IntegerVariable" name="Int4" />
+                </inoutArg>
+              </arguments>
+            </realisation>
+          </action>
+        </flow>
+      </realisation>
+    </procedure>
+    <procedure name="callee" id="Procedure_8e9c7207ffc14619893ee2b47200c7d1" visibility="PUBLIC">
+      <realisation>
+        <parameters>
+          <inoutParam name="IndexIdentifier" id="InOutParameterDeclaration_6cf057c1526d46d9b6ee293b9df8ea6d">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inoutParam>
+          <inoutParam name="IndexEcuVariant" id="InOutParameterDeclaration_1b2cab7d61a34413a820eeacb721bd49">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inoutParam>
+          <inoutParam name="IndexConfigurationRecord" id="InOutParameterDeclaration_51166d647b66408ba95436e680c66844">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inoutParam>
+          <inoutParam name="IndexOptionItem" id="InOutParameterDeclaration_19c0c999f1ee42afba1f9fcd40611344">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </inoutParam>
+        </parameters>
+        <declarations>
+          <variable name="ListIdentifier" id="VariableDeclaration_c4ebdfd3d3434372839e2ff1ce5436fc">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ComChannel1" id="VariableDeclaration_e3e79b3917b44e02a233d3ff4fd68e55">
+            <realisation>
+              <dataType xsi:type="diag:ComChannel" />
+            </realisation>
+          </variable>
+          <variable name="ListEcuVariant" id="VariableDeclaration_80916cc0912c4b589fc9f9b1eec23b54">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="String" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="String1" id="VariableDeclaration_fe0005cf516b4d808aa9ffc906a0accb">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+          <variable name="Exception1" id="VariableDeclaration_6fded4ae8aa8476183f78699631074c3">
+            <realisation>
+              <dataType xsi:type="Exception" />
+            </realisation>
+          </variable>
+          <variable name="ListConfigurationRecord" id="VariableDeclaration_1d0e6208b47341e2a1c507543e6035b7">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ecuConf:ConfigurationRecord" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="ConfigurationRecord1" id="VariableDeclaration_1d0c167e47bc4766a6d795c8f54432d3">
+            <realisation>
+              <dataType xsi:type="ecuConf:ConfigurationRecord" />
+            </realisation>
+          </variable>
+          <variable name="ListOptionItem" id="VariableDeclaration_0dfe1a201b2d47c6ba84301b355933ea">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ecuConf:OptionItem" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="OptionItem1" id="VariableDeclaration_7194de315a99408ea66e1b8963adb7df">
+            <realisation>
+              <dataType xsi:type="ecuConf:OptionItem" />
+            </realisation>
+          </variable>
+          <variable name="ListDbConfigurationData" id="VariableDeclaration_fedb458805474e228d318c1917aaadb8">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ecuConf:DbConfigurationData" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="IndexDbConfigurationData" id="VariableDeclaration_82bd34a64fb0474e8efa4bb28fd073eb">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="ListDbConfigurationRecord" id="VariableDeclaration_2004aef9d55d4f4f8b997f8302dbeb9a">
+            <realisation>
+              <dataType xsi:type="List">
+                <itemType xsi:type="ecuConf:DbConfigurationRecord" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="IndexDbConfigurationRecord" id="VariableDeclaration_227e01967a1948aa8b6cd070f9d8255f">
+            <realisation>
+              <dataType xsi:type="Integer" />
+            </realisation>
+          </variable>
+          <variable name="StringFolderName" id="VariableDeclaration_2857649003e040b6b249c0f9afd5ff71">
+            <realisation>
+              <dataType xsi:type="String">
+                <init value="D:/" />
+              </dataType>
+            </realisation>
+          </variable>
+          <variable name="FileWriteHandle1" id="VariableDeclaration_659970ac1f444e1eaa319c158396134b">
+            <realisation>
+              <dataType xsi:type="file:FileWriteHandle" />
+            </realisation>
+          </variable>
+          <variable name="DbItemValue1" id="VariableDeclaration_734faa4f02704f07acfff6774cf5b7c5">
+            <realisation>
+              <dataType xsi:type="ecuConf:DbItemValue" />
+            </realisation>
+          </variable>
+          <variable name="ODX_Current" id="VariableDeclaration_21c2c85d968147719d4fe24d9722b348">
+            <realisation>
+              <dataType xsi:type="String" />
+            </realisation>
+          </variable>
+        </declarations>
+        <flow>
+          <action id="Action_8d705f54da534d23b59184f9d9cdaf77">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="ODX_Current" />
+              <term xsi:type="string:StringConcatenate">
+                <string:string xsi:type="diagConf:GetActiveProject" />
+                <string:string xsi:type="StringLiteral" value="/" />
+                <string:string xsi:type="diagConf:GetActiveVehicleInformation" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_8d7ac101f05543d6948fa94681eecf8e">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="StringVariable" name="StringFolderName" />
+              <term xsi:type="string:StringConcatenate">
+                <string:string xsi:type="StringValue" valueOf="StringFolderName" />
+                <string:string xsi:type="StringLiteral" value="/" />
+                <string:string xsi:type="StringValue" valueOf="ODX_Current" />
+                <string:string xsi:type="StringLiteral" value="/" />
+              </term>
+            </realisation>
+          </action>
+          <action id="Action_e7a0fd5dd7b04b09b50a881bcc32d856">
+            <realisation xsi:type="Assignment">
+              <result xsi:type="ListVariable" name="ListIdentifier" />
+              <term xsi:type="data:GetComChannelList" />
+            </realisation>
+          </action>
+          <loop name="ForEachLoop1" id="Loop_a1926c6024704360b4ba1ea953a367e0">
+            <realisation>
+              <configuration id="LoopConfigurationHeader_ffa0da8e6fdd4ec4b00e8e01aea19576">
+                <realisation xsi:type="ForEachLoop">
+                  <locator xsi:type="IntegerVariable" name="IndexIdentifier" />
+                  <collection xsi:type="ListValue" valueOf="ListIdentifier" />
+                </realisation>
+              </configuration>
+              <flow>
+                <action id="Action_fa885d279745423f9cb64ddddbd2f688">
+                  <realisation xsi:type="ListClear">
+                    <list name="ListEcuVariant" />
+                  </realisation>
+                </action>
+                <handler id="Handler_ce2deb704b2d46aba5415a5419067407">
+                  <realisation>
+                    <try>
+                      <action id="Action_c74daa0954304976971c6f03aa48f008">
+                        <realisation xsi:type="Assignment">
+                          <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                          <term xsi:type="diag:GetComChannel">
+                            <diag:identifier xsi:type="StringValue" valueOf="ListIdentifier">
+                              <path>
+                                <stepByIndex xsi:type="IntegerValue" valueOf="IndexIdentifier" />
+                              </path>
+                            </diag:identifier>
+                          </term>
+                        </realisation>
+                      </action>
+                      <action id="Action_f90c3a4b13114672b8576992df8f95fb">
+                        <realisation xsi:type="Assignment">
+                          <result xsi:type="ListVariable" name="ListEcuVariant" />
+                          <term xsi:type="data:GetEcuVariantList">
+                            <data:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                          </term>
+                        </realisation>
+                      </action>
+                      <action id="Action_24243f4e5e5743aca3547234df76e3d9">
+                        <realisation xsi:type="diag:CloseComChannel">
+                          <diag:comChannel name="ComChannel1" />
+                        </realisation>
+                      </action>
+                    </try>
+                    <catch>
+                      <exception id="CatchHeader_cdcee34a33fc4d4cb5420522185c9a47">
+                        <realisation>
+                          <type />
+                          <handle name="Exception1" />
+                        </realisation>
+                      </exception>
+                      <flow>
+                        <action id="Action_07ff9d052770442da4dcefed32b6dfa3">
+                          <realisation xsi:type="diag:CloseComChannel">
+                            <diag:comChannel name="ComChannel1" />
+                          </realisation>
+                        </action>
+                        <continue id="Continue_4442f1c9c2a94225bd7893461a89639c" target="ForEachLoop1" />
+                      </flow>
+                    </catch>
+                  </realisation>
+                </handler>
+                <branch id="Branch_d253edede9a34ae784b1aa5e910cbb86">
+                  <realisation>
+                    <if>
+                      <condition id="ConditionHeader_4ee5cd50d2ad4477a899d131a4cdf25c">
+                        <realisation xsi:type="IsGreater">
+                          <left xsi:type="ListGetLength">
+                            <list xsi:type="ListValue" valueOf="ListEcuVariant" />
+                          </left>
+                          <right xsi:type="IntegerLiteral" value="0" />
+                        </realisation>
+                      </condition>
+                      <flow>
+                        <action id="Action_dfe74dec4a104a71aea0f34427813c38">
+                          <realisation xsi:type="ListInsertItems">
+                            <list name="ListEcuVariant" />
+                            <index xsi:type="IntegerLiteral" value="0" />
+                            <item xsi:type="StringLiteral" value="" />
+                          </realisation>
+                        </action>
+                      </flow>
+                    </if>
+                    <else>
+                      <action id="Action_c37ccf68f43c492095e955f98c37242f">
+                        <realisation xsi:type="ListAppendItems">
+                          <list name="ListEcuVariant" />
+                          <item xsi:type="StringLiteral" value="" />
+                        </realisation>
+                      </action>
+                    </else>
+                  </realisation>
+                </branch>
+                <loop name="ForEachLoop2" id="Loop_1987f9b5b10f4f48bde616d6b9207394">
+                  <realisation>
+                    <configuration id="LoopConfigurationHeader_8cb7d3c20d0f46d895ba6862f6627a9b">
+                      <realisation xsi:type="ForEachLoop">
+                        <locator xsi:type="IntegerVariable" name="IndexEcuVariant" />
+                        <collection xsi:type="ListValue" valueOf="ListEcuVariant" />
+                      </realisation>
+                    </configuration>
+                    <flow>
+                      <branch id="Branch_ba37235fca7b415196e6357501ccf02a">
+                        <realisation>
+                          <if>
+                            <condition id="ConditionHeader_1ea228fbd4eb4193be585e41bc158602">
+                              <realisation xsi:type="IsEqual">
+                                <term xsi:type="StringValue" valueOf="ListEcuVariant">
+                                  <path>
+                                    <stepByIndex xsi:type="IntegerValue" valueOf="IndexEcuVariant" />
+                                  </path>
+                                </term>
+                                <term xsi:type="StringLiteral" value="" />
+                              </realisation>
+                            </condition>
+                            <flow>
+                              <action id="Action_6edf24036024415187f14e482f99a455">
+                                <realisation xsi:type="Assignment">
+                                  <result xsi:type="file:FileWriteHandleVariable" name="FileWriteHandle1" />
+                                  <term xsi:type="file:OpenFileForWrite">
+                                    <file:path xsi:type="string:StringConcatenate">
+                                      <string:string xsi:type="StringValue" valueOf="StringFolderName" />
+                                      <string:string xsi:type="StringValue" valueOf="ListIdentifier">
+                                        <path>
+                                          <stepByIndex xsi:type="IntegerValue" valueOf="IndexIdentifier" />
+                                        </path>
+                                      </string:string>
+                                      <string:string xsi:type="StringLiteral" value=".txt" />
+                                    </file:path>
+                                    <file:append xsi:type="BooleanLiteral" value="false" />
+                                  </term>
+                                </realisation>
+                              </action>
+                            </flow>
+                          </if>
+                          <else>
+                            <action id="Action_11b0169edf584089b42db156fcb5dcf5">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="file:FileWriteHandleVariable" name="FileWriteHandle1" />
+                                <term xsi:type="file:OpenFileForWrite">
+                                  <file:path xsi:type="string:StringConcatenate">
+                                    <string:string xsi:type="StringValue" valueOf="StringFolderName" />
+                                    <string:string xsi:type="StringValue" valueOf="ListIdentifier">
+                                      <path>
+                                        <stepByIndex xsi:type="IntegerValue" valueOf="IndexIdentifier" />
+                                      </path>
+                                    </string:string>
+                                    <string:string xsi:type="StringLiteral" value="/" />
+                                    <string:string xsi:type="StringValue" valueOf="ListEcuVariant">
+                                      <path>
+                                        <stepByIndex xsi:type="IntegerValue" valueOf="IndexEcuVariant" />
+                                      </path>
+                                    </string:string>
+                                    <string:string xsi:type="StringLiteral" value=".txt" />
+                                  </file:path>
+                                  <file:append xsi:type="BooleanLiteral" value="false" />
+                                </term>
+                              </realisation>
+                            </action>
+                          </else>
+                        </realisation>
+                      </branch>
+                      <action id="Action_d16b72a6400147379677d1d0a7a75989">
+                        <realisation xsi:type="ListClear">
+                          <list name="ListConfigurationRecord" />
+                        </realisation>
+                      </action>
+                      <handler id="Handler_a9c1c4c2fd1f4f798a05007adc3533bd">
+                        <realisation>
+                          <try>
+                            <action id="Action_c40a97e0b199470b90e8543a4c906ec4">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="diag:ComChannelVariable" name="ComChannel1" />
+                                <term xsi:type="diag:GetComChannel">
+                                  <diag:identifier xsi:type="StringValue" valueOf="ListIdentifier">
+                                    <path>
+                                      <stepByIndex xsi:type="IntegerValue" valueOf="IndexIdentifier" />
+                                    </path>
+                                  </diag:identifier>
+                                  <diag:ecuVariantName xsi:type="StringValue" valueOf="ListEcuVariant">
+                                    <path>
+                                      <stepByIndex xsi:type="IntegerValue" valueOf="IndexEcuVariant" />
+                                    </path>
+                                  </diag:ecuVariantName>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_21b7faa0335e4f44986382a75e726809">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="ListVariable" name="ListDbConfigurationData" />
+                                <term xsi:type="ecuConf:GetDbComChannelDbConfigurationDatas">
+                                  <ecuConf:dbComChannel xsi:type="diagDataPlus:GetComChannelDbComChannel">
+                                    <diagDataPlus:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                                  </ecuConf:dbComChannel>
+                                </term>
+                              </realisation>
+                            </action>
+                            <loop name="ForEachLoop4" id="Loop_0475d461cefc4f5d9c072bc962a62b44">
+                              <realisation>
+                                <configuration id="LoopConfigurationHeader_2552bb5fa1c8406697022d5b5327c14f">
+                                  <realisation xsi:type="ForEachLoop">
+                                    <locator xsi:type="IntegerVariable" name="IndexDbConfigurationData" />
+                                    <collection xsi:type="ListValue" valueOf="ListDbConfigurationData" />
+                                  </realisation>
+                                </configuration>
+                                <flow>
+                                  <action id="Action_88c0e35a4c444039a1cc06b8ef2e54f2">
+                                    <realisation xsi:type="Assignment">
+                                      <result xsi:type="ListVariable" name="ListDbConfigurationRecord" />
+                                      <term xsi:type="ecuConf:GetDbConfigurationDataDbConfigurationRecords">
+                                        <ecuConf:dbConfigurationData xsi:type="ecuConf:DbConfigurationDataValue" valueOf="ListDbConfigurationData">
+                                          <ecuConf:path>
+                                            <stepByIndex xsi:type="IntegerValue" valueOf="IndexDbConfigurationData" />
+                                          </ecuConf:path>
+                                        </ecuConf:dbConfigurationData>
+                                      </term>
+                                    </realisation>
+                                  </action>
+                                  <loop name="ForEachLoop5" id="Loop_4d6cf4a808124b49a396b8721f0150cf">
+                                    <realisation>
+                                      <configuration id="LoopConfigurationHeader_4bca0970b5314a92b6db842bd2c3286f">
+                                        <realisation xsi:type="ForEachLoop">
+                                          <locator xsi:type="IntegerVariable" name="IndexDbConfigurationRecord" />
+                                          <collection xsi:type="ListValue" valueOf="ListDbConfigurationRecord" />
+                                        </realisation>
+                                      </configuration>
+                                      <flow>
+                                        <action id="Action_0b184c1c62604f91aea67cb357cee987">
+                                          <realisation xsi:type="ecuConf:AddComchannelConfigurationRecordByDbObject">
+                                            <ecuConf:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                                            <ecuConf:dbConfigurationRecord xsi:type="ecuConf:DbConfigurationRecordValue" valueOf="ListDbConfigurationRecord">
+                                              <ecuConf:path>
+                                                <stepByIndex xsi:type="IntegerValue" valueOf="IndexDbConfigurationRecord" />
+                                              </ecuConf:path>
+                                            </ecuConf:dbConfigurationRecord>
+                                            <ecuConf:configurationRecord name="ConfigurationRecord1" />
+                                          </realisation>
+                                        </action>
+                                      </flow>
+                                    </realisation>
+                                  </loop>
+                                </flow>
+                              </realisation>
+                            </loop>
+                            <action id="Action_5cb169a5c4774df2b8008d252d53107c">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="ListVariable" name="ListConfigurationRecord" />
+                                <term xsi:type="ecuConf:GetComchannelConfigurationRecords">
+                                  <ecuConf:comChannel xsi:type="diag:ComChannelValue" valueOf="ComChannel1" />
+                                </term>
+                              </realisation>
+                            </action>
+                          </try>
+                          <catch>
+                            <exception id="CatchHeader_d11da238687a4560a8b88d10a8f2a2f0">
+                              <realisation>
+                                <type />
+                                <handle name="Exception1" />
+                              </realisation>
+                            </exception>
+                            <flow>
+                              <action id="Action_d3911af3642d4e9abdcc429491b5485d">
+                                <realisation xsi:type="diag:CloseComChannel">
+                                  <diag:comChannel name="ComChannel1" />
+                                </realisation>
+                              </action>
+                              <continue id="Continue_6f307974110843f49f094f0d598225ef" target="ForEachLoop2" />
+                            </flow>
+                          </catch>
+                        </realisation>
+                      </handler>
+                      <loop name="ForEachLoop3" id="Loop_8b0328dbc9a24bed8c1610308c30672e">
+                        <realisation>
+                          <configuration id="LoopConfigurationHeader_b0662d06b3444a53b282ecb752cfcc23">
+                            <realisation xsi:type="ForEachLoop">
+                              <locator xsi:type="IntegerVariable" name="IndexConfigurationRecord" />
+                              <collection xsi:type="ListValue" valueOf="ListConfigurationRecord" />
+                            </realisation>
+                          </configuration>
+                          <flow>
+                            <action id="Action_6eeaf559026b487b9398dea61db1bb52">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="ecuConf:ConfigurationRecordVariable" name="ConfigurationRecord1" />
+                                <term xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ListConfigurationRecord">
+                                  <ecuConf:path>
+                                    <stepByIndex xsi:type="IntegerValue" valueOf="IndexConfigurationRecord" />
+                                  </ecuConf:path>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_5e4b31509ee74b8cb84be240151d2bcf">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="StringVariable" name="String1" />
+                                <term xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringLiteral" value="\t\tConfigurationRecord: " />
+                                  <string:string xsi:type="ToString">
+                                    <term xsi:type="IntegerValue" valueOf="IndexConfigurationRecord" />
+                                  </string:string>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_fd48038749d74a02a8403f6382fe8912">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="StringVariable" name="String1" />
+                                <term xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="String1" />
+                                  <string:string xsi:type="StringLiteral" value=". " />
+                                  <string:string xsi:type="ToString">
+                                    <term xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ConfigurationRecord1" />
+                                  </string:string>
+                                </term>
+                              </realisation>
+                            </action>
+                            <handler id="Handler_40e85b45ada5428cadc4b64954e50b66">
+                              <realisation>
+                                <try>
+                                  <action id="Action_0b52d2b628134dd5b32a0b679e157aa7">
+                                    <realisation xsi:type="Assignment">
+                                      <result xsi:type="StringVariable" name="String1" />
+                                      <term xsi:type="string:StringConcatenate">
+                                        <string:string xsi:type="StringValue" valueOf="String1" />
+                                        <string:string xsi:type="StringLiteral" value=" - AsByteField: &amp;" />
+                                        <string:string xsi:type="string:Decode">
+                                          <string:encoding xsi:type="string:EncodingLiteral" value="HEX" />
+                                          <string:bytes xsi:type="ecuConf:GetConfigurationRecordAsByteField">
+                                            <ecuConf:configurationRecord xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ConfigurationRecord1" />
+                                          </string:bytes>
+                                        </string:string>
+                                      </term>
+                                    </realisation>
+                                  </action>
+                                </try>
+                                <catch>
+                                  <exception id="CatchHeader_4658b79b247e4eb498933d527300d405">
+                                    <realisation>
+                                      <type />
+                                      <handle name="Exception1" />
+                                    </realisation>
+                                  </exception>
+                                  <flow>
+                                    <action id="Action_bf937aa1f2554d9d8c2227307d97bd01">
+                                      <realisation xsi:type="Assignment">
+                                        <result xsi:type="StringVariable" name="String1" />
+                                        <term xsi:type="string:StringConcatenate">
+                                          <string:string xsi:type="StringValue" valueOf="String1" />
+                                          <string:string xsi:type="StringLiteral" value=" - AsByteField-Exception: " />
+                                          <string:string xsi:type="GetExceptionQualifier">
+                                            <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                                          </string:string>
+                                          <string:string xsi:type="StringLiteral" value=": " />
+                                          <string:string xsi:type="GetExceptionText">
+                                            <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                                          </string:string>
+                                        </term>
+                                      </realisation>
+                                    </action>
+                                  </flow>
+                                </catch>
+                              </realisation>
+                            </handler>
+                            <action id="Action_346f20fd69cf4e4daeabbf2791d16bf0">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="StringVariable" name="String1" />
+                                <term xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="String1" />
+                                  <string:string xsi:type="StringLiteral" value=" - Error: " />
+                                  <string:string xsi:type="ToString">
+                                    <term xsi:type="ecuConf:GetConfigurationRecordError">
+                                      <ecuConf:configurationRecord xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ConfigurationRecord1" />
+                                    </term>
+                                  </string:string>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_cbaa44c071e7496d9fb61431e8bc7e78">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="StringVariable" name="String1" />
+                                <term xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="String1" />
+                                  <string:string xsi:type="StringLiteral" value=" - MatchingFileNames: " />
+                                  <string:string xsi:type="ToString">
+                                    <term xsi:type="ecuConf:GetConfigurationRecordMatchingFileNames">
+                                      <ecuConf:configurationRecord xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ConfigurationRecord1" />
+                                    </term>
+                                  </string:string>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_d17426cec3944b4e88673f4068b333ea">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="ListVariable" name="ListOptionItem" />
+                                <term xsi:type="ecuConf:GetConfigurationRecordOptionItems">
+                                  <ecuConf:configurationRecord xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ConfigurationRecord1" />
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_98832b949a5d4bf8b0ae99a68352d996">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="StringVariable" name="String1" />
+                                <term xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="String1" />
+                                  <string:string xsi:type="StringLiteral" value=" - OptionItems-Length: " />
+                                  <string:string xsi:type="ToString">
+                                    <term xsi:type="ListGetLength">
+                                      <list xsi:type="ListValue" valueOf="ListOptionItem" />
+                                    </term>
+                                  </string:string>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_d38ae1a3110f49a9ad95df6c32e06838">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="StringVariable" name="String1" />
+                                <term xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="String1" />
+                                  <string:string xsi:type="StringLiteral" value=" - ReadDiagServices-Length: " />
+                                  <string:string xsi:type="ToString">
+                                    <term xsi:type="ListGetLength">
+                                      <list xsi:type="ecuConf:GetConfigurationRecordReadDiagServices">
+                                        <ecuConf:configurationRecord xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ConfigurationRecord1" />
+                                      </list>
+                                    </term>
+                                  </string:string>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_a82879c6ddf849528b9f42d0a77c5083">
+                              <realisation xsi:type="Assignment">
+                                <result xsi:type="StringVariable" name="String1" />
+                                <term xsi:type="string:StringConcatenate">
+                                  <string:string xsi:type="StringValue" valueOf="String1" />
+                                  <string:string xsi:type="StringLiteral" value=" - WriteConfigurationServices-Length: " />
+                                  <string:string xsi:type="ToString">
+                                    <term xsi:type="ListGetLength">
+                                      <list xsi:type="ecuConf:GetConfigurationRecordWriteConfigurationServices">
+                                        <ecuConf:configurationRecord xsi:type="ecuConf:ConfigurationRecordValue" valueOf="ConfigurationRecord1" />
+                                      </list>
+                                    </term>
+                                  </string:string>
+                                </term>
+                              </realisation>
+                            </action>
+                            <action id="Action_47327db711cb4bce8969c934268c870d">
+                              <realisation xsi:type="file:WriteLine">
+                                <file:handle xsi:type="file:FileWriteHandleValue" valueOf="FileWriteHandle1" />
+                                <file:value xsi:type="StringValue" valueOf="String1" />
+                              </realisation>
+                            </action>
+                            <loop name="ForEachLoop6" id="Loop_90b467c346ab41abaea1f8ccf4fcf57c">
+                              <realisation>
+                                <configuration id="LoopConfigurationHeader_eeb2b26978f64130b2b364a2abfb4558">
+                                  <realisation xsi:type="ForEachLoop">
+                                    <locator xsi:type="IntegerVariable" name="IndexOptionItem" />
+                                    <collection xsi:type="ListValue" valueOf="ListOptionItem" />
+                                  </realisation>
+                                </configuration>
+                                <flow>
+                                  <action id="Action_25c2705d9beb42aaa3c9838ecfed078c">
+                                    <realisation xsi:type="Assignment">
+                                      <result xsi:type="ecuConf:OptionItemVariable" name="OptionItem1" />
+                                      <term xsi:type="ecuConf:OptionItemValue" valueOf="ListOptionItem">
+                                        <ecuConf:path>
+                                          <stepByIndex xsi:type="IntegerValue" valueOf="IndexOptionItem" />
+                                        </ecuConf:path>
+                                      </term>
+                                    </realisation>
+                                  </action>
+                                  <action id="Action_eb30df5da71d411c9c7b27b8a5d6fa3d">
+                                    <realisation xsi:type="Assignment">
+                                      <result xsi:type="StringVariable" name="String1" />
+                                      <term xsi:type="string:StringConcatenate">
+                                        <string:string xsi:type="StringLiteral" value="\t\t\tOptionItem: " />
+                                        <string:string xsi:type="ToString">
+                                          <term xsi:type="IntegerValue" valueOf="IndexOptionItem" />
+                                        </string:string>
+                                      </term>
+                                    </realisation>
+                                  </action>
+                                  <action id="Action_5f5b4d61ff4145318b25cf658082f95e">
+                                    <realisation xsi:type="Assignment">
+                                      <result xsi:type="StringVariable" name="String1" />
+                                      <term xsi:type="string:StringConcatenate">
+                                        <string:string xsi:type="StringValue" valueOf="String1" />
+                                        <string:string xsi:type="StringLiteral" value=". " />
+                                        <string:string xsi:type="ToString">
+                                          <term xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                        </string:string>
+                                      </term>
+                                    </realisation>
+                                  </action>
+                                  <action id="Action_725b7befdcab4dd787be67894ce75271">
+                                    <realisation xsi:type="Assignment">
+                                      <result xsi:type="StringVariable" name="String1" />
+                                      <term xsi:type="string:StringConcatenate">
+                                        <string:string xsi:type="StringValue" valueOf="String1" />
+                                        <string:string xsi:type="StringLiteral" value=" - Name: " />
+                                        <string:string xsi:type="ecuConf:GetOptionItemName">
+                                          <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                        </string:string>
+                                      </term>
+                                    </realisation>
+                                  </action>
+                                  <action id="Action_3d278bfdc54a45d38e064e4e82a653fd">
+                                    <realisation xsi:type="Assignment">
+                                      <result xsi:type="StringVariable" name="String1" />
+                                      <term xsi:type="string:StringConcatenate">
+                                        <string:string xsi:type="StringValue" valueOf="String1" />
+                                        <string:string xsi:type="StringLiteral" value=" - Error: " />
+                                        <string:string xsi:type="ecuConf:GetOptionItemError">
+                                          <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                        </string:string>
+                                      </term>
+                                    </realisation>
+                                  </action>
+                                  <handler id="Handler_16781981ab664c5daa5264aa9d08a9e1">
+                                    <realisation>
+                                      <try>
+                                        <action id="Action_47929c3e13cc4b918bb1ede54b0ff147">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - ValueAsBoolean: " />
+                                              <string:string xsi:type="ToString">
+                                                <term xsi:type="ecuConf:GetOptionItemValueAsBoolean">
+                                                  <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                                </term>
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                      </try>
+                                      <catch>
+                                        <exception id="CatchHeader_9da3c985c6784b029eccc7b6af514ae4">
+                                          <realisation>
+                                            <type />
+                                          </realisation>
+                                        </exception>
+                                        <flow />
+                                      </catch>
+                                    </realisation>
+                                  </handler>
+                                  <handler id="Handler_2e2e26c7a570406faead750f8992de90">
+                                    <realisation>
+                                      <try>
+                                        <action id="Action_478d35dccb164bbdb297c5ce0f487bb3">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - ValueAsByteField: &amp;" />
+                                              <string:string xsi:type="string:Decode">
+                                                <string:encoding xsi:type="string:EncodingLiteral" value="HEX" />
+                                                <string:bytes xsi:type="ecuConf:GetOptionItemValueAsByteField">
+                                                  <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                                </string:bytes>
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                      </try>
+                                      <catch>
+                                        <exception id="CatchHeader_1df8ecc9cd3248d6b537755f3934526d">
+                                          <realisation>
+                                            <type />
+                                          </realisation>
+                                        </exception>
+                                        <flow />
+                                      </catch>
+                                    </realisation>
+                                  </handler>
+                                  <handler id="Handler_ced532d3d3594a53bd08c6c567bdcec6">
+                                    <realisation>
+                                      <try>
+                                        <action id="Action_e58f71b7c40b4ba6af2f667a380fc9a0">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - ValueAsFloat: " />
+                                              <string:string xsi:type="ToString">
+                                                <term xsi:type="ecuConf:GetOptionItemValueAsFloat">
+                                                  <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                                </term>
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                      </try>
+                                      <catch>
+                                        <exception id="CatchHeader_8269c47b405f447c86ead2c400718604">
+                                          <realisation>
+                                            <type />
+                                          </realisation>
+                                        </exception>
+                                        <flow />
+                                      </catch>
+                                    </realisation>
+                                  </handler>
+                                  <handler id="Handler_5a286adde109466ea5397ba8362b4ae5">
+                                    <realisation>
+                                      <try>
+                                        <action id="Action_b32d3df9e6c942e7aeb27e58b57661c5">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - ValueAsInteger: " />
+                                              <string:string xsi:type="ToString">
+                                                <term xsi:type="ecuConf:GetOptionItemValueAsInteger">
+                                                  <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                                </term>
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                      </try>
+                                      <catch>
+                                        <exception id="CatchHeader_6bf06d24d955420aac5b3f0c7c4eeb64">
+                                          <realisation>
+                                            <type />
+                                          </realisation>
+                                        </exception>
+                                        <flow />
+                                      </catch>
+                                    </realisation>
+                                  </handler>
+                                  <handler id="Handler_2086a46f64004d058a822634fd22a5be">
+                                    <realisation>
+                                      <try>
+                                        <action id="Action_a24c6fa41be24c509545e2feb1331c0d">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - ValueAsString: " />
+                                              <string:string xsi:type="ToString">
+                                                <term xsi:type="ecuConf:GetOptionItemValueAsString">
+                                                  <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                                </term>
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                      </try>
+                                      <catch>
+                                        <exception id="CatchHeader_17eed231aef14415a6521b730ced5add">
+                                          <realisation>
+                                            <type />
+                                          </realisation>
+                                        </exception>
+                                        <flow />
+                                      </catch>
+                                    </realisation>
+                                  </handler>
+                                  <action id="Action_97e67fd6368f4b5ba2897440e13748a1">
+                                    <realisation xsi:type="file:WriteLine">
+                                      <file:handle xsi:type="file:FileWriteHandleValue" valueOf="FileWriteHandle1" />
+                                      <file:value xsi:type="StringValue" valueOf="String1" />
+                                    </realisation>
+                                  </action>
+                                  <handler id="Handler_ee18f139a3554f23bf095917987589b2">
+                                    <realisation>
+                                      <try>
+                                        <action id="Action_fd1098a92632471f9a8cfb8f7825c492">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="ecuConf:DbItemValueVariable" name="DbItemValue1" />
+                                            <term xsi:type="ecuConf:GetOptionItemMatchingDbItemValue">
+                                              <ecuConf:optionItem xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                        <action id="Action_bf66e3c56e8240e8b48184f9f9aad6d3">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringLiteral" value="\t\t\tDbItemValue:" />
+                                              <string:string xsi:type="ToString">
+                                                <term xsi:type="ecuConf:OptionItemValue" valueOf="OptionItem1" />
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                        <action id="Action_050db730430847cd8c0117fa522031b7">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - Key: " />
+                                              <string:string xsi:type="ecuConf:GetDbItemValueKey">
+                                                <ecuConf:dbItemValue xsi:type="ecuConf:DbItemValueValue" valueOf="DbItemValue1" />
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                        <action id="Action_5f2a30c1d325446ea7eba33c5b589e90">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - Meaning: " />
+                                              <string:string xsi:type="ecuConf:GetDbItemValueMeaning">
+                                                <ecuConf:dbItemValue xsi:type="ecuConf:DbItemValueValue" valueOf="DbItemValue1" />
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                        <action id="Action_711f3be1f0074770b286d1f7514374e6">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - MeaningID: " />
+                                              <string:string xsi:type="ecuConf:GetDbItemValueMeaningID">
+                                                <ecuConf:dbItemValue xsi:type="ecuConf:DbItemValueValue" valueOf="DbItemValue1" />
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                        <action id="Action_5c65281a540c47a2a63e4e517498aff5">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - PhysicalConstantValue: " />
+                                              <string:string xsi:type="ecuConf:GetDbItemValuePhysicalConstantValueAsString">
+                                                <ecuConf:dbItemValue xsi:type="ecuConf:DbItemValueValue" valueOf="DbItemValue1" />
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                        <action id="Action_4cf96f2b191b4d27a82b1f72ffd391da">
+                                          <realisation xsi:type="Assignment">
+                                            <result xsi:type="StringVariable" name="String1" />
+                                            <term xsi:type="string:StringConcatenate">
+                                              <string:string xsi:type="StringValue" valueOf="String1" />
+                                              <string:string xsi:type="StringLiteral" value=" - Key: " />
+                                              <string:string xsi:type="ecuConf:GetDbItemValueRule">
+                                                <ecuConf:dbItemValue xsi:type="ecuConf:DbItemValueValue" valueOf="DbItemValue1" />
+                                              </string:string>
+                                            </term>
+                                          </realisation>
+                                        </action>
+                                      </try>
+                                      <catch>
+                                        <exception id="CatchHeader_9ba186c442da4344af2807e35253e9c8">
+                                          <realisation>
+                                            <type />
+                                            <handle name="Exception1" />
+                                          </realisation>
+                                        </exception>
+                                        <flow>
+                                          <action id="Action_644bc89742d4469fb443bade12abc3de">
+                                            <realisation xsi:type="Assignment">
+                                              <result xsi:type="StringVariable" name="String1" />
+                                              <term xsi:type="string:StringConcatenate">
+                                                <string:string xsi:type="StringLiteral" value="\t\t\tDbItemValue-Exception:" />
+                                                <string:string xsi:type="GetExceptionQualifier">
+                                                  <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                                                </string:string>
+                                                <string:string xsi:type="StringLiteral" value=" - " />
+                                                <string:string xsi:type="GetExceptionText">
+                                                  <exception xsi:type="ExceptionValue" valueOf="Exception1" />
+                                                </string:string>
+                                              </term>
+                                            </realisation>
+                                          </action>
+                                        </flow>
+                                      </catch>
+                                    </realisation>
+                                  </handler>
+                                  <action id="Action_eb5cb93e694f436daa926dfacbc6c575">
+                                    <realisation xsi:type="file:WriteLine">
+                                      <file:handle xsi:type="file:FileWriteHandleValue" valueOf="FileWriteHandle1" />
+                                      <file:value xsi:type="StringValue" valueOf="String1" />
+                                    </realisation>
+                                  </action>
+                                </flow>
+                              </realisation>
+                            </loop>
+                          </flow>
+                        </realisation>
+                      </loop>
+                      <action id="Action_ce05bcd04bbc411c9b63b0eff319c594">
+                        <realisation xsi:type="file:SaveFile">
+                          <file:handle name="FileWriteHandle1" />
+                        </realisation>
+                      </action>
+                      <action id="Action_f947bb956dd247a5807b03ace3e9657d">
+                        <realisation xsi:type="file:CloseFile">
+                          <file:handle xsi:type="file:FileWriteHandleVariable" name="FileWriteHandle1" />
+                        </realisation>
+                      </action>
+                      <action id="Action_52de70bc39e044a6b52b57a1c79711eb">
+                        <realisation xsi:type="diag:CloseComChannel">
+                          <diag:comChannel name="ComChannel1" />
+                        </realisation>
+                      </action>
+                    </flow>
+                  </realisation>
+                </loop>
+              </flow>
+            </realisation>
+          </loop>
+        </flow>
+      </realisation>
+    </procedure>
+  </procedures>
+</otx>

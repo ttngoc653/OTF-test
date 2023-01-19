@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.emotive.de/odf">
+  <Applications />
+  <References>
+    <ProjectReference Name="OtxProject1" Lib="false" />
+    <ProjectReference Path="C:\Users\NGOC\Documents" Name="pending_EcuConfiguration.ptx" Lib="true" />
+  </References>
+  <MakeBackup />
+  <StartupApplication Procedure="OtxProject54Package1.Document1.main">
+    <ParameterCollection />
+  </StartupApplication>
+  <ExportPtx />
+  <InstructionsFile TemplateName="Default.ptxt" ShortName="Project" />
+  <MetaDataLayout />
+  <TestResultHandling>
+    <Property Name="DataModelFile" />
+    <Property Name="TestResultHandlingFileName" />
+    <Property Name="TestResultHandlingDirectory" />
+    <Property Name="TestResultHandlingLevel" />
+    <Property Name="TestResultHandlingOn" />
+  </TestResultHandling>
+  <Property Name="ResourceMappingFile" Value="" />
+</Project>

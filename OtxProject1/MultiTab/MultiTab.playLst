@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MultiTab" version="2.1.0" schemaVersion="1.0" xmlns="http://www.emotive.de/Player.xsd">
+  <projects />
+  <monitors>
+    <monitor name="Monitor_First" tableLayoutRef="Monitor_First" autoStartCommand="">
+      <displayName TI="">Monitor1</displayName>
+    </monitor>
+    <monitor name="Monitor_Second" tableLayoutRef="Monitor_Second">
+      <displayName>Monitor2</displayName>
+    </monitor>
+  </monitors>
+  <contextVariables />
+  <globalOnChangedBehaviours />
+  <playList name="PlayList1" />
+  <commands>
+    <command name="main" monitorRef="Monitor_First">
+      <controlFile controlFileIdRef="ControlFile_9f1706aef3704fa0948291f1cc638fb3" commandType="ProcedureCall" idRef="OtxProcedureCall_26a0c5ce34be4c98845248fd87b72b6a" initState="Enabled" />
+      <displayName>main</displayName>
+    </command>
+  </commands>
+</player>

@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<playerLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0" xmlns="http://www.emotive.de/OTP/1.0.1/PlayerLayout.xsd">
+  <tableLayout name="Monitor_First" dpiValue="0">
+    <columnStyles>
+      <columnStyle>
+        <style>Percent</style>
+      </columnStyle>
+    </columnStyles>
+    <rowStyles>
+      <rowStyle>
+        <style>AutoSize</style>
+      </rowStyle>
+      <rowStyle>
+        <style value="210">Absolute</style>
+      </rowStyle>
+      <rowStyle>
+        <style>Percent</style>
+      </rowStyle>
+    </rowStyles>
+    <panels>
+      <controlPanel AutoScroll="true" name="panelParameter" row="1" column="0" rowSpan="1" columnSpan="1">
+        <elementRefs>
+          <elementRef>TextControl1</elementRef>
+          <elementRef>SwitchButtonControl1</elementRef>
+          <elementRef>ComboBoxControl1</elementRef>
+          <elementRef>GaugeStyle1Control1</elementRef>
+          <elementRef>KnobStyle1Control1</elementRef>
+          <elementRef>ChartStyle1Control1</elementRef>
+          <elementRef>StateIconControl1</elementRef>
+          <elementRef>TableControl1</elementRef>
+        </elementRefs>
+        <growStyle>Horizontal</growStyle>
+        <title>Toolbox_Enable</title>
+      </controlPanel>
+      <controlPanel AutoScroll="true" name="ControlPanel1" row="2" column="0" rowSpan="1" columnSpan="1">
+        <elementRefs>
+          <elementRef>TextControl2</elementRef>
+          <elementRef>SwitchButtonControl2</elementRef>
+          <elementRef>ComboBoxControl2</elementRef>
+          <elementRef>GaugeStyle1Control2</elementRef>
+          <elementRef>KnobStyle1Control2</elementRef>
+          <elementRef>ChartStyle1Control2</elementRef>
+          <elementRef>StateIconControl2</elementRef>
+          <elementRef>TableControl2</elementRef>
+        </elementRefs>
+        <growStyle>Horizontal</growStyle>
+        <title>Toolbox_Disable</title>
+      </controlPanel>
+      <commandPanel name="panelCommand" row="0" column="0" rowSpan="1" columnSpan="1">
+        <elementRefs>
+          <elementRef>main</elementRef>
+        </elementRefs>
+        <growStyle>Horizontal</growStyle>
+        <title>Command</title>
+      </commandPanel>
+    </panels>
+    <controls>
+      <control name="TableControl1">
+        <controlType>TableControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle type="Percent" />
+        </layout>
+        <displayTitle>Table_Z</displayTitle>
+        <properties />
+      </control>
+      <control name="StateIconControl1">
+        <controlType>StateIconControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Symbol_Z</displayTitle>
+        <properties>
+          <property name="NumberOfBits">
+            <value>1</value>
+          </property>
+          <property name="IconBit0">
+            <value>DefaultIcon</value>
+          </property>
+        </properties>
+      </control>
+      <control name="ChartStyle1Control1">
+        <controlType>ChartStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Chart_Z</displayTitle>
+        <properties />
+      </control>
+      <control name="KnobStyle1Control1">
+        <controlType>KnobStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Knob_Z</displayTitle>
+        <properties />
+      </control>
+      <control name="GaugeStyle1Control1">
+        <controlType>GaugeStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Gauge_Z</displayTitle>
+        <properties />
+      </control>
+      <control name="ComboBoxControl1">
+        <controlType>ComboBoxControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize width="150" height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>ComboBox_Z</displayTitle>
+        <properties />
+      </control>
+      <control name="SwitchButtonControl1">
+        <controlType>SwitchButtonControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>SwitchButton_Z</displayTitle>
+        <properties />
+      </control>
+      <control name="TextControl1">
+        <controlType>TextControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize width="150" height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>TextBox_Z</displayTitle>
+        <properties />
+      </control>
+      <control name="TableControl2">
+        <controlType>TableControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle type="Percent" />
+        </layout>
+        <displayTitle>Table_X</displayTitle>
+        <properties />
+      </control>
+      <control name="StateIconControl2">
+        <controlType>StateIconControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Symbol_X</displayTitle>
+        <properties>
+          <property name="NumberOfBits">
+            <value>1</value>
+          </property>
+          <property name="IconBit0">
+            <value>DefaultIcon</value>
+          </property>
+        </properties>
+      </control>
+      <control name="ChartStyle1Control2">
+        <controlType>ChartStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Chart_X</displayTitle>
+        <properties />
+      </control>
+      <control name="KnobStyle1Control2">
+        <controlType>KnobStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Knob_X</displayTitle>
+        <properties />
+      </control>
+      <control name="GaugeStyle1Control2">
+        <controlType>GaugeStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Gauge_X</displayTitle>
+        <properties />
+      </control>
+      <control name="ComboBoxControl2">
+        <controlType>ComboBoxControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize width="150" height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>ComboBox_X</displayTitle>
+        <properties />
+      </control>
+      <control name="SwitchButtonControl2">
+        <controlType>SwitchButtonControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>SwitchButton_X</displayTitle>
+        <properties />
+      </control>
+      <control name="TextControl2">
+        <controlType>TextControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize width="150" height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>TextBox_X</displayTitle>
+        <properties />
+      </control>
+    </controls>
+  </tableLayout>
+  <tableLayout name="Monitor_Second" dpiValue="0">
+    <columnStyles>
+      <columnStyle>
+        <style>Percent</style>
+      </columnStyle>
+      <columnStyle>
+        <style>Percent</style>
+      </columnStyle>
+    </columnStyles>
+    <rowStyles>
+      <rowStyle>
+        <style>AutoSize</style>
+      </rowStyle>
+      <rowStyle>
+        <style>AutoSize</style>
+      </rowStyle>
+      <rowStyle>
+        <style>Percent</style>
+      </rowStyle>
+    </rowStyles>
+    <panels>
+      <controlPanel name="panelContext" row="1" column="1" rowSpan="1" columnSpan="1">
+        <elementRefs>
+          <elementRef>TextControl2</elementRef>
+          <elementRef>SwitchButtonControl2</elementRef>
+          <elementRef>ComboBoxControl2</elementRef>
+          <elementRef>GaugeStyle1Control2</elementRef>
+          <elementRef>KnobStyle1Control2</elementRef>
+          <elementRef>ChartStyle1Control2</elementRef>
+          <elementRef>StateIconControl2</elementRef>
+          <elementRef>TableControl2</elementRef>
+        </elementRefs>
+        <growStyle>Vertical</growStyle>
+        <title>CP_Disable</title>
+      </controlPanel>
+      <controlPanel name="panelState" row="1" column="0" rowSpan="1" columnSpan="1">
+        <elementRefs>
+          <elementRef>TextControl1</elementRef>
+          <elementRef>SwitchButtonControl1</elementRef>
+          <elementRef>ComboBoxControl1</elementRef>
+          <elementRef>GaugeStyle1Control1</elementRef>
+          <elementRef>KnobStyle1Control1</elementRef>
+          <elementRef>ChartStyle1Control1</elementRef>
+          <elementRef>StateIconControl1</elementRef>
+          <elementRef>TableControl1</elementRef>
+        </elementRefs>
+        <growStyle>Vertical</growStyle>
+        <title>CP_Enable</title>
+      </controlPanel>
+      <commandPanel name="panelCommand" row="0" column="0" rowSpan="1" columnSpan="2">
+        <elementRefs />
+        <growStyle>Horizontal</growStyle>
+        <title>Command</title>
+      </commandPanel>
+    </panels>
+    <controls>
+      <control name="TableControl1">
+        <controlType>TableControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle type="Percent" />
+        </layout>
+        <displayTitle>Table_V</displayTitle>
+        <properties />
+      </control>
+      <control name="StateIconControl1">
+        <controlType>StateIconControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Symbol_V</displayTitle>
+        <properties>
+          <property name="NumberOfBits">
+            <value>1</value>
+          </property>
+          <property name="IconBit0">
+            <value>DefaultIcon</value>
+          </property>
+        </properties>
+      </control>
+      <control name="ChartStyle1Control1">
+        <controlType>ChartStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize height="150" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Chart_V</displayTitle>
+        <properties />
+      </control>
+      <control name="KnobStyle1Control1">
+        <controlType>KnobStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize height="230" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Knob_V</displayTitle>
+        <properties />
+      </control>
+      <control name="GaugeStyle1Control1">
+        <controlType>GaugeStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize height="200" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Gauge_V</displayTitle>
+        <properties />
+      </control>
+      <control name="ComboBoxControl1">
+        <controlType>ComboBoxControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize width="150" height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>ComboBox_V</displayTitle>
+        <properties />
+      </control>
+      <control name="SwitchButtonControl1">
+        <controlType>SwitchButtonControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>SwitchButton_V</displayTitle>
+        <properties />
+      </control>
+      <control name="TextControl1">
+        <controlType>TextControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize width="150" height="60" />
+          <controlAnchor bottom="true" right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>TextBox_V</displayTitle>
+        <properties />
+      </control>
+      <control name="TableControl2">
+        <controlType>TableControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout>
+          <controlSize />
+          <controlAnchor />
+          <controlStyle type="Percent" />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties />
+      </control>
+      <control name="StateIconControl2">
+        <controlType>StateIconControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout visible="false">
+          <controlSize />
+          <controlAnchor />
+          <controlStyle />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties>
+          <property name="NumberOfBits">
+            <value>1</value>
+          </property>
+          <property name="IconBit0">
+            <value>DefaultIcon</value>
+          </property>
+        </properties>
+      </control>
+      <control name="ChartStyle1Control2">
+        <controlType>ChartStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout visible="false">
+          <controlSize />
+          <controlAnchor />
+          <controlStyle />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties />
+      </control>
+      <control name="KnobStyle1Control2">
+        <controlType>KnobStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout visible="false">
+          <controlSize height="170" />
+          <controlAnchor right="true" />
+          <controlStyle />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties />
+      </control>
+      <control name="GaugeStyle1Control2">
+        <controlType>GaugeStyle1Control</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout visible="false">
+          <controlSize />
+          <controlAnchor />
+          <controlStyle />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties />
+      </control>
+      <control name="ComboBoxControl2">
+        <controlType>ComboBoxControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout visible="false">
+          <controlSize width="150" height="60" />
+          <controlAnchor />
+          <controlStyle />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties />
+      </control>
+      <control name="SwitchButtonControl2">
+        <controlType>SwitchButtonControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout visible="false">
+          <controlSize height="60" />
+          <controlAnchor />
+          <controlStyle />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties />
+      </control>
+      <control name="TextControl2">
+        <controlType>TextControl</controlType>
+        <channels>
+          <channel>
+            <element>
+              <type>None</type>
+            </element>
+          </channel>
+        </channels>
+        <layout visible="false">
+          <controlSize width="150" height="60" />
+          <controlAnchor />
+          <controlStyle />
+        </layout>
+        <displayTitle>Title</displayTitle>
+        <properties />
+      </control>
+    </controls>
+  </tableLayout>
+</playerLayout>

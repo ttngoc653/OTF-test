@@ -4,7 +4,6 @@
   <Project Name="OtxTestProject1" Path="OtxTestProject1\OtxTestProject1.otfPrj" />
   <Project Name="OtxProjectGenToFile" Path="OtxProjectGenToFile\OtxProjectGenToFile.otfPrj" />
   <Project Name="HandlingQuantitiesDiagCom_1" Path="HandlingQuantitiesDiagCom_1\HandlingQuantitiesDiagCom_1.otfPrj" />
-  <Project Name="HandlingQuantitiesDiagCom" Path="TestHandlingQuantitiesDiagCom\HandlingQuantitiesDiagCom\HandlingQuantitiesDiagCom.otfPrj" />
   <StartupProject Name="OtxProject13" />
   <Config>
     <MvciServer />

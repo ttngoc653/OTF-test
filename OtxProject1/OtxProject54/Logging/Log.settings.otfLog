@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Setting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.emotive.de/odf">
+  <LoggingConfig Type="Standard">
+    <Property Name="Directory" Value="" />
+    <Property Name="FileName" Value="[Proj]_[Now].log" />
+    <Property Name="FileSize" Value="10" />
+    <Property Name="MaxFileNumber" Value="3" />
+    <Property Name="HeaderFormat" Value="-------------------------------------------------------------------------------------------------------------------------------------------------&#xA;OpenTestSystem - Logging Extension&#xA;-------------------------------------------------------------------------------------------------------------------------------------------------&#xA;Solution:                  %[Sol]$s&#xA;Start-Project:             %[StartProj]$s&#xA;Start-Document:            %[StartDoc]$s&#xA;Start-Package:             %[StartPack]$s&#xA;Start-Procedure:           %[StartProc]$s&#xA;Date:                      %[Now]$tD&#xA;User:                      %[usr]$s&#xA;Computer:                  %[Comp]$s&#xA;OTF-Version:               %[OTF]$s&#xA;OTX-Version:               %[OTX]$s&#xA;RuntimeApi-Version:        %[RuntimeApiVersion]$s&#xA;RuntimeApi-Implementation: %[RuntimeApiImplementation]$s&#xA;-------------------------------------------------------------------------------------------------------------------------------------------------&#xA;Time         | Document             Procedure                                | Level      || Message&#xA;------------ | ------------------------------------------------------------- | ---------- || ----------------------------------------------------" />
+    <Property Name="MessageFormat" Value="%[Now]$8tT.%[Now]$-3tL | %[Doc]$-20s %[Proc]$-40s | %[Lev]$-10s || %[Msg]$s" />
+    <Property Name="Version" Value="6.99.0.46650" />
+    <Property Name="LoggingOn" Value="True" />
+    <Property Name="LogCommunicationTrace" Value="False" />
+    <Property Name="LogVariableTrace" Value="False" />
+    <Property Name="LogOtxException" Value="False" />
+    <Property Name="LogCommunicationTraceSeverityLevel" Value="TRACE" />
+    <Property Name="LogVariableTraceSeverityLevel" Value="TRACE" />
+    <Property Name="LogOtxExceptionSeverityLevel" Value="TRACE" />
+    <Property Name="LoggingTargetResolving" Value="False" />
+    <Property Name="WriteId" Value="False" />
+    <Property Name="WriteIdSeverityLevel" Value="TRACE" />
+    <Property Name="LoggingLevelDefault" Value="ALL" />
+  </LoggingConfig>
+</Setting>

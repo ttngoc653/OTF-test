@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Setting xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.emotive.de/odf">
+  <TextLibrary Type="Standard">
+    <Property Name="Folder" Value="E:\SHARED\Common_Test_Files_and_Resources\I18N_Languages" />
+    <Property Name="DefaultLanguage" Value="af-ZA" />
+  </TextLibrary>
+</Setting>

@@ -1,0 +1,75 @@
+{
+  "schema": "otx-control-file-schema-v2.1.json",
+  "adminData": {
+    "id": "ControlFile_9f1706aef3704fa0948291f1cc638fb3",
+    "versionId": "ControlFileVersion_26af6863a24f417e9ad39167381d5876",
+    "lastModified": "2023-01-11T18:30:49.3292217+07:00",
+    "created": "2023-01-11T18:23:12.4110875+07:00",
+    "authoringTool": "OTF - version 6.99.0.46854",
+    "targetRuntimeSystem": "OTP",
+    "fileVersion": "1.0.0.0",
+    "schemaVersion": "2.1"
+  },
+  "sequences": [
+    {
+      "id": "ControlSequence_ee38699ee4b24b83b66caccf1da9e234",
+      "displayName": "ControlSequence1",
+      "onlyForTestPurpose": false,
+      "sequence": [
+        {
+          "id": "Sequence_b4bae32c3a874efe8694a72e0bb8bd79",
+          "displayName": "Sequence1",
+          "lanes": [
+            {
+              "displayName": "Lane1",
+              "laneSequence": []
+            }
+          ]
+        }
+      ],
+      "eventCatchSequences": [
+        {
+          "id": "EventCatchSequence_65d5e7a93f494ab6993e8c0b86ffa4e5",
+          "displayName": "EventCatchSequence1",
+          "lanes": []
+        }
+      ],
+      "finallySequence": [
+        {
+          "displayName": "FinallySequence1",
+          "lanes": []
+        }
+      ]
+    }
+  ],
+  "otxProcedureCalls": [
+    {
+      "id": "OtxProcedureCall_26a0c5ce34be4c98845248fd87b72b6a",
+      "name": "main",
+      "displayName": "main",
+      "otxLocation": {
+        "folder": "../PTX",
+        "fileName": "OtxProject54.ptx",
+        "otxPackage": "OtxProject54Package1",
+        "otxDocument": "Document1",
+        "otxProcedure": "main"
+      },
+      "diagConnectionState": "none",
+      "inputs": [
+        {
+          "name": "InParameterDeclaration1",
+          "inputType": "inParam",
+          "dataType": "OtxProject54Package1.Document1.STRUC_RoutineRequest<String, Map<String, String>>",
+          "value": "{ServiceShortname=\"\", RequestParameter=}"
+        }
+      ],
+      "results": [
+        {
+          "name": "OutParameterDeclaration1",
+          "outputType": "outParam",
+          "dataType": "OtxProject54Package1.Document1.STRUC_RoutineRequest<String, Map<String, String>>"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1394 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "OTX Control File",
+    "description": "OTX Control File to describe sequences of OTX procedure calls",
+    "properties": {
+        "adminData": {
+            "$ref": "#/definitions/otxControlAdminData"
+        },
+        "sequences": {
+            "type": "array",
+            "description": "Consistent, static processing logic of multiple OTX Procedure Calls.\nA sequence consists of 1..n elements that are described by multiple parallelization (lanes.\nSeqences are executed sequencially.\nIt is allowed to define multiple sequences within one OTX Control file",
+            "minItems": 1,
+            "items": {
+                "$ref": "#/definitions/otxControlSequence"
+            }
+        },
+        "otxProcedureCalls": {
+            "type": "array",
+            "description": "A parameterization that describes how the target system shall configure an OTX Procedure that is executed by the OTX Runtime.",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "$ref": "#/definitions/otxProcedureCall"
+            }
+        }
+    },
+    "required": [
+        "adminData"
+    ],
+    "definitions": {
+        "meta": {
+            "type": "array",
+            "description": "Additional data added to the OTX Control or Result File",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "minItems": 1,
+                "uniqueItems": true,
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "description": "Target system wide unique identifier of the data",
+                        "$id": "#meta.key"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the specific meta information",
+                        "$id": "#meta.description"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "Readable name of the data key",
+                        "$id": "#meta.displayName"
+                    },
+                    "value": {
+                        "type": "string",
+                        "description": "Value of the data",
+                        "$id": "#meta.value"
+                    }
+                },
+                "required": [
+                    "key",
+                    "value"
+                ]
+            },
+            "$id": "#meta"
+        },
+        "otxControlAdminData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique, target system specific identifier. Does not change in case version of the OTX Control file is increased.",
+                    "$id": "#otxControlAdminData.id"
+                },
+                "versionId": {
+                    "type": "string",
+                    "description": "Target system specific version identifier. Is updated when the OTX Control file is changed",
+                    "$id": "#otxControlAdminData.versionId"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Readable name of the OTX Control file",
+                    "$id": "#otxControlAdminData.displayName"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Understandable description of the OTX Control file",
+                    "$id": "#otxControlAdminData.description"
+                },
+                "author": {
+                    "type": "string",
+                    "description": "The author of the current version of OTX Control file",
+                    "$id": "#otxControlAdminData.author"
+                },
+                "lastModified": {
+                    "type": "string",
+                    "description": "Timestamp of last modification of the OTX Control file",
+                    "format": "date-time",
+                    "$id": "#otxControlAdminData.lastModified"
+                },
+                "created": {
+                    "type": "string",
+                    "description": "Timestamp of initial creation of the OTX Control file",
+                    "format": "date-time",
+                    "$id": "#otxControlAdminData.created"
+                },
+                "authoringTool": {
+                    "type": "string",
+                    "description": "Tool and version used to generate the OTX Control file",
+                    "$id": "#otxControlAdminData.authoringTool"
+                },
+                "targetRuntimeSystem": {
+                    "type": "string",
+                    "description": "Environment where this OTX Control file is supposed to be executed",
+                    "$id": "#otxControlAdminData.targetRuntimeSystem"
+                },
+                "fileVersion": {
+                    "type": "string",
+                    "description": "Current version of the OTX Control file",
+                    "$id": "#otxControlAdminData.fileVersion"
+                },
+                "schemaVersion": {
+                    "type": "string",
+                    "description": "Used OTX Control file schema to create/validate the current OTX Control file",
+                    "$id": "#otxControlAdminData.schemaVersion"
+                },
+                "logicalPath": {
+                    "type": "string",
+                    "description": "Allocation to group.\nRelative, logical Path of the OTX Control File\nPath can be defined like a namespace, e.g. \"Montage.IB1\"",
+                    "$id": "#otxControlAdminData.logicalPath"
+                },
+                "importRefs": {
+                    "type": "array",
+                    "description": "In case an OTX Control file contains sequences only, import references can be used\nto include other OTX Control files that contain referenced OTX Procedure calls.",
+                    "items": {
+                        "type": "object",
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "properties": {
+                            "idRef": {
+                                "type": "string",
+                                "description": "Reference to an OTX Control file",
+                                "$id": "#otxControlAdminData.importRefs.idRef"
+                            },
+                            "versionIdRef": {
+                                "type": "string",
+                                "description": "Version of the referenced OTX Control file",
+                                "$id": "#otxControlAdminData.importRefs.versionIdRef"
+                            }
+                        },
+                        "required": [
+                            "idRef",
+                            "versionIdRef"
+                        ]
+                    },
+                    "$id": "#otxControlAdminData.importRefs"
+                },
+                "metaData": {
+                    "$ref": "#/definitions/meta",
+                    "$id": "#otxControlAdminData.metaData"
+                }
+            },
+            "required": [
+                "id",
+                "lastModified",
+                "authoringTool",
+                "targetRuntimeSystem",
+                "fileVersion",
+                "schemaVersion"
+            ],
+            "$id": "#otxControlAdminData"
+        },
+        "sequenceObject": {
+            "type": "object",
+            "description": "Lane object. Either OTX Procedure Call, Signal or WaitforSignal.",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique ID of the IBN lane object inside the OTX Control File",
+                    "$id": "#sequence.id"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Readable name of the sequence object",
+                    "$id": "#sequence.displayName"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "oneOf": [
+                {
+                    "description": "OTX Procedure Call ID reference",
+                    "properties": {
+                        "otxProcedureCallIdRef": {
+                            "type": "string",
+                            "description": "Reference of the OTX Procedure Call to be executed (by ID)",
+                            "$id": "#sequence.otxProcedureCallIdRef"
+                        },
+                        "onlyForTestPurpose": {
+                            "type": "boolean",
+                            "description": "If the flag is set to \"true\", the OTX Procedure Call will be executed only if the target system is in test mode.\nIt set to \"false\", the OTX Procedure call is always executed.",
+                            "default": false,
+                            "$id": "#sequence.onlyForTestPurpose"
+                        },
+                        "resultRelevant": {
+                            "type": "boolean",
+                            "description": "Indicates if the OTX procedure execution is relevant for the overall result of the sequence.\nIf set to false, the overall result is not affected by the execution of this OTX Procedure Call.",
+                            "$id": "#sequence.resultRelevant"
+                        },
+                        "resultMandatory": {
+                            "type": "boolean",
+                            "description": "Indicates if the OTX Procedure Call MUST be executed.\nIf the value is set to \"true\" and the OTX Procedure Call is not executed, it must be handled as \"failed\".\nThe flag shall only be evaluated in case of resultRelevant is set to \"true\".",
+                            "default": false,
+                            "$id": "#sequence.resultMandatory"
+                        },
+                        "executeOnlyByPreResults": {
+                            "type": "object",
+                            "description": "The execution of the OTX Procedure Call depends on a previous executed one.\nThe dependency can be either inside the sequence (sequenceObject is referenced) or external (otxProcedureCall is referenced).\nOnly if the previous executed OTX Procedure call had a defined result, this OTX Procedure call shall be executed.\nIf the OTX Procedure calls defined as precondition have not been executed, the current one shall not be executed and the result shall be set to \"failed\".\nPre-results are defined as logical expressions, e.g. \"123==true||456==false\".\nOptions to reference an OTX Procedure Call:\n- OTX Procedure call id: The last OTX Procedure Call result shall be used\n- Lane object id: The result of the OTX Procedure call executed in specific sequence is used.",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "description": "Type of object for which pre results are required (sequenceObject, procedureCall)",
+                                    "enum": [
+                                        "sequenceObject",
+                                        "procedureCall"
+                                    ],
+                                    "$id": "#sequence.executeOnlyByPreResults.type"
+                                },
+                                "expression": {
+                                    "$ref": "#/definitions/logicalExpression",
+                                    "description": "Logical expression to define the required pre result",
+                                    "$id": "#sequence.executeOnlyByPreResults.expression"
+                                }
+                            },
+                            "required": [
+                                "type",
+                                "expression"
+                            ],
+                            "$id": "#sequence.executeOnlyByPreResults"
+                        },
+                        "onFailure": {
+                            "type": "object",
+                            "description": "Definition on behavior in case the OTX procedure call execution failed (not for exceptions emitted by OTX Runtime).",
+                            "properties": {
+                                "retryCount": {
+                                    "type": "integer",
+                                    "description": "Retry counter of OTX Procedure call.\nNumber of retries in failed case (<= counting from first failure).\nIn case retry count is reached and \"abort\" is set to \"false\", lane execution is continued.",
+                                    "$id": "#sequence.onFailure.retryCount"
+                                },
+                                "abort": {
+                                    "type": "boolean",
+                                    "description": "Flag to indicate that the execution of the sequence has to stop in case the OTX Procedure Call execution was not successful after specified number of retries.\nIn case no \"catchIdRef\" is specified, the finally sequence shall be executed (if available).",
+                                    "$id": "#sequence.onFailure.abort"
+                                },
+                                "catchIdRef": {
+                                    "type": "string",
+                                    "description": "Reference of catch sequence (by ID).\nExecution continues in failure case with specified catch sequence if \"abort\" is set to \"true\".",
+                                    "$id": "#sequence.onFailure.catchIdRef"
+                                }
+                            },
+                            "$id": "#sequence.onFailure"
+                        }
+                    },
+                    "required": [
+                        "otxProcedureCallIdRef",
+                        "resultRelevant"
+                    ]
+                },
+                {
+                    "description": "Describes a position point inside a lane at which a \"Signal\" is send out to idicate parallel lanes that this specific point is reached.",
+                    "properties": {
+                        "signalId": {
+                            "type": "string",
+                            "description": "Unique identifier of the signal",
+                            "$id": "#sequence.signalId"
+                        }
+                    },
+                    "required": [
+                        "signalId"
+                    ]
+                },
+                {
+                    "description": "WaitForSignal. The lane execution is stopped at this point until all referenced signals have been fired.",
+                    "properties": {
+                        "signalIdRef": {
+                            "type": "array",
+                            "description": "List of referenced signal identifiers",
+                            "minItems": 1,
+                            "items": {
+                                "type": "string"
+                            },
+                            "$id": "#sequence.waitForSignal.signalIdRef"
+                        }
+                    },
+                    "required": [
+                        "signalIdRefs",
+                        "signalIdRef"
+                    ],
+                    "$id": "#sequence.waitForSignal"
+                }
+            ],
+            "$id": "#sequence"
+        },
+        "lane": {
+            "type": "object",
+            "description": "Seqence of OTX Procedure Calls, Signals and WaitForSignal elements.\nA lane is always executed sequencially.",
+            "additionalProperties": false,
+            "properties": {
+                "displayName": {
+                    "type": "string",
+                    "description": "Readable name of the lane",
+                    "$id": "#lane.displayName"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Understandable description of what the lane does",
+                    "$id": "#lane.description"
+                },
+                "displayConfigPanelIdRef": {
+                    "type": "string",
+                    "description": "Reference to a display panel (by ID)",
+                    "$id": "#lane.displayConfigPanelIdRef"
+                },
+                "laneSequence": {
+                    "type": "array",
+                    "description": "Contains the sequence.",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/sequenceObject"
+                    },
+                    "$id": "#lane.laneSequence"
+                }
+            },
+            "required": [
+                "laneSequence"
+            ],
+            "$id": "#lane"
+        },
+        "displayConfig": {
+            "type": "object",
+            "description": "Target system specific label for a screen allocation of multiple lanes. ",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique, target system specific identifier of the display configuration, e.g. \"split01\", \"full01\" or similar",
+                    "$id": "#displayConfig.id"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Readable name of the display configuration, e.g.\"Splitscreen\" or similar",
+                    "$id": "#displayConfig.displayName"
+                },
+                "panels": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "description": "List of display part configurations inside a screen that visualizes the content of a lane.\nIn case no lane references a part, nothing will be displayed.",
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique screen part identifier.",
+                                "$id": "#displayConfig.panels.id"
+                            },
+                            "displayName": {
+                                "type": "string",
+                                "description": "Readable name of the display part",
+                                "$id": "#displayConfig.panels.displayName"
+                            }
+                        },
+                        "required": [
+                            "id"
+                        ]
+                    },
+                    "$id": "#displayConfig.panels"
+                },
+                "metaData": {
+                    "$ref": "#/definitions/meta",
+                    "$id": "#displayConfig.metaData"
+                }
+            },
+            "required": [
+                "id",
+                "panels"
+            ],
+            "$id": "#displayConfig"
+        },
+        "otxProcedureCall": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique, target system specific identifier of the OTX Procedure call",
+                    "$id": "#otxProcedureCall.id"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the OTX Procedure call. If used the name shall be unique inside a control file (similar to OTX name attribute).",
+                    "$id": "#otxProcedureCall.displayName"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Readable name of the OTX Procedure call.\nText identifier can be used as well if a translation is needed.",
+                    "$id": "#otxProcedureCall.displayName"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Understandable description of OTX Procedure call.\nHint: Description from OTX Document specification can be used.",
+                    "$id": "#otxProcedureCall.description"
+                },
+                "logicalPath": {
+                    "type": "string",
+                    "description": "Allocation to group.\nRelative, logical Path of the OTX Control File\nPath can be defined like a namespace, e.g. \"EPS.LWS_Anlernen\"",
+                    "$id": "#otxProcedureCall.logicalPath"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/logicalExpression",
+                    "description": "A logical expression that describes under which conditions the OTX Procedure call can be executed.\nSame as validity in sequence.",
+                    "$id": "#otxProcedureCall.validFor"
+                },
+                "equivalentResults": {
+                    "type": "array",
+                    "description": "List of OTX Procedure Call references that generate an equivalent result.\nE.g. target system specific information of equivalence of OTX Procedure call results.\nHint: It is not possible to provide a direction to relate equivalent OTX Procedure Calls to each other more precise.",
+                    "items": {
+                        "type": "string",
+                        "minItems": 1,
+                        "uniqueItems": true
+                    },
+                    "$id": "#otxProcedureCall.equivalentResults"
+                },
+                "exclusiveExecutionNeeded": {
+                    "type": "boolean",
+                    "description": "Information that this OTX procedure call shall be executed exclusively.\nThis flag not taken into account for sequence execution.",
+                    "$id": "#otxProcedureCall.exclusiveExecutionNeeded"
+                },
+                "otxLocation": {
+                    "type": "object",
+                    "description": "All information needed to identify an OTX procedure.",
+                    "additionalProperties": false,
+                    "properties": {
+                        "folder": {
+                            "type": "string",
+                            "description": "Folder were PPX/PTX file is stored",
+                            "$id": "#otxProcedureCall.otxLocation.folder"
+                        },
+                        "fileName": {
+                            "type": "string",
+                            "description": "Name of the PTX or PPX document including file ending.",
+                            "$id": "#otxProcedureCall.otxLocation.fileName"
+                        },
+                        "otxPackage": {
+                            "type": "string",
+                            "description": "Full package path inside the PTX.\nTODO: How to specify the path: e.g. \"PPE41.DME.Functions\"",
+                            "$id": "#otxProcedureCall.otxLocation.otxPackage"
+                        },
+                        "otxDocument": {
+                            "type": "string",
+                            "description": "Name of the OTX document.\nTODO: including file ending *.otx? Depends on OTX Runtime needs.",
+                            "$id": "#otxProcedureCall.otxLocation.otxDocument"
+                        },
+                        "otxProcedure": {
+                            "type": "string",
+                            "description": "Name of the OTX procedure",
+                            "$id": "#otxProcedureCall.otxLocation.otxProcedure"
+                        }
+                    },
+                    "required": [
+                        "fileName",
+                        "otxPackage",
+                        "otxDocument"
+                    ],
+                    "$id": "#otxProcedureCall.otxLocation"
+                },
+                "diagConnectionState": {
+                    "type": "string",
+                    "description": "Precondition of clamp- and voltage-states for execution of the procedure call. Valid contents \n[\"off - no care about states\", \n\"batteryStateOn - clamp 30 must be on, clamp 15 is not relevant\", \n\"ignitionStateOn - clamp 15 must be on\", \"ignitionStateOff - clamp 15 must be off\"]. Default value \"off\"",
+                    "default": "none",
+                    "enum": [
+                        "none",
+                        "batteryOn",
+                        "ignitionOff",
+                        "ignitionOn"
+                    ],
+                    "$id": "#otxProcedureCall.diagConnectionState"
+                },
+                "metaData": {
+                    "$ref": "#/definitions/meta"
+                },
+                "msTimeout": {
+                    "type": "integer",
+                    "description": "Timeout of the OTX Procedure Call (in ms). In case timeout reached, procedure shall be aborted.\nTimeout of 0 means no timeout.",
+                    "default": 0,
+                    "minimum": 0,
+                    "$id": "#otxProcedureCall.msTimeout",
+                    "maxValue": 86400000
+                },
+                "validityDefinitions": {
+                    "type": "array",
+                    "description": "List of validity expressions that are referenced by input parameters",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique identifier of the validity",
+                                "$id": "#otxProcedureCall.validityDefinitions.id"
+                            },
+                            "displayName": {
+                                "type": "string",
+                                "description": "Readable name of the validity entry",
+                                "$id": "#otxProcedureCall.validityDefinitions.displayName"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Understandable description of the validity entry",
+                                "$id": "#otxProcedureCall.validityDefinitions.description"
+                            },
+                            "validFor": {
+                                "$ref": "#/definitions/logicalExpression",
+                                "description": "Target system specific logical expression. ",
+                                "$id": "#otxProcedureCall.validityDefinitions.validFor"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "validFor"
+                        ]
+                    },
+                    "$id": "#otxProcedureCall.validityDefinitions"
+                },
+                "retryCount": {
+                    "type": "integer",
+                    "description": "Specifies how often the OTX procedure call will be reexecuted in case of failed execution.\nCan be overwritten in sequence definition.",
+                    "default": 0,
+                    "$id": "#otxProcedureCall.retryCount"
+                },
+                "inputs": {
+                    "type": "array",
+                    "description": "List of input parameters to be set during OTX procedure invocation.",
+                    "items": {
+                        "type": "object",
+                        "minItems": 0,
+                        "uniqueItems": true,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the input parameter or context variable.\nCan be a path for context variables, e.g. \"Package.otxDoc.contextVarName\"",
+                                "$id": "#otxProcedureCall.inputs.name"
+                            },
+                            "displayName": {
+                                "type": "string",
+                                "description": "Readable name of the output parameter",
+                                "$id": "#otxProcedureCall.inputs.displayName"
+                            },
+                            "inputType": {
+                                "type": "string",
+                                "description": "Type of the input parameter (inParam, context)",
+                                "enum": [
+                                    "inParam",
+                                    "inOutParam",
+                                    "context",
+                                    "deviceServiceOutParam"
+                                ],
+                                "$id": "#otxProcedureCall.inputs.inputType"
+                            },
+                            "dataType": {
+                                "type": "string",
+                                "description": "Data type of the input parameter (e.g. integer)",
+                                "$id": "#otxProcedureCall.inputs.dataType"
+                            },
+                            "unit": {
+                                "type": "string",
+                                "description": "Unit of the input parameter",
+                                "default": "",
+                                "$id": "#otxProcedureCall.inputs.unit"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "inputType",
+                            "dataType"
+                        ],
+                        "oneOf": [
+                            {
+                                "properties": {
+                                    "value": {
+                                        "type": "string",
+                                        "description": "Value of the input parameter or context variable.\n The prefix \"$\" denotes that the value is set dynamically\ne.g. for a generic script that uses a logical link as input parameter.\nA target system specific namespace/path can be used after the prefix to indicate on which basis the value shall be set,\ne.g \"$diagSlave.localLink\".",
+                                        "$id": "#otxProcedureCall.inputs.value"
+                                    }
+                                },
+                                "required": [
+                                    "value"
+                                ]
+                            },
+                            {
+                                "properties": {
+                                    "valuesByValidForCase": {
+                                        "type": "array",
+                                        "description": "List of alternative values based on validity expressions is possible.\nContent and structure of such an expression is target system specific, e.g. based on PR numbers.",
+                                        "items": {
+                                            "type": "object",
+                                            "minItems": 1,
+                                            "uniqueItems": true,
+                                            "properties": {
+                                                "validForIdRef": {
+                                                    "type": "string",
+                                                    "description": "Reference to validity expression",
+                                                    "$id": "#otxProcedureCall.inputs.valuesByValidForCase.validForIdRef"
+                                                },
+                                                "value": {
+                                                    "type": "string",
+                                                    "description": "Value of the input parameter or context variable.\n The prefix \"$\" denotes that the value is set dynamically\ne.g. for a generic script that uses a logical link as input parameter.\nA target system specific namespace/path can be used after the prefix to indicate on which basis the value shall be set,\ne.g \"$diagSlave.localLink\".",
+                                                    "$id": "#otxProcedureCall.inputs.valuesByValidForCase.value"
+                                                }
+                                            },
+                                            "required": [
+                                                "value"
+                                            ]
+                                        },
+                                        "$id": "#otxProcedureCall.inputs.valuesByValidForCase"
+                                    }
+                                },
+                                "required": [
+                                    "valuesByValidForCase"
+                                ]
+                            }
+                        ]
+                    },
+                    "$id": "#otxProcedureCall.inputs"
+                },
+                "results": {
+                    "type": "array",
+                    "description": "List of expected result parameterizations of output parameters and state variables.\nIt is possible to only specify expected results for a subset of output parameters and state variables.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "minItems": 1,
+                        "uniqueItems": true,
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the output parameter.\nIn case of a state variable, a path could be specified, e.g. \"Package.otxDoc.stateVarName\".\nIn case of a \"meta-data structure\", a path to value element can be specified, e.g. \"Package.otxDoc.structureName.value\".",
+                                "$id": "#otxProcedureCall.results.name"
+                            },
+                            "displayName": {
+                                "type": "string",
+                                "description": "Readable name of the output parameter or state variable or state variable.",
+                                "$id": "#otxProcedureCall.results.displayName"
+                            },
+                            "outputType": {
+                                "type": "string",
+                                "description": "Type of the output parameter (outParam, state)",
+                                "enum": [
+                                    "inOutParam",
+                                    "outParam",
+                                    "state"
+                                ],
+                                "$id": "#otxProcedureCall.results.outputType"
+                            },
+                            "dataType": {
+                                "type": "string",
+                                "description": "Data type of the output parameter or state variable.\nUsed for analysis and debugging purposes with a text editor.\nIn case of a \"meta-data structure\", dataType and structureType are concatinated,\ne.g.\"structureType:Kuehlmitteltemp\"",
+                                "$id": "#otxProcedureCall.results.dataType"
+                            },
+                            "unit": {
+                                "type": "string",
+                                "description": "Unit of the output parameter",
+                                "default": "",
+                                "$id": "#otxProcedureCall.results.unit"
+                            },
+                            "active": {
+                                "type": "boolean",
+                                "description": "Flag wether the output parameter is active or not.\nThe use case is to temporary deactive the parameter for the result evaluation.\nCriteria are not evaluated in case of setting this flag to false",
+                                "default": true,
+                                "$id": "#otxProcedureCall.results.active"
+                            },
+                            "logicalPath": {
+                                "type": "string",
+                                "description": "Allocation to group.\nRelative, logical Path of the OTX Control File\nPath can be defined like a namespace,\ne.g. \"RoutineAusfuehrung.RoutineStatus\"",
+                                "$id": "#otxProcedureCall.results.logicalPath"
+                            },
+                            "metaData": {
+                                "$ref": "#/definitions/meta",
+                                "$id": "#otxProcedureCall.results.metaData"
+                            },
+                            "okCondition": {
+                                "type": "object",
+                                "description": "If criteria is not set, the result is always iO and displayed with information \"displayName\" and \"active\"",
+                                "properties": {
+                                    "relevance": {
+                                        "type": "boolean",
+                                        "description": "Flag if the parameter is relevant for overall result validation"
+                                    }
+                                },
+                                "required": [
+                                    "relevance"
+                                ],
+                                "oneOf": [
+                                    {
+                                        "properties": {
+                                            "nominalValue": {
+                                                "type": "string",
+                                                "description": "Expected nominal value of the output parameter.\nIf value is set, a structured value will be overritten (if set)",
+                                                "$id": "#otxProcedureCall.results.okCondition.nominalValue"
+                                            }
+                                        },
+                                        "required": [
+                                            "nominalValue"
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "nominalValueByValidForCase": {
+                                                "type": "array",
+                                                "description": "List of alternative values based on validity expressions is possible.",
+                                                "items": {
+                                                    "type": "object",
+                                                    "minItems": 1,
+                                                    "uniqueItems": true,
+                                                    "properties": {
+                                                        "validForIdRef": {
+                                                            "type": "string",
+                                                            "description": "Reference to validity expression",
+                                                            "$id": "##otxProcedureCall.results.okCondition.nominalValueByValidForCase.validForIdRef"
+                                                        },
+                                                        "nominalValue": {
+                                                            "type": "string",
+                                                            "description": "Expected nominal value of the output parameter.",
+                                                            "$id": "#otxProcedureCall.results.okCondition.nominalValueByValidForCase.nominalValue"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "validForIdRef",
+                                                        "nominalValue"
+                                                    ]
+                                                },
+                                                "$id": "#otxProcedureCall.results.okCondition.nominalValueByValidForCase"
+                                            }
+                                        },
+                                        "required": [
+                                            "nominalValueByValidForCase"
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "description": "Name of the output parameter or state variable that provide a nominal value.\nIn case of a \"meta-structure\", this can be a path to the value in the structure,\ne.g. \"Package.otxDoc.structureName.nominalValue\"",
+                                                "$id": "#otxProcedureCall.results.okCondition.name"
+                                            },
+                                            "dataType": {
+                                                "type": "string",
+                                                "description": "Data type of the output parameter or state variable.\nUsed for analysis and debugging purposes with a text editor.\nIn case of a \"meta-data structure\", dataType and structureType are concatinated,\ne.g.\"structureType:Kuehlmitteltemp\"",
+                                                "$id": "#otxProcedureCall.results.okCondition.dataType"
+                                            }
+                                        },
+                                        "required": [
+                                            "name",
+                                            "dataType"
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "lowerLimit": {
+                                                "type": "string",
+                                                "description": "Expected included lower limit of the output parameter (>=).\nOnly literals are valid.",
+                                                "$id": "#otxProcedureCall.results.okCondition.lowerLimit"
+                                            },
+                                            "upperLimit": {
+                                                "type": "string",
+                                                "description": "Expected included upper limit of the output parameter (<=).\nOnly literals are valid.",
+                                                "$id": "#otxProcedureCall.results.okCondition.upperLimit"
+                                            }
+                                        },
+                                        "required": [
+                                            "lowerLimit",
+                                            "upperLimit"
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "lowerUpperLimitByValidForCase": {
+                                                "type": "array",
+                                                "description": "List of alternative lower and upper limits based on validity expressions is possible.",
+                                                "items": {
+                                                    "type": "object",
+                                                    "minItems": 1,
+                                                    "uniqueItems": true,
+                                                    "properties": {
+                                                        "validForIdRef": {
+                                                            "type": "string",
+                                                            "description": "Reference to validity expression",
+                                                            "$id": "#otxProcedureCall.results.okCondition.lowerUpperLimitByValidForCase.validForIdRef"
+                                                        },
+                                                        "lowerLimit": {
+                                                            "type": "string",
+                                                            "description": "Expected included lower limit of the output parameter (>=). Only literals are valid.",
+                                                            "$id": "#otxProcedureCall.results.okCondition.lowerUpperLimitByValidForCase.lowerLimit"
+                                                        },
+                                                        "upperLimit": {
+                                                            "type": "string",
+                                                            "description": "Expected included upper limit of the output parameter (<=). Only literals are valid.",
+                                                            "$id": "#otxProcedureCall.results.okCondition.lowerUpperLimitByValidForCase.upperLimit"
+                                                        }
+                                                    },
+                                                    "required": [
+                                                        "validForIdRef",
+                                                        "lowerLimit",
+                                                        "upperLimit"
+                                                    ]
+                                                },
+                                                "$id": "#otxProcedureCall.results.okCondition.lowerUpperLimitByValidForCase"
+                                            }
+                                        },
+                                        "required": [
+                                            "lowerUpperLimitByValidForCase"
+                                        ]
+                                    },
+                                    {
+                                        "properties": {
+                                            "lowerLimit": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "Name of the output parameter or state variable that provide a nominal value.\nIn case of a \"meta-structure\", this can be a path to the value in the structure,\ne.g. \"Package.otxDoc.structureName.lowerLimit\"",
+                                                        "$id": "#otxProcedureCall.results.okCondition.lowerLimit.name"
+                                                    },
+                                                    "dataType": {
+                                                        "type": "string",
+                                                        "description": "Data type of the output parameter or state variable.\nUsed for analysis and debugging purposes with a text editor.\nIn case of a \"meta-data structure\", dataType and structureType are concatinated,\ne.g.\"structureType:Kuehlmitteltemp\"",
+                                                        "$id": "#otxProcedureCall.results.okCondition.lowerLimit.dataType"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "name",
+                                                    "dataType"
+                                                ]
+                                            },
+                                            "upperLimit": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "description": "Name of the output parameter or state variable that provide a nominal value.\nIn case of a \"meta-structure\", this can be a path to the value in the structure,\ne.g. \"Package.otxDoc.structureName.upperLimit\"",
+                                                        "$id": "#otxProcedureCall.results.okCondition.upperLimit.name"
+                                                    },
+                                                    "dataType": {
+                                                        "type": "string",
+                                                        "description": "Data type of the output parameter or state variable.\nUsed for analysis and debugging purposes with a text editor.\nIn case of a \"meta-data structure\", dataType and structureType are concatinated,\ne.g.\"structureType:Kuehlmitteltemp\"",
+                                                        "$id": "#otxProcedureCall.results.okCondition.upperLimit.dataType"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "name",
+                                                    "dataType"
+                                                ]
+                                            }
+                                        },
+                                        "required": [
+                                            "lowerLimit",
+                                            "upperLimit"
+                                        ]
+                                    }
+                                ],
+                                "$id": "#otxProcedureCall.results.okCondition"
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "outputType",
+                            "dataType"
+                        ]
+                    },
+                    "$id": "#otxProcedureCall.results"
+                }
+            },
+            "required": [
+                "id",
+                "otxLocation",
+                "diagConnectionState"
+            ],
+            "$id": "#otxProcedureCall"
+        },
+        "otxControlSequence": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Unique, target system specific identifier of the sequence",
+                    "$id": "#otxControlSequence.id"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "Readable name of the sequence",
+                    "$id": "#otxControlSequence.displayName"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Understandable description of what the sequence does",
+                    "$id": "#otxControlSequence.description"
+                },
+                "sequenceType": {
+                    "type": "string",
+                    "description": "Target system specific type of the sequence,\ne.g. \"Serie\", \"Nacharbeit\" for production\ne.g. \"Wartung/Instandhaltung und generische Bausteine\"",
+                    "$id": "#otxControlSequence.sequenceType"
+                },
+                "logicalPath": {
+                    "type": "string",
+                    "description": "Allocation to group.\nRelative, logical Path of the sequence\nPath can be defined like a namespace,\ne.g. \"LWS_Anlernen\"\ne.g. \"Montage.IB1.Boxster\"",
+                    "$id": "#otxControlSequence.logicalPath"
+                },
+                "validFor": {
+                    "$ref": "#/definitions/logicalExpression",
+                    "description": "Condition in which cases a sequence can be executed.\nStructure of logical definition is target system specific, e.g. based on PR numbers, vehicle project etc.\ne.g.\"(PR==(7F3||PR9)&&(2019<=MY<=2021))&&(!(PR==XX*))\".\nTODO: How to describe general logical expressions with target system specific identifiern.",
+                    "$id": "#otxControlSequence.validFor"
+                },
+                "onlyForTestPurpose": {
+                    "type": "boolean",
+                    "description": "If the flag is set to \"true\", the sequence will be executed only if the target system is in test mode.\nIt set to \"false\", the sequence is always executed.",
+                    "default": false,
+                    "$id": "#otxControlSequence.onlyForTestPurpose"
+                },
+                "triggers": {
+                    "type": "object",
+                    "description": "OTX Control sequence trigger definitions",
+                    "additionalProperties": false,
+                    "properties": {
+                        "start": {
+                            "type": "array",
+                            "description": "List of target system specific event identifier.\nEach occured event results in start of execution of the sequence.\nE.g. \"location.station3\", \"vehicle.drivingCycleDetected\"",
+                            "items": {
+                                "type": "string"
+                            },
+                            "$id": "#otxControlSequence.triggers.start"
+                        },
+                        "pause": {
+                            "type": "array",
+                            "description": "List of target system specific event identifier.\nEach occured event results in pause of execution of the sequence.\nE.g. \"Rollpruefstand.Anhalteschnur.gezogen\", \"Fahrzeug.SOC.zuGering\"",
+                            "items": {
+                                "type": "string"
+                            },
+                            "$id": "#otxControlSequence.triggers.pause"
+                        },
+                        "continue": {
+                            "type": "array",
+                            "description": "List of target system specific event identifier.\nEach occured event results in continuation of paused sequence.\nE.g. \"Rollpruefstand.Anhalteschnur.gezogen\", \"Fahrzeug.SOC.zuGering\"",
+                            "items": {
+                                "type": "string"
+                            },
+                            "$id": "#otxControlSequence.triggers.continue"
+                        }
+                    },
+                    "$id": "#otxControlSequence.triggers"
+                },
+                "sequence": {
+                    "type": "array",
+                    "description": "The sequence contains the normal processing logic that is always executed.",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "minItems": 1,
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "description": "Unique identifier of sequence segment",
+                                "$id": "#otxControlSequence.sequence.id"
+                            },
+                            "displayName": {
+                                "type": "string",
+                                "description": "Readable name of the sequence",
+                                "$id": "#otxControlSequence.sequence.displayName"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Understandable description what the main sequence does",
+                                "$id": "#otxControlSequence.sequence.description"
+                            },
+                            "displayConfigIdRef": {
+                                "type": "string",
+                                "description": "Reference of a display configuration (by ID)",
+                                "$id": "#otxControlSequence.sequence.displayConfigIdRef"
+                            },
+                            "lanes": {
+                                "type": "array",
+                                "description": "OTX procedure call sequences executed in parallel in this sequence part",
+                                "minItems": 1,
+                                "items": {
+                                    "$ref": "#/definitions/lane"
+                                },
+                                "$id": "#otxControlSequence.sequence.lanes"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "lanes"
+                        ]
+                    },
+                    "$id": "#otxControlSequence.sequence"
+                },
+                "eventCatchSequences": {
+                    "type": "array",
+                    "description": "An OTX control eventCatch sequence is used for exeception handling in case the main sequence was stopped due to target system specific information, failures, execptions etc.",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "minItems": 1,
+                        "properties": {
+                            "caseTriggers": {
+                                "type": "array",
+                                "description": "List of target system specific trigger that cause the execution of the catch sequence.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "$id": "#otxControlSequence.eventCatchSequences.caseTriggers"
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "Identifier of catch sequence",
+                                "$id": "#otxControlSequence.eventCatchSequences.id"
+                            },
+                            "displayName": {
+                                "type": "string",
+                                "description": "Readable name of the catch sequence part",
+                                "$id": "#otxControlSequence.eventCatchSequences.displayName"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Description of the sequence part",
+                                "$id": "#otxControlSequence.eventCatchSequences.description"
+                            },
+                            "displayConfigIdRef": {
+                                "type": "string",
+                                "description": "Reference of a display configuration",
+                                "$id": "#otxControlSequence.eventCatchSequences.displayConfigIdRef"
+                            },
+                            "lanes": {
+                                "type": "array",
+                                "description": "OTX procedure call sequences executed in parallel in this sequence part",
+                                "items": {
+                                    "$ref": "#/definitions/lane"
+                                },
+                                "$id": "#otxControlSequence.eventCatchSequences.lanes"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "lanes"
+                        ]
+                    },
+                    "$id": "#otxControlSequence.eventCatchSequences"
+                },
+                "finallySequence": {
+                    "type": "array",
+                    "description": "The finally sequence is used to execute the clean up of the sequence and runs always after the main and/or catch sequence.",
+                    "maxItems": 1,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "minItems": 1,
+                        "properties": {
+                            "displayName": {
+                                "type": "string",
+                                "description": "Readable name of the clean up sequence part",
+                                "$id": "#otxControlSequence.finallySequence.displayName"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Description of the sequence part",
+                                "$id": "#otxControlSequence.finallySequence.description"
+                            },
+                            "displayConfigIdRef": {
+                                "type": "string",
+                                "description": "Reference of a display configuration",
+                                "$id": "#otxControlSequence.finallySequence.displayConfigIdRef"
+                            },
+                            "lanes": {
+                                "type": "array",
+                                "description": "OTX procedure call sequences executed in parallel in this sequence part",
+                                "items": {
+                                    "$ref": "#/definitions/lane"
+                                },
+                                "$id": "#otxControlSequence.finallySequence.lanes"
+                            }
+                        },
+                        "required": [
+                            "lanes"
+                        ]
+                    },
+                    "$id": "#otxControlSequence.finallySequence"
+                },
+                "metaData": {
+                    "$ref": "#/definitions/meta"
+                }
+            },
+            "required": [
+                "id",
+                "onlyForTestPurpose",
+                "sequence"
+            ],
+            "$id": "#otxControlSequence"
+        },
+        "logicalExpression": {
+            "type": "object",
+            "description": "Logical expression",
+            "oneOf": [
+                {
+                    "properties": {
+                        "and": {
+                            "$ref": "#/definitions/and"
+                        }
+                    },
+                    "required": [
+                        "and"
+                    ]
+                },
+                {
+                    "properties": {
+                        "or": {
+                            "$ref": "#/definitions/or"
+                        }
+                    },
+                    "required": [
+                        "or"
+                    ]
+                },
+                {
+                    "properties": {
+                        "==": {
+                            "$ref": "#/definitions/=="
+                        }
+                    },
+                    "required": [
+                        "=="
+                    ]
+                },
+                {
+                    "properties": {
+                        "!=": {
+                            "$ref": "#/definitions/!="
+                        }
+                    },
+                    "required": [
+                        "!="
+                    ]
+                },
+                {
+                    "properties": {
+                        ">": {
+                            "$ref": "#/definitions/%3E"
+                        }
+                    },
+                    "required": [
+                        ">"
+                    ]
+                },
+                {
+                    "properties": {
+                        ">=": {
+                            "$ref": "#/definitions/%3E="
+                        }
+                    },
+                    "required": [
+                        ">="
+                    ]
+                },
+                {
+                    "properties": {
+                        "<": {
+                            "$ref": "#/definitions/%3C"
+                        }
+                    },
+                    "required": [
+                        "<"
+                    ]
+                },
+                {
+                    "properties": {
+                        "<=": {
+                            "$ref": "#/definitions/%3C="
+                        }
+                    },
+                    "required": [
+                        "<="
+                    ]
+                }
+            ]
+        },
+        "and": {
+            "type": "array",
+            "description": "Logical and",
+            "additionalProperties": false,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "and": {
+                        "$ref": "#/definitions/and"
+                    },
+                    "or": {
+                        "$ref": "#/definitions/or"
+                    },
+                    "==": {
+                        "$ref": "#/definitions/=="
+                    },
+                    "!=": {
+                        "$ref": "#/definitions/!="
+                    },
+                    ">": {
+                        "$ref": "#/definitions/%3E"
+                    },
+                    ">=": {
+                        "$ref": "#/definitions/%3E="
+                    },
+                    "<": {
+                        "$ref": "#/definitions/%3C"
+                    },
+                    "<=": {
+                        "$ref": "#/definitions/%3C="
+                    }
+                }
+            },
+            "anyOf": [
+                {
+                    "required": [
+                        "and"
+                    ]
+                },
+                {
+                    "required": [
+                        "or"
+                    ]
+                },
+                {
+                    "required": [
+                        "=="
+                    ]
+                },
+                {
+                    "required": [
+                        "!="
+                    ]
+                },
+                {
+                    "required": [
+                        ">"
+                    ]
+                },
+                {
+                    "required": [
+                        ">="
+                    ]
+                },
+                {
+                    "required": [
+                        "<"
+                    ]
+                },
+                {
+                    "required": [
+                        "<="
+                    ]
+                }
+            ]
+        },
+        "or": {
+            "type": "array",
+            "description": "Logical or",
+            "additionalProperties": false,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "and": {
+                        "$ref": "#/definitions/and"
+                    },
+                    "or": {
+                        "$ref": "#/definitions/or"
+                    },
+                    "==": {
+                        "$ref": "#/definitions/=="
+                    },
+                    "!=": {
+                        "$ref": "#/definitions/!="
+                    },
+                    ">": {
+                        "$ref": "#/definitions/%3E"
+                    },
+                    ">=": {
+                        "$ref": "#/definitions/%3E="
+                    },
+                    "<": {
+                        "$ref": "#/definitions/%3C"
+                    },
+                    "<=": {
+                        "$ref": "#/definitions/%3C="
+                    }
+                }
+            },
+            "anyOf": [
+                {
+                    "required": [
+                        "and"
+                    ]
+                },
+                {
+                    "required": [
+                        "or"
+                    ]
+                },
+                {
+                    "required": [
+                        "=="
+                    ]
+                },
+                {
+                    "required": [
+                        "!="
+                    ]
+                },
+                {
+                    "required": [
+                        ">"
+                    ]
+                },
+                {
+                    "required": [
+                        ">="
+                    ]
+                },
+                {
+                    "required": [
+                        "<"
+                    ]
+                },
+                {
+                    "required": [
+                        "<="
+                    ]
+                }
+            ]
+        },
+        "==": {
+            "$ref": "#/definitions/operator"
+        },
+        "!=": {
+            "$ref": "#/definitions/operator"
+        },
+        ">": {
+            "$ref": "#/definitions/operator"
+        },
+        ">=": {
+            "$ref": "#/definitions/operator"
+        },
+        "<": {
+            "$ref": "#/definitions/operator"
+        },
+        "<=": {
+            "$ref": "#/definitions/operator"
+        },
+        "operator": {
+            "type": "array",
+            "description": "Input variable to logical expression",
+            "additionalItems": false,
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "key"
+                    ]
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        }
+    },
+    "$id": "v1.1_otx-control-file.schema.json"
+}
